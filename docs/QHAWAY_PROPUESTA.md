@@ -605,6 +605,25 @@ Todas las cifras de esta sección son **estimaciones referenciales a junio de 20
 
 **La lección del QHAWAY original, convertida en regla presupuestal:** el observatorio anterior quedó offline porque la renovación de dominio y hosting no estaba asegurada más allá del primer año[^cost-leccion]. QHAWAY 2.0 adopta dos salvaguardas explícitas: (i) **toda partida de dominio/hosting se presupuesta multi-año** (renovación de `qhaway.pe` por 3-5 años por adelantado, ~S/ 450–1,250 únicos, o subdominio institucional sin caducidad); y (ii) la arquitectura degrada con gracia: si cesa todo financiamiento, el sitio estático en GitHub Pages y los datos versionados en repositorios públicos permanecen accesibles sin pago alguno.
 
+## 10.1 Costo de la actualización periódica de datos
+
+Una pregunta natural de sostenibilidad es **cuánto cuesta mantener los datos al día**. La respuesta, gracias a la arquitectura elegida, es contundente: **el costo de infraestructura de la actualización es ≈ S/ 0**.
+
+El refresco se automatiza con un *flujo programado de GitHub Actions* (un `cron`) que, en la fecha fijada, ejecuta el ETL en Python, vuelve a consultar la API de Datos Abiertos del MEF[^cost-mefapi], regenera los archivos JSON y, si detecta cambios, los versiona y publica; GitHub Pages redespliega el sitio automáticamente. En repositorios públicos, **GitHub Actions no tiene costo** (minutos ilimitados)[^cost-actions], y cada corrida del ETL toma minutos.
+
+**Cadencia recomendada: mensual, el último viernes de cada mes** (alineada con el cierre mensual del SIAF), configurable a cualquier día/hora. El flujo ya queda dejado listo en el repositorio del propio observatorio (`refresh-data.yml`), de modo que activarlo es cuestión de habilitar la programación.
+
+| Concepto de la actualización mensual | Costo |
+|---|---|
+| Cómputo del ETL (GitHub Actions, repo público) | S/ 0 (capa gratuita, minutos ilimitados)[^cost-actions] |
+| Redespliegue del sitio (GitHub Pages) | S/ 0 |
+| Consumo de la API del MEF | S/ 0 (datos abiertos, sin tarifa)[^cost-mefapi] |
+| **Mantenimiento humano** (validar que el MEF no cambió el esquema, revisar cifras) | **~2–4 h/mes** de un asistente de investigación (incluido en el equipo del Escenario B) |
+
+Es decir: en el **Escenario A (mínimo viable)** la actualización mensual no añade gasto monetario alguno; basta una supervisión académica esporádica. En el **Escenario B** queda absorbida por las horas del asistente de investigación ya presupuestado. El único riesgo operativo —no de costo— es que el MEF modifique el esquema de su dataset; por eso se reserva esa pequeña ventana de validación humana mensual.
+
+**Prueba de concepto ya operativa.** Lo descrito no es teórico: la Fase 1 del dashboard **ya está construida y publicada** con datos reales del SIAF-MEF (presupuesto 2025: PIM ≈ S/ 272 mil millones), navegable en <https://unimauro.github.io/qhaway-dashboard/>[^cost-demo], con el ETL versionado en su repositorio. Demuestra, sobre datos reales y a costo de infraestructura cero, la viabilidad de toda la arquitectura de la Fase 1.
+
 [^road-qhaway]: QHAWAY — Observatorio del Presupuesto Público del Perú, anuncio institucional FIEECS-UNI (abril 2024): <https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/>
 [^road-wayback]: Snapshot del dashboard original (30-nov-2024) en Internet Archive, único acceso vigente al estar el dominio caído: <https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/>
 [^cost-pages]: GitHub Pages es gratuito para sitios de repositorios públicos, con límites de uso blando (~100 GB/mes de banda): <https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages>
@@ -612,6 +631,9 @@ Todas las cifras de esta sección son **estimaciones referenciales a junio de 20
 [^cost-aws]: Estimación con la calculadora de precios de AWS para CloudFront + S3 + Lambda + RDS de bajo tráfico; debe recotizarse al diseñar la Fase 3: <https://calculator.aws/>
 [^cost-pe]: Registro y renovación de dominios .pe a través de registradores acreditados por punto.pe (NIC .pe); tarifas según registrador: <https://punto.pe/>
 [^cost-leccion]: Evidencia: el dominio `dashboard.qhaway-fieecs.pe` no resuelve a junio 2026; solo persiste el archivo en Wayback Machine: <https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/>
+[^cost-actions]: GitHub Actions es gratuito y sin límite de minutos para repositorios públicos; los flujos programados (`schedule`/`cron`) permiten ejecutar el ETL automáticamente: <https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration>
+[^cost-mefapi]: API de Datos Abiertos del MEF (Consulta del Gasto Público, SIAF), de acceso libre y sin tarifa: <https://datosabiertos.mef.gob.pe/dataset/presupuesto-y-ejecucion-de-gasto>
+[^cost-demo]: Dashboard QHAWAY 2.0 — Fase 1 (implementación de referencia con datos reales del SIAF-MEF): <https://unimauro.github.io/qhaway-dashboard/>
 
 
 # 11. Beneficios Académicos

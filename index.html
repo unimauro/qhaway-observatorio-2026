@@ -143,7 +143,12 @@ id="toc-observatorio-prospectivo">8.7 Observatorio Prospectivo</a></li>
 </ul></li>
 <li><a href="#roadmap" id="toc-roadmap">9. Roadmap</a></li>
 <li><a href="#costos-estimados" id="toc-costos-estimados">10. Costos
-Estimados</a></li>
+Estimados</a>
+<ul>
+<li><a href="#costo-de-la-actualización-periódica-de-datos"
+id="toc-costo-de-la-actualización-periódica-de-datos">10.1 Costo de la
+actualización periódica de datos</a></li>
+</ul></li>
 <li><a href="#beneficios-académicos" id="toc-beneficios-académicos">11.
 Beneficios Académicos</a></li>
 <li><a href="#beneficios-para-el-estado"
@@ -1670,6 +1675,80 @@ caducidad); y (ii) la arquitectura degrada con gracia: si cesa todo
 financiamiento, el sitio estático en GitHub Pages y los datos
 versionados en repositorios públicos permanecen accesibles sin pago
 alguno.</p>
+<h2 id="costo-de-la-actualización-periódica-de-datos">10.1 Costo de la
+actualización periódica de datos</h2>
+<p>Una pregunta natural de sostenibilidad es <strong>cuánto cuesta
+mantener los datos al día</strong>. La respuesta, gracias a la
+arquitectura elegida, es contundente: <strong>el costo de
+infraestructura de la actualización es ~ S/ 0</strong>.</p>
+<p>El refresco se automatiza con un <em>flujo programado de GitHub
+Actions</em> (un <code>cron</code>) que, en la fecha fijada, ejecuta el
+ETL en Python, vuelve a consultar la API de Datos Abiertos del MEF<a
+href="#fn80" class="footnote-ref" id="fnref80"
+role="doc-noteref"><sup>80</sup></a>, regenera los archivos JSON y, si
+detecta cambios, los versiona y publica; GitHub Pages redespliega el
+sitio automáticamente. En repositorios públicos, <strong>GitHub Actions
+no tiene costo</strong> (minutos ilimitados)<a href="#fn81"
+class="footnote-ref" id="fnref81" role="doc-noteref"><sup>81</sup></a>,
+y cada corrida del ETL toma minutos.</p>
+<p><strong>Cadencia recomendada: mensual, el último viernes de cada
+mes</strong> (alineada con el cierre mensual del SIAF), configurable a
+cualquier día/hora. El flujo ya queda dejado listo en el repositorio del
+propio observatorio (<code>refresh-data.yml</code>), de modo que
+activarlo es cuestión de habilitar la programación.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Concepto de la actualización mensual</th>
+<th>Costo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cómputo del ETL (GitHub Actions, repo público)</td>
+<td>S/ 0 (capa gratuita, minutos ilimitados)<a href="#fn82"
+class="footnote-ref" id="fnref82"
+role="doc-noteref"><sup>82</sup></a></td>
+</tr>
+<tr>
+<td>Redespliegue del sitio (GitHub Pages)</td>
+<td>S/ 0</td>
+</tr>
+<tr>
+<td>Consumo de la API del MEF</td>
+<td>S/ 0 (datos abiertos, sin tarifa)<a href="#fn83"
+class="footnote-ref" id="fnref83"
+role="doc-noteref"><sup>83</sup></a></td>
+</tr>
+<tr>
+<td><strong>Mantenimiento humano</strong> (validar que el MEF no cambió
+el esquema, revisar cifras)</td>
+<td><strong>~2-4 h/mes</strong> de un asistente de investigación
+(incluido en el equipo del Escenario B)</td>
+</tr>
+</tbody>
+</table>
+<p>Es decir: en el <strong>Escenario A (mínimo viable)</strong> la
+actualización mensual no añade gasto monetario alguno; basta una
+supervisión académica esporádica. En el <strong>Escenario B</strong>
+queda absorbida por las horas del asistente de investigación ya
+presupuestado. El único riesgo operativo –no de costo– es que el MEF
+modifique el esquema de su dataset; por eso se reserva esa pequeña
+ventana de validación humana mensual.</p>
+<p><strong>Prueba de concepto ya operativa.</strong> Lo descrito no es
+teórico: la Fase 1 del dashboard <strong>ya está construida y
+publicada</strong> con datos reales del SIAF-MEF (presupuesto 2025: PIM
+~ S/ 272 mil millones), navegable en <a
+href="https://unimauro.github.io/qhaway-dashboard/"
+class="uri">https://unimauro.github.io/qhaway-dashboard/</a><a
+href="#fn84" class="footnote-ref" id="fnref84"
+role="doc-noteref"><sup>84</sup></a>, con el ETL versionado en su
+repositorio. Demuestra, sobre datos reales y a costo de infraestructura
+cero, la viabilidad de toda la arquitectura de la Fase 1.</p>
 <h1 id="beneficios-académicos">11. Beneficios Académicos</h1>
 <p>QHAWAY 2.0 convierte a la FIEECS-UNI en propietaria de un laboratorio
 de datos abierto sobre presupuesto, territorio y clima – un activo que
@@ -1683,18 +1762,18 @@ reproducible: un jurado puede verificar exactamente la versión
 usada.</p>
 <p><strong>Publicaciones indexadas con datasets citables.</strong> Cada
 release del dataset puede depositarse en Zenodo con DOI propio<a
-href="#fn80" class="footnote-ref" id="fnref80"
-role="doc-noteref"><sup>80</sup></a>, siguiendo el patrón ya operativo
+href="#fn85" class="footnote-ref" id="fnref85"
+role="doc-noteref"><sup>85</sup></a>, siguiendo el patrón ya operativo
 en el Observatorio de Smartphones en Adolescentes (biblioteca con DOI)<a
-href="#fn81" class="footnote-ref" id="fnref81"
-role="doc-noteref"><sup>81</sup></a>. Esto habilita artículos en
+href="#fn86" class="footnote-ref" id="fnref86"
+role="doc-noteref"><sup>86</sup></a>. Esto habilita artículos en
 revistas indexadas donde los datos –no solo el paper– son citables,
 sumando métricas de impacto para la UNI.</p>
 <p><strong>Laboratorio de datos y docencia.</strong> Casos reales para
 cursos de políticas públicas, presupuesto público, econometría espacial
 y ciencia de datos: los estudiantes trabajan sobre la Consulta Amigable
-del MEF<a href="#fn82" class="footnote-ref" id="fnref82"
-role="doc-noteref"><sup>82</sup></a> ya estructurada en JSON, en lugar
+del MEF<a href="#fn87" class="footnote-ref" id="fnref87"
+role="doc-noteref"><sup>87</sup></a> ya estructurada en JSON, en lugar
 de descargas manuales.</p>
 <p><strong>Semilleros de investigación.</strong> El ETL en Python y el
 frontend abierto (GitHub) permiten que semilleros contribuyan código y
@@ -1726,18 +1805,18 @@ oficial.</p>
 IPT, riesgos territoriales y ejecución presupuestal por distrito permite
 a gobiernos regionales y locales identificar dónde la brecha de
 servicios coincide con baja inversión – insumo directo para carteras de
-INVIERTE.PE<a href="#fn83" class="footnote-ref" id="fnref83"
-role="doc-noteref"><sup>83</sup></a>.</p>
+INVIERTE.PE<a href="#fn88" class="footnote-ref" id="fnref88"
+role="doc-noteref"><sup>88</sup></a>.</p>
 <p><strong>Insumo para la programación multianual.</strong> Las series
 PIA/PIM/Devengado con desagregación distrital y funcional ofrecen
 evidencia para la Programación Multianual de Inversiones y para los
 planes territoriales que CEPLAN articula con el PEDN al 2050<a
-href="#fn84" class="footnote-ref" id="fnref84"
-role="doc-noteref"><sup>84</sup></a>.</p>
+href="#fn89" class="footnote-ref" id="fnref89"
+role="doc-noteref"><sup>89</sup></a>.</p>
 <p><strong>Trazabilidad del gasto climático.</strong> El etiquetado del
 gasto con el clasificador funcional-programático del MEF y la referencia
-de los marcadores de Río de la OCDE<a href="#fn85" class="footnote-ref"
-id="fnref85" role="doc-noteref"><sup>85</sup></a> genera una serie
+de los marcadores de Río de la OCDE<a href="#fn90" class="footnote-ref"
+id="fnref90" role="doc-noteref"><sup>90</sup></a> genera una serie
 verificable de inversión en adaptación y mitigación – insumo para
 reportar avances de las NDC ante la CMNUCC y para sustentar solicitudes
 de financiamiento climático internacional (Fondo Verde del Clima,
@@ -1767,8 +1846,8 @@ compartible y exportación CSV, de modo que un periodista regional puede
 verificar, citar y embeber la evidencia en minutos. Los datos llevan
 marca de procedencia (fuente y fecha por registro), lo que permite
 distinguir cifra oficial de estimación – práctica ya operativa en los
-observatorios del equipo<a href="#fn86" class="footnote-ref"
-id="fnref86" role="doc-noteref"><sup>86</sup></a>.</p>
+observatorios del equipo<a href="#fn91" class="footnote-ref"
+id="fnref91" role="doc-noteref"><sup>91</sup></a>.</p>
 <p><strong>Vigilancia ciudadana informada.</strong> Juntas vecinales,
 frentes de defensa y comités de vigilancia de presupuesto participativo
 obtienen un lenguaje común con la autoridad: la misma cifra de PIM y
@@ -1790,16 +1869,16 @@ dato manda, la IA solo traduce.</p>
 <li><p><strong>La marca QHAWAY tiene valor institucional y debe
 relanzarse.</strong> FIEECS-UNI invirtió en 2024 en el diseño
 participativo y el lanzamiento del Observatorio del Presupuesto
-Público<a href="#fn87" class="footnote-ref" id="fnref87"
-role="doc-noteref"><sup>87</sup></a>; ese capital simbólico –una marca
+Público<a href="#fn92" class="footnote-ref" id="fnref92"
+role="doc-noteref"><sup>92</sup></a>; ese capital simbólico –una marca
 quechua propia, asociada a la facultad y a la vigilancia del gasto
 público– no debe perderse por la caída del hosting original. Relanzar es
 más barato y más creíble que empezar de cero.</p></li>
 <li><p><strong>La base técnica ya existe y está demostrada en
 producción.</strong> No se propone una promesa: siete observatorios live
 del equipo proponente (Perú Transparente, Perú Riesgos, Proyecto INTI,
-Observatorio FONAFE, entre otros)<a href="#fn88" class="footnote-ref"
-id="fnref88" role="doc-noteref"><sup>88</sup></a> operan hoy con el
+Observatorio FONAFE, entre otros)<a href="#fn93" class="footnote-ref"
+id="fnref93" role="doc-noteref"><sup>93</sup></a> operan hoy con el
 mismo stack (React, ECharts, Leaflet/MapLibre, ETL Python). QHAWAY 2.0
 reutiliza componentes probados, no parte de un prototipo.</p></li>
 <li><p><strong>El diferencial de pisos altitudinales es
@@ -1891,8 +1970,8 @@ Pisos Altitudinales)</td>
 <tr>
 <td>R6</td>
 <td>Aprobar una política de datos abiertos: datasets descargables, ETL
-público y licencia CC BY 4.0<a href="#fn89" class="footnote-ref"
-id="fnref89" role="doc-noteref"><sup>89</sup></a> para datos y
+público y licencia CC BY 4.0<a href="#fn94" class="footnote-ref"
+id="fnref94" role="doc-noteref"><sup>94</sup></a> para datos y
 visualizaciones derivadas</td>
 <td>Comité académico</td>
 <td>Mes 3-4</td>
@@ -1900,8 +1979,8 @@ visualizaciones derivadas</td>
 <tr>
 <td>R7</td>
 <td>Gestionar financiamiento para Fases 2-3 ante BID, CAF y cooperación
-internacional<a href="#fn90" class="footnote-ref" id="fnref90"
-role="doc-noteref"><sup>90</sup></a>, usando el MVP live como evidencia
+internacional<a href="#fn95" class="footnote-ref" id="fnref95"
+role="doc-noteref"><sup>95</sup></a>, usando el MVP live como evidencia
 de capacidad de ejecución</td>
 <td>Decanato + comité</td>
 <td>Mes 6-12</td>
@@ -2011,13 +2090,13 @@ estado del gráfico vive en la URL: lo que usted comparte es lo que el
 receptor ve.</p>
 <h1 id="preguntas-frecuentes-faq">17. Preguntas Frecuentes (FAQ)</h1>
 <p><strong>¿De dónde salen los datos?</strong> De fuentes oficiales: MEF
-(Transparencia Económica / Consulta Amigable)<a href="#fn91"
-class="footnote-ref" id="fnref91" role="doc-noteref"><sup>91</sup></a>,
-INEI<a href="#fn92" class="footnote-ref" id="fnref92"
-role="doc-noteref"><sup>92</sup></a>, MINEDU-ESCALE<a href="#fn93"
-class="footnote-ref" id="fnref93" role="doc-noteref"><sup>93</sup></a>,
-MINSA, MIDIS, CENEPRED-SIGRID<a href="#fn94" class="footnote-ref"
-id="fnref94" role="doc-noteref"><sup>94</sup></a>, SENAMHI, CEPLAN e
+(Transparencia Económica / Consulta Amigable)<a href="#fn96"
+class="footnote-ref" id="fnref96" role="doc-noteref"><sup>96</sup></a>,
+INEI<a href="#fn97" class="footnote-ref" id="fnref97"
+role="doc-noteref"><sup>97</sup></a>, MINEDU-ESCALE<a href="#fn98"
+class="footnote-ref" id="fnref98" role="doc-noteref"><sup>98</sup></a>,
+MINSA, MIDIS, CENEPRED-SIGRID<a href="#fn99" class="footnote-ref"
+id="fnref99" role="doc-noteref"><sup>99</sup></a>, SENAMHI, CEPLAN e
 INVIERTE.PE, además de organismos internacionales (Banco Mundial, OCDE,
 BID, CEPAL). Cada gráfico cita su fuente específica en el tooltip y en
 la ficha del dato.</p>
@@ -2036,16 +2115,16 @@ explica por esto, repórtela como posible error.</p>
 presupuesto inicial aprobado por ley. PIM: presupuesto modificado
 durante el año. Devengado: obligación de pago reconocida por un bien o
 servicio ya recibido. Girado: desembolso efectivo. El glosario completo
-enlaza a las definiciones del MEF<a href="#fn95" class="footnote-ref"
-id="fnref95" role="doc-noteref"><sup>95</sup></a>.</p>
+enlaza a las definiciones del MEF<a href="#fn100" class="footnote-ref"
+id="fnref100" role="doc-noteref"><sup>100</sup></a>.</p>
 <p><strong>¿Uso devengado o girado para medir ejecución?</strong> La
 convención estándar –y la que usa QHAWAY por defecto– es
 <strong>devengado/PIM</strong>. El girado se ofrece como vista
 complementaria de caja.</p>
 <p><strong>¿Puedo descargar los datos?</strong> Sí. Todos los conjuntos
 de datos se descargan en CSV y JSON, bajo licencia Creative Commons CC
-BY 4.0<a href="#fn96" class="footnote-ref" id="fnref96"
-role="doc-noteref"><sup>96</sup></a>: úselos libremente citando la
+BY 4.0<a href="#fn101" class="footnote-ref" id="fnref101"
+role="doc-noteref"><sup>101</sup></a>: úselos libremente citando la
 fuente.</p>
 <p><strong>¿Puedo citarlo en mi tesis?</strong> Sí. Formato sugerido:
 <em>QHAWAY 2.0 – Observatorio Nacional de Inteligencia Territorial,
@@ -2111,9 +2190,9 @@ verificables, no como garantías.</p>
 </thead>
 <tbody>
 <tr>
-<td>Consulta Amigable / Transparencia Económica<a href="#fn97"
-class="footnote-ref" id="fnref97"
-role="doc-noteref"><sup>97</sup></a></td>
+<td>Consulta Amigable / Transparencia Económica<a href="#fn102"
+class="footnote-ref" id="fnref102"
+role="doc-noteref"><sup>102</sup></a></td>
 <td>MEF</td>
 <td>PIA, PIM, Certificado, Devengado, Girado por pliego, función,
 programa y proyecto</td>
@@ -2121,18 +2200,18 @@ programa y proyecto</td>
 <td>Mensual (gasto); anual (cierre)</td>
 </tr>
 <tr>
-<td>Portal Nacional de Datos Abiertos<a href="#fn98"
-class="footnote-ref" id="fnref98"
-role="doc-noteref"><sup>98</sup></a></td>
+<td>Portal Nacional de Datos Abiertos<a href="#fn103"
+class="footnote-ref" id="fnref103"
+role="doc-noteref"><sup>103</sup></a></td>
 <td>PCM/SGTD</td>
 <td>Datasets multisectoriales del Estado</td>
 <td>Variable por dataset</td>
 <td>Variable</td>
 </tr>
 <tr>
-<td>Censos, ENAHO, ENDES (microdatos)<a href="#fn99"
-class="footnote-ref" id="fnref99"
-role="doc-noteref"><sup>99</sup></a></td>
+<td>Censos, ENAHO, ENDES (microdatos)<a href="#fn104"
+class="footnote-ref" id="fnref104"
+role="doc-noteref"><sup>104</sup></a></td>
 <td>INEI</td>
 <td>Población, pobreza, empleo, ingreso, vivienda, salud
 materno-infantil</td>
@@ -2140,32 +2219,32 @@ materno-infantil</td>
 <td>Censal; anual (ENAHO/ENDES)</td>
 </tr>
 <tr>
-<td>ESCALE / Censo Educativo<a href="#fn100" class="footnote-ref"
-id="fnref100" role="doc-noteref"><sup>100</sup></a></td>
+<td>ESCALE / Censo Educativo<a href="#fn105" class="footnote-ref"
+id="fnref105" role="doc-noteref"><sup>105</sup></a></td>
 <td>MINEDU</td>
 <td>Matrícula, locales escolares, logro de aprendizaje</td>
 <td>Distrital / por institución educativa</td>
 <td>Anual</td>
 </tr>
 <tr>
-<td>REUNIS / SIEN<a href="#fn101" class="footnote-ref" id="fnref101"
-role="doc-noteref"><sup>101</sup></a></td>
+<td>REUNIS / SIEN<a href="#fn106" class="footnote-ref" id="fnref106"
+role="doc-noteref"><sup>106</sup></a></td>
 <td>MINSA</td>
 <td>Anemia, desnutrición crónica, indicadores sanitarios</td>
 <td>Distrital (según indicador)</td>
 <td>Anual; algunos semestrales</td>
 </tr>
 <tr>
-<td>REDinforma / IDD<a href="#fn102" class="footnote-ref" id="fnref102"
-role="doc-noteref"><sup>102</sup></a></td>
+<td>REDinforma / IDD<a href="#fn107" class="footnote-ref" id="fnref107"
+role="doc-noteref"><sup>107</sup></a></td>
 <td>MIDIS</td>
 <td>Desarrollo e inclusión social, cobertura de programas</td>
 <td>Distrital</td>
 <td>Anual</td>
 </tr>
 <tr>
-<td>SIGRID<a href="#fn103" class="footnote-ref" id="fnref103"
-role="doc-noteref"><sup>103</sup></a></td>
+<td>SIGRID<a href="#fn108" class="footnote-ref" id="fnref108"
+role="doc-noteref"><sup>108</sup></a></td>
 <td>CENEPRED</td>
 <td>Escenarios de riesgo, peligros, vulnerabilidad (capas
 geoespaciales)</td>
@@ -2173,52 +2252,52 @@ geoespaciales)</td>
 <td>Por evento y por estudio</td>
 </tr>
 <tr>
-<td>Datos hidrometeorológicos y escenarios climáticos<a href="#fn104"
-class="footnote-ref" id="fnref104"
-role="doc-noteref"><sup>104</sup></a></td>
+<td>Datos hidrometeorológicos y escenarios climáticos<a href="#fn109"
+class="footnote-ref" id="fnref109"
+role="doc-noteref"><sup>109</sup></a></td>
 <td>SENAMHI</td>
 <td>Clima observado, pronósticos, escenarios</td>
 <td>Estaciones / grillas interpoladas</td>
 <td>Diaria a anual según producto</td>
 </tr>
 <tr>
-<td>PEDN al 2050 e información territorial<a href="#fn105"
-class="footnote-ref" id="fnref105"
-role="doc-noteref"><sup>105</sup></a></td>
+<td>PEDN al 2050 e información territorial<a href="#fn110"
+class="footnote-ref" id="fnref110"
+role="doc-noteref"><sup>110</sup></a></td>
 <td>CEPLAN</td>
 <td>Prospectiva, brechas, fichas territoriales</td>
 <td>Departamental / provincial</td>
 <td>Por actualización de planes</td>
 </tr>
 <tr>
-<td>INVIERTE.PE / SSI<a href="#fn106" class="footnote-ref" id="fnref106"
-role="doc-noteref"><sup>106</sup></a></td>
+<td>INVIERTE.PE / SSI<a href="#fn111" class="footnote-ref" id="fnref111"
+role="doc-noteref"><sup>111</sup></a></td>
 <td>MEF</td>
 <td>Inversión pública: cartera, avance físico-financiero</td>
 <td>Por proyecto (georreferenciable)</td>
 <td>Continua</td>
 </tr>
 <tr>
-<td>API OCDS<a href="#fn107" class="footnote-ref" id="fnref107"
-role="doc-noteref"><sup>107</sup></a></td>
+<td>API OCDS<a href="#fn112" class="footnote-ref" id="fnref112"
+role="doc-noteref"><sup>112</sup></a></td>
 <td>OECE</td>
 <td>Contrataciones públicas en estándar abierto</td>
 <td>Por proceso / entidad</td>
 <td>Continua</td>
 </tr>
 <tr>
-<td>OECD Data, Banco Mundial, BID, CEPAL<a href="#fn108"
-class="footnote-ref" id="fnref108"
-role="doc-noteref"><sup>108</sup></a></td>
+<td>OECD Data, Banco Mundial, BID, CEPAL<a href="#fn113"
+class="footnote-ref" id="fnref113"
+role="doc-noteref"><sup>113</sup></a></td>
 <td>Multilaterales</td>
 <td>Comparables internacionales, elasticidades de referencia</td>
 <td>Nacional</td>
 <td>Anual</td>
 </tr>
 <tr>
-<td>Cartografía oficial y GeoJSON distrital<a href="#fn109"
-class="footnote-ref" id="fnref109"
-role="doc-noteref"><sup>109</sup></a></td>
+<td>Cartografía oficial y GeoJSON distrital<a href="#fn114"
+class="footnote-ref" id="fnref114"
+role="doc-noteref"><sup>114</sup></a></td>
 <td>IGN / geo GOB.PE</td>
 <td>Límites distritales (1,891 distritos, ya operativos en Proyecto
 INTI)</td>
@@ -2226,8 +2305,8 @@ INTI)</td>
 <td>Por actualización demarcatoria</td>
 </tr>
 <tr>
-<td>DEM SRTM / Copernicus 30 m<a href="#fn110" class="footnote-ref"
-id="fnref110" role="doc-noteref"><sup>110</sup></a></td>
+<td>DEM SRTM / Copernicus 30 m<a href="#fn115" class="footnote-ref"
+id="fnref115" role="doc-noteref"><sup>115</sup></a></td>
 <td>NASA / ESA</td>
 <td>Modelo digital de elevación para pisos altitudinales</td>
 <td>Píxel de 30 m</td>
@@ -2235,8 +2314,8 @@ id="fnref110" role="doc-noteref"><sup>110</sup></a></td>
 </tr>
 <tr>
 <td>Clasificador funcional-programático y marcadores climáticos<a
-href="#fn111" class="footnote-ref" id="fnref111"
-role="doc-noteref"><sup>111</sup></a></td>
+href="#fn116" class="footnote-ref" id="fnref116"
+role="doc-noteref"><sup>116</sup></a></td>
 <td>MEF / MINAM</td>
 <td>Taxonomía para etiquetar gasto climático (referencia: marcadores de
 Río, OCDE)</td>
@@ -2267,58 +2346,58 @@ tableros, nivel provincial, login obligatorio, hoy fuera de línea).</p>
 </thead>
 <tbody>
 <tr>
-<td>Perú Transparente<a href="#fn112" class="footnote-ref" id="fnref112"
-role="doc-noteref"><sup>112</sup></a></td>
+<td>Perú Transparente<a href="#fn117" class="footnote-ref" id="fnref117"
+role="doc-noteref"><sup>117</sup></a></td>
 <td>Stack React+TS+Vite+Tailwind, ECharts, MapLibre, Cytoscape; OG/SEO
 por sección; export CSV; ETL Python (MEF, OECE/OCDS, gob.pe) sobre ~20
 MB de JSON estático</td>
 <td>Plataforma base; M1 Presupuesto</td>
 </tr>
 <tr>
-<td>Observatorio de Poder Económico<a href="#fn113" class="footnote-ref"
-id="fnref113" role="doc-noteref"><sup>113</sup></a></td>
+<td>Observatorio de Poder Económico<a href="#fn118" class="footnote-ref"
+id="fnref118" role="doc-noteref"><sup>118</sup></a></td>
 <td>Índice compuesto EPI 0-100, grafos NetworkX offline, treemaps</td>
 <td>M5 Índice de Prosperidad Territorial</td>
 </tr>
 <tr>
-<td>Perú Riesgos<a href="#fn114" class="footnote-ref" id="fnref114"
-role="doc-noteref"><sup>114</sup></a></td>
+<td>Perú Riesgos<a href="#fn119" class="footnote-ref" id="fnref119"
+role="doc-noteref"><sup>119</sup></a></td>
 <td>14 secciones de riesgos, 6 simuladores client-side, Leaflet, URLs
 compartibles, PDF en cliente; fuentes IGP, SENAMHI, CENEPRED,
 INDECI</td>
 <td>M3 Riesgos Territoriales; M6 Simulador</td>
 </tr>
 <tr>
-<td>Proyecto INTI<a href="#fn115" class="footnote-ref" id="fnref115"
-role="doc-noteref"><sup>115</sup></a></td>
+<td>Proyecto INTI<a href="#fn120" class="footnote-ref" id="fnref120"
+role="doc-noteref"><sup>120</sup></a></td>
 <td>GeoJSON de 1,891 distritos + UBIGEO; indicadores distritales (IDH,
 pobreza); prospectiva 2075 con escenarios; consultas IA por
 distrito</td>
 <td>M4 Inteligencia Territorial; M7 Prospectivo</td>
 </tr>
 <tr>
-<td>Perú Finanzas Públicas<a href="#fn116" class="footnote-ref"
-id="fnref116" role="doc-noteref"><sup>116</sup></a></td>
+<td>Perú Finanzas Públicas<a href="#fn121" class="footnote-ref"
+id="fnref121" role="doc-noteref"><sup>121</sup></a></td>
 <td>Series 1990-2025; PIA/PIM/Devengado; heatmap añoxsector; coroplético
 regional; ETL MEF + BCRP (repo local, no publicado)</td>
 <td>M1 Presupuesto</td>
 </tr>
 <tr>
-<td>Observatorio FONAFE<a href="#fn117" class="footnote-ref"
-id="fnref117" role="doc-noteref"><sup>117</sup></a></td>
+<td>Observatorio FONAFE<a href="#fn122" class="footnote-ref"
+id="fnref122" role="doc-noteref"><sup>122</sup></a></td>
 <td>ETL modular versionado (seed -&gt; build -&gt; snapshots/manifest);
 marcado verified/estimate; AskBot con dataset como contexto</td>
 <td>Capa de datos e IA transversal</td>
 </tr>
 <tr>
-<td>Observatorio Defensa-Interior<a href="#fn118" class="footnote-ref"
-id="fnref118" role="doc-noteref"><sup>118</sup></a></td>
+<td>Observatorio Defensa-Interior<a href="#fn123" class="footnote-ref"
+id="fnref123" role="doc-noteref"><sup>123</sup></a></td>
 <td>Patrón de presupuesto sectorial; AskBot client-side sin backend</td>
 <td>M1 Presupuesto; IA transversal</td>
 </tr>
 <tr>
-<td>Obs. Smartphones Adolescentes<a href="#fn119" class="footnote-ref"
-id="fnref119" role="doc-noteref"><sup>119</sup></a></td>
+<td>Obs. Smartphones Adolescentes<a href="#fn124" class="footnote-ref"
+id="fnref124" role="doc-noteref"><sup>124</sup></a></td>
 <td>i18n con prerender; mapa Leaflet; biblioteca con DOI; procedencia
 por registro</td>
 <td>Internacionalización; rigor documental</td>
@@ -2775,46 +2854,75 @@ persiste el archivo en Wayback Machine: <a
 href="https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/"
 class="uri">https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/</a><a
 href="#fnref79" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn80"><p>Zenodo, repositorio de datos de investigación operado
+<li id="fn80"><p>API de Datos Abiertos del MEF (Consulta del Gasto
+Público, SIAF), de acceso libre y sin tarifa: <a
+href="https://datosabiertos.mef.gob.pe/dataset/presupuesto-y-ejecucion-de-gasto"
+class="uri">https://datosabiertos.mef.gob.pe/dataset/presupuesto-y-ejecucion-de-gasto</a><a
+href="#fnref80" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn81"><p>GitHub Actions es gratuito y sin límite de minutos para
+repositorios públicos; los flujos programados
+(<code>schedule</code>/<code>cron</code>) permiten ejecutar el ETL
+automáticamente: <a
+href="https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration"
+class="uri">https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration</a><a
+href="#fnref81" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn82"><p>GitHub Actions es gratuito y sin límite de minutos para
+repositorios públicos; los flujos programados
+(<code>schedule</code>/<code>cron</code>) permiten ejecutar el ETL
+automáticamente: <a
+href="https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration"
+class="uri">https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration</a><a
+href="#fnref82" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn83"><p>API de Datos Abiertos del MEF (Consulta del Gasto
+Público, SIAF), de acceso libre y sin tarifa: <a
+href="https://datosabiertos.mef.gob.pe/dataset/presupuesto-y-ejecucion-de-gasto"
+class="uri">https://datosabiertos.mef.gob.pe/dataset/presupuesto-y-ejecucion-de-gasto</a><a
+href="#fnref83" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn84"><p>Dashboard QHAWAY 2.0 – Fase 1 (implementación de
+referencia con datos reales del SIAF-MEF): <a
+href="https://unimauro.github.io/qhaway-dashboard/"
+class="uri">https://unimauro.github.io/qhaway-dashboard/</a><a
+href="#fnref84" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn85"><p>Zenodo, repositorio de datos de investigación operado
 por el CERN, asigna DOI a cada versión de un dataset: <a
 href="https://zenodo.org" class="uri">https://zenodo.org</a>.<a
-href="#fnref80" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn81"><p>Observatorio Global de Smartphones en Adolescentes,
+href="#fnref85" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn86"><p>Observatorio Global de Smartphones en Adolescentes,
 biblioteca científica con DOI y procedencia de datos por registro: <a
 href="https://unimauro.github.io/observatorio-smartphones-adolescentes"
 class="uri">https://unimauro.github.io/observatorio-smartphones-adolescentes</a>.<a
-href="#fnref81" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn82"><p>MEF, Consulta Amigable de ejecución presupuestal: <a
+href="#fnref86" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn87"><p>MEF, Consulta Amigable de ejecución presupuestal: <a
 href="https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx"
 class="uri">https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx</a>.<a
-href="#fnref82" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn83"><p>MEF, Sistema de Seguimiento de Inversiones
+href="#fnref87" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn88"><p>MEF, Sistema de Seguimiento de Inversiones
 (INVIERTE.PE/SSI): <a href="https://ofi5.mef.gob.pe/ssi/"
-class="uri">https://ofi5.mef.gob.pe/ssi/</a>.<a href="#fnref83"
+class="uri">https://ofi5.mef.gob.pe/ssi/</a>.<a href="#fnref88"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn84"><p>CEPLAN, Plan Estratégico de Desarrollo Nacional al 2050
+<li id="fn89"><p>CEPLAN, Plan Estratégico de Desarrollo Nacional al 2050
 e información territorial: <a href="https://www.ceplan.gob.pe"
-class="uri">https://www.ceplan.gob.pe</a>.<a href="#fnref84"
+class="uri">https://www.ceplan.gob.pe</a>.<a href="#fnref89"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn85"><p>OCDE, marcadores de Río para el seguimiento del
+<li id="fn90"><p>OCDE, marcadores de Río para el seguimiento del
 financiamiento climático: <a
 href="https://www.oecd.org/dac/environment-development/rioconventions.htm"
 class="uri">https://www.oecd.org/dac/environment-development/rioconventions.htm</a>.<a
-href="#fnref85" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn86"><p>Observatorio FONAFE, patrón de procedencia de datos
+href="#fnref90" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn91"><p>Observatorio FONAFE, patrón de procedencia de datos
 (verified/estimate) y AskBot sobre dataset: <a
 href="https://unimauro.github.io/observatorio-fonafe"
 class="uri">https://unimauro.github.io/observatorio-fonafe</a>.<a
-href="#fnref86" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn87"><p>FIEECS-UNI, “QHAWAY – Observatorio del Presupuesto
+href="#fnref91" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn92"><p>FIEECS-UNI, “QHAWAY – Observatorio del Presupuesto
 Público del Perú” (abril 2024): <a
 href="https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/"
 class="uri">https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/</a>.
 Snapshot del dashboard original (30-nov-2024) en Wayback Machine: <a
 href="https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/"
 class="uri">https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/</a>.<a
-href="#fnref87" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn88"><p>Activos live verificables: Perú Transparente <a
+href="#fnref92" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn93"><p>Activos live verificables: Perú Transparente <a
 href="https://unimauro.github.io/peru-transparente"
 class="uri">https://unimauro.github.io/peru-transparente</a>; Perú
 Riesgos <a href="https://unimauro.github.io/unimaurox-peru-riesgos"
@@ -2823,139 +2931,142 @@ Proyecto INTI <a href="https://unimauro.github.io/proyecto-inti"
 class="uri">https://unimauro.github.io/proyecto-inti</a>; Observatorio
 FONAFE <a href="https://unimauro.github.io/observatorio-fonafe"
 class="uri">https://unimauro.github.io/observatorio-fonafe</a>.<a
-href="#fnref88" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn89"><p>Licencia Creative Commons Atribución 4.0 Internacional
+href="#fnref93" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn94"><p>Licencia Creative Commons Atribución 4.0 Internacional
 (CC BY 4.0): <a
 href="https://creativecommons.org/licenses/by/4.0/deed.es"
 class="uri">https://creativecommons.org/licenses/by/4.0/deed.es</a>.<a
-href="#fnref89" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn90"><p>Datos abiertos y líneas de cooperación: BID <a
+href="#fnref94" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn95"><p>Datos abiertos y líneas de cooperación: BID <a
 href="https://data.iadb.org" class="uri">https://data.iadb.org</a>; CAF
 – Banco de Desarrollo de América Latina <a href="https://www.caf.com"
 class="uri">https://www.caf.com</a>; CEPAL <a
 href="https://statistics.cepal.org"
-class="uri">https://statistics.cepal.org</a>.<a href="#fnref90"
+class="uri">https://statistics.cepal.org</a>.<a href="#fnref95"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn91"><p>MEF – Consulta Amigable de Ejecución del Gasto:
+<li id="fn96"><p>MEF – Consulta Amigable de Ejecución del Gasto:
 https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx y gasto
 mensual: https://apps5.mineco.gob.pe/transparencia/mensual/<a
-href="#fnref91" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn92"><p>INEI – censos, ENAHO, ENDES: https://www.inei.gob.pe y
-microdatos: https://proyectos.inei.gob.pe/microdatos/<a href="#fnref92"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn93"><p>MINEDU – Estadística de la Calidad Educativa (ESCALE):
-https://escale.minedu.gob.pe<a href="#fnref93" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn94"><p>CENEPRED – Sistema de Información para la Gestión del
-Riesgo de Desastres (SIGRID): https://sigrid.cenepred.gob.pe<a
-href="#fnref94" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn95"><p>MEF – Glosario de Presupuesto Público:
-https://www.mef.gob.pe/es/glosario-sp-5902<a href="#fnref95"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn96"><p>Licencia Creative Commons Atribución 4.0 Internacional
-(CC BY 4.0): https://creativecommons.org/licenses/by/4.0/deed.es<a
 href="#fnref96" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn97"><p>MEF – Transparencia Económica, gasto mensual: <a
+<li id="fn97"><p>INEI – censos, ENAHO, ENDES: https://www.inei.gob.pe y
+microdatos: https://proyectos.inei.gob.pe/microdatos/<a href="#fnref97"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn98"><p>MINEDU – Estadística de la Calidad Educativa (ESCALE):
+https://escale.minedu.gob.pe<a href="#fnref98" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn99"><p>CENEPRED – Sistema de Información para la Gestión del
+Riesgo de Desastres (SIGRID): https://sigrid.cenepred.gob.pe<a
+href="#fnref99" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn100"><p>MEF – Glosario de Presupuesto Público:
+https://www.mef.gob.pe/es/glosario-sp-5902<a href="#fnref100"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn101"><p>Licencia Creative Commons Atribución 4.0 Internacional
+(CC BY 4.0): https://creativecommons.org/licenses/by/4.0/deed.es<a
+href="#fnref101" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn102"><p>MEF – Transparencia Económica, gasto mensual: <a
 href="https://apps5.mineco.gob.pe/transparencia/mensual/"
 class="uri">https://apps5.mineco.gob.pe/transparencia/mensual/</a>;
 Consulta Amigable: <a
 href="https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx"
 class="uri">https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx</a>.<a
-href="#fnref97" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn98"><p>Portal Nacional de Datos Abiertos: <a
+href="#fnref102" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn103"><p>Portal Nacional de Datos Abiertos: <a
 href="https://datosabiertos.gob.pe"
-class="uri">https://datosabiertos.gob.pe</a>.<a href="#fnref98"
+class="uri">https://datosabiertos.gob.pe</a>.<a href="#fnref103"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn99"><p>INEI: <a href="https://www.inei.gob.pe"
+<li id="fn104"><p>INEI: <a href="https://www.inei.gob.pe"
 class="uri">https://www.inei.gob.pe</a>; microdatos: <a
 href="https://proyectos.inei.gob.pe/microdatos/"
 class="uri">https://proyectos.inei.gob.pe/microdatos/</a>.<a
-href="#fnref99" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn100"><p>MINEDU – ESCALE: <a
+href="#fnref104" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn105"><p>MINEDU – ESCALE: <a
 href="https://escale.minedu.gob.pe"
-class="uri">https://escale.minedu.gob.pe</a>.<a href="#fnref100"
+class="uri">https://escale.minedu.gob.pe</a>.<a href="#fnref105"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn101"><p>MINSA: <a href="https://www.minsa.gob.pe"
-class="uri">https://www.minsa.gob.pe</a>.<a href="#fnref101"
+<li id="fn106"><p>MINSA: <a href="https://www.minsa.gob.pe"
+class="uri">https://www.minsa.gob.pe</a>.<a href="#fnref106"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn102"><p>MIDIS: <a href="https://www.midis.gob.pe"
-class="uri">https://www.midis.gob.pe</a>.<a href="#fnref102"
+<li id="fn107"><p>MIDIS: <a href="https://www.midis.gob.pe"
+class="uri">https://www.midis.gob.pe</a>.<a href="#fnref107"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn103"><p>CENEPRED – SIGRID: <a
+<li id="fn108"><p>CENEPRED – SIGRID: <a
 href="https://sigrid.cenepred.gob.pe"
-class="uri">https://sigrid.cenepred.gob.pe</a>.<a href="#fnref103"
+class="uri">https://sigrid.cenepred.gob.pe</a>.<a href="#fnref108"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn104"><p>SENAMHI: <a href="https://www.senamhi.gob.pe"
-class="uri">https://www.senamhi.gob.pe</a>.<a href="#fnref104"
+<li id="fn109"><p>SENAMHI: <a href="https://www.senamhi.gob.pe"
+class="uri">https://www.senamhi.gob.pe</a>.<a href="#fnref109"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn105"><p>CEPLAN: <a href="https://www.ceplan.gob.pe"
-class="uri">https://www.ceplan.gob.pe</a>.<a href="#fnref105"
+<li id="fn110"><p>CEPLAN: <a href="https://www.ceplan.gob.pe"
+class="uri">https://www.ceplan.gob.pe</a>.<a href="#fnref110"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn106"><p>MEF – Sistema de Seguimiento de Inversiones (SSI): <a
+<li id="fn111"><p>MEF – Sistema de Seguimiento de Inversiones (SSI): <a
 href="https://ofi5.mef.gob.pe/ssi/"
-class="uri">https://ofi5.mef.gob.pe/ssi/</a>.<a href="#fnref106"
+class="uri">https://ofi5.mef.gob.pe/ssi/</a>.<a href="#fnref111"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn107"><p>OECE – Contrataciones Abiertas (estándar OCDS): <a
+<li id="fn112"><p>OECE – Contrataciones Abiertas (estándar OCDS): <a
 href="https://contratacionesabiertas.oece.gob.pe"
 class="uri">https://contratacionesabiertas.oece.gob.pe</a>.<a
-href="#fnref107" class="footnote-back"
+href="#fnref112" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn108"><p>OECD Data: <a href="https://data.oecd.org"
+<li id="fn113"><p>OECD Data: <a href="https://data.oecd.org"
 class="uri">https://data.oecd.org</a>; Banco Mundial: <a
 href="https://datos.bancomundial.org"
 class="uri">https://datos.bancomundial.org</a>; BID: <a
 href="https://data.iadb.org" class="uri">https://data.iadb.org</a>;
 CEPAL: <a href="https://statistics.cepal.org"
-class="uri">https://statistics.cepal.org</a>.<a href="#fnref108"
+class="uri">https://statistics.cepal.org</a>.<a href="#fnref113"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn109"><p>GeoJSON distrital ya integrado en Proyecto INTI: <a
+<li id="fn114"><p>GeoJSON distrital ya integrado en Proyecto INTI: <a
 href="https://unimauro.github.io/proyecto-inti"
 class="uri">https://unimauro.github.io/proyecto-inti</a>; cartografía
-oficial: IGN y geo GOB.PE.<a href="#fnref109" class="footnote-back"
+oficial: IGN y geo GOB.PE.<a href="#fnref114" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn110"><p>SRTM 30 m (NASA) y Copernicus DEM GLO-30 (ESA), de
-acceso abierto.<a href="#fnref110" class="footnote-back"
+<li id="fn115"><p>SRTM 30 m (NASA) y Copernicus DEM GLO-30 (ESA), de
+acceso abierto.<a href="#fnref115" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn111"><p>Metodología de marcadores climáticos MEF/MINAM y
+<li id="fn116"><p>Metodología de marcadores climáticos MEF/MINAM y
 marcadores de Río de la OCDE, aplicadas sobre el clasificador
-funcional-programático del MEF.<a href="#fnref111" class="footnote-back"
+funcional-programático del MEF.<a href="#fnref116" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn112"><p><a href="https://unimauro.github.io/peru-transparente"
+<li id="fn117"><p><a href="https://unimauro.github.io/peru-transparente"
 class="uri">https://unimauro.github.io/peru-transparente</a>.<a
-href="#fnref112" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn113"><p><a
-href="https://unimauro.github.io/observatorio-poder-economico"
-class="uri">https://unimauro.github.io/observatorio-poder-economico</a>.<a
-href="#fnref113" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn114"><p><a
-href="https://unimauro.github.io/unimaurox-peru-riesgos"
-class="uri">https://unimauro.github.io/unimaurox-peru-riesgos</a>.<a
-href="#fnref114" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn115"><p><a href="https://unimauro.github.io/proyecto-inti"
-class="uri">https://unimauro.github.io/proyecto-inti</a>.<a
-href="#fnref115" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn116"><p>Repositorio local
-<code>unimaurox-peru-finanzas-publicas</code>; único activo del
-inventario sin URL pública a la fecha.<a href="#fnref116"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn117"><p><a
-href="https://unimauro.github.io/observatorio-fonafe"
-class="uri">https://unimauro.github.io/observatorio-fonafe</a>.<a
 href="#fnref117" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 <li id="fn118"><p><a
-href="https://unimauro.github.io/observatorio-defensa-interior"
-class="uri">https://unimauro.github.io/observatorio-defensa-interior</a>.<a
+href="https://unimauro.github.io/observatorio-poder-economico"
+class="uri">https://unimauro.github.io/observatorio-poder-economico</a>.<a
 href="#fnref118" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 <li id="fn119"><p><a
+href="https://unimauro.github.io/unimaurox-peru-riesgos"
+class="uri">https://unimauro.github.io/unimaurox-peru-riesgos</a>.<a
+href="#fnref119" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn120"><p><a href="https://unimauro.github.io/proyecto-inti"
+class="uri">https://unimauro.github.io/proyecto-inti</a>.<a
+href="#fnref120" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn121"><p>Repositorio local
+<code>unimaurox-peru-finanzas-publicas</code>; único activo del
+inventario sin URL pública a la fecha.<a href="#fnref121"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn122"><p><a
+href="https://unimauro.github.io/observatorio-fonafe"
+class="uri">https://unimauro.github.io/observatorio-fonafe</a>.<a
+href="#fnref122" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn123"><p><a
+href="https://unimauro.github.io/observatorio-defensa-interior"
+class="uri">https://unimauro.github.io/observatorio-defensa-interior</a>.<a
+href="#fnref123" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn124"><p><a
 href="https://unimauro.github.io/observatorio-smartphones-adolescentes"
 class="uri">https://unimauro.github.io/observatorio-smartphones-adolescentes</a>.<a
-href="#fnref119" class="footnote-back"
+href="#fnref124" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
