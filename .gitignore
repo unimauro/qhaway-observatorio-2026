@@ -1,0 +1,5 @@
+.build_tmp.md
+.build_diagrams/
+.DS_Store
+__pycache__/
+*.pyc
