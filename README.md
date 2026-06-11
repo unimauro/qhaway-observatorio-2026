@@ -5,10 +5,14 @@ Presupuesto Público del Perú** (FIEECS-UNI, 2024, hoy offline) como
 **QHAWAY 2.0: Observatorio Nacional de Inteligencia Territorial, Presupuesto
 Público, Cambio Climático, Riesgos y Desarrollo Humano**.
 
+**Sitio live:** <https://unimauro.github.io/qhaway-observatorio-2026/> ·
+**PDF:** [QHAWAY_PROPUESTA.pdf](https://unimauro.github.io/qhaway-observatorio-2026/entregables/QHAWAY_PROPUESTA.pdf)
+
 ## Entregable
 
-- `entregables/QHAWAY_PROPUESTA.pdf` — documento de propuesta (~15-25 pp.)
+- `entregables/QHAWAY_PROPUESTA.pdf` — documento de propuesta (39 pp.)
 - `docs/QHAWAY_PROPUESTA.md` — fuente Markdown del documento
+- `index.html` — versión web del documento (GitHub Pages)
 
 ## Estructura
 
