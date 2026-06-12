@@ -12,19 +12,23 @@ En abril de 2024 la FIEECS-UNI lanzó **QHAWAY, Observatorio del Presupuesto Pú
 
 Esta propuesta plantea relanzar la marca como **QHAWAY 2.0 — Observatorio Nacional de Inteligencia Territorial, Presupuesto Público, Cambio Climático, Riesgos y Desarrollo Humano**, sobre una base ya demostrada: el proponente técnico, Carlos Cárdenas Fernández, egresado UNI, mantiene en producción siete observatorios de datos públicos de acceso abierto —más un octavo en repositorio pre-publicación—, a nivel distrital y con costo de infraestructura de US$ 0, entre ellos Perú Transparente, Proyecto INTI (1,891 distritos georreferenciados) y Perú Riesgos[^res-activos]. QHAWAY 2.0 no parte de cero: reutiliza componentes operativos y los pone bajo el respaldo institucional de la FIEECS-UNI.
 
-El observatorio se organiza en un **menú de nueve módulos**: 🏛 Presupuesto Público · 🌱 Cambio Climático · ⚠️ Riesgos Territoriales · 📊 Indicadores Sociales · 🗺 Inteligencia Territorial (Pisos) · 📈 Prospectiva y Escenarios · 🧠 Simulador de Políticas Públicas · 🔍 Explorador Multidimensional · 📚 Laboratorio Académico FIEECS.
+El observatorio **ya está live y navegable** en <https://unimauro.github.io/qhaway-dashboard/> con un **menú de nueve módulos operativos**: 🏠 Inicio · 🏛 Presupuesto Público · 🗺 Pisos Altitudinales · ⚠️ Riesgos Territoriales · 📊 Prosperidad (IPT) · 🔍 Explorador Multidimensional · 📈 Evolución Regional 2004-2026 · 🧭 Cobertura Territorial · 📚 Metodología y FAQ. A estos módulos entregados, la propuesta suma una agenda de módulos **propuestos** para las Fases 2-3 (Cambio Climático dedicado, Simulador de Políticas, Prospectiva 2030/2040/2050 y Laboratorio Académico FIEECS), claramente marcados como tales.
+
+**Módulos entregados (live hoy):**
 
 | # | Módulo | Qué responde |
 |---|---|---|
-| 1 | 🏛 Presupuesto Público | PIA/PIM/Devengado/Girado por distrito, sector y programa |
-| 2 | 🌱 Cambio Climático | Cuánto y dónde invierte el Perú en adaptación y mitigación |
-| 3 | ⚠️ Riesgos Territoriales | Inundaciones, sequías, heladas, huaicos, estrés hídrico |
-| 4 | 📊 Indicadores Sociales (IPT) | Educación, salud, economía y servicios por territorio |
-| 5 | 🗺 Inteligencia Territorial (Pisos) | Composición de cada distrito según las 8 regiones naturales |
-| 6 | 📈 Prospectiva y Escenarios | Escenarios territoriales 2030/2040/2050 con apoyo de IA |
-| 7 | 🧠 Simulador de Políticas Públicas | Escenarios con elasticidades de literatura OCDE/BM, supuestos explícitos |
-| 8 | 🔍 Explorador Multidimensional (Cubo) | Cruza presupuesto × clima × riesgos × pobreza × piso altitudinal |
-| 9 | 📚 Laboratorio Académico FIEECS | Datasets citables, ETL reproducible, tesis y docencia |
+| 1 | 🏠 Inicio | KPIs nacionales y tendencia del presupuesto público a lo largo de 22 años |
+| 2 | 🏛 Presupuesto Público | PIA/PIM/Devengado/Girado por distrito (2025), función, sector y nivel, con Sankey, treemap y evolución mensual |
+| 3 | 🗺 Pisos Altitudinales | Composición de cada distrito según las 8 regiones naturales; % población vs. % presupuesto y per cápita por piso |
+| 4 | ⚠️ Riesgos Territoriales | Exposición a peligros por región, cruzada con territorio |
+| 5 | 📊 Prosperidad (IPT) | Índice de Prosperidad Territorial por distrito (educación, salud, economía, servicios) |
+| 6 | 🔍 Explorador Multidimensional | Cruza función/fuente × territorio × nivel, con atribución por destino (META) vs. ejecutora y cobertura de datos |
+| 7 | 📈 Evolución Regional 2004-2026 | Presupuesto por departamento para cada uno de 22 años: mapa por año, ranking y serie temporal por departamento |
+| 8 | 🧭 Cobertura Territorial | Tres estados del dato ("con dato" / "sin dato" / "no existía") y timeline de demarcación de distritos |
+| 9 | 📚 Metodología y FAQ | Glosario, guía de gráficos, presentación de la marca y la nota del vacío de datos distritales por destino |
+
+A ello se suman, de forma transversal, un **chat de IA asistente** flotante, un **buscador global** (Ctrl+K) y modo oscuro. Los módulos **propuestos** para Fases 2-3 —Cambio Climático dedicado, Simulador de Políticas Públicas, Prospectiva y Escenarios 2030/2040/2050, y Laboratorio Académico FIEECS— se describen en §8 y se ordenan en el roadmap de §9.
 
 El **diferencial estrella** frente al portal del MEF es el **Explorador Presupuestal Multidimensional** (módulo 8, §8.8): un "cubo presupuestal" que permite navegar desde lo nacional hasta el proyecto específico cruzando dimensiones —presupuesto × cambio climático × riesgos × pobreza × piso altitudinal— para responder, por ejemplo, qué distritos suman alta vulnerabilidad climática, alta pobreza y baja inversión pública. Ninguna plataforma pública peruana ofrece hoy ese cruce integrado. A ello se suma el **diferencial territorial** de los pisos altitudinales (módulo 5): cruzando los límites distritales con un modelo digital de elevación (SRTM/Copernicus 30 m), cada distrito se descompone porcentualmente en las ocho regiones naturales de Javier Pulgar Vidal (Chala, Yunga, Quechua, Suni, Puna, Janca, Selva Alta, Selva Baja)[^res-pulgar], lo que permite responder ¿cuánto presupuesto recibe la puna?, ¿cuánta inversión climática llega a los territorios amazónicos o a los distritos más vulnerables a heladas?
 
@@ -32,7 +36,7 @@ El **diferencial estrella** frente al portal del MEF es el **Explorador Presupue
 
 Un ejemplo concreto del salto de valor: en el SIAF, el presupuesto del Gobierno Nacional aparece —si se mira por unidad ejecutora— concentrado en Lima (S/ 145.5 mil millones de PIM 2025 frente a montos ínfimos en el resto). Pero esos proyectos están georreferenciados a su **destino territorial** (campo `DEPARTAMENTO_META`): leído así, el mismo presupuesto nacional se redistribuye realmente entre regiones —Cusco S/ 4.3 mil M, Áncash S/ 3.6 mil M, Piura S/ 3.4 mil M, Puno S/ 2.9 mil M, Cajamarca S/ 2.8 mil M…[^res-meta]. QHAWAY hace visible esa atribución territorial real, que el portal del MEF no expone de forma directa: es la diferencia entre saber *quién administra* el dinero y saber *a qué territorio llega*.
 
-La propuesta no es teórica: **la Fase 1 ya está operativa y es verificable hoy** en <https://unimauro.github.io/qhaway-dashboard/>[^res-fase1], con datos reales del SIAF-MEF 2025 (PIM ≈ S/ 272 mil millones), los 1,834 distritos del dataset cartográfico, chat de IA asistente, buscador global y módulos de presupuesto, pisos, riesgos e IPT, incluyendo un Explorador con cruces pre-computados.
+La propuesta no es teórica: **la Fase 1 ya está operativa y es verificable hoy** en <https://unimauro.github.io/qhaway-dashboard/>[^res-fase1], con datos reales del SIAF-MEF: el presupuesto distrital 2025 (≈ S/ 272 mil millones de PIM) sobre los 1,834 distritos del dataset cartográfico, y una **serie nacional y regional 2004-2026 (22 años)** del presupuesto por destino territorial, alimentada por un scraper propio de la Consulta Amigable del MEF. Operan ya los nueve módulos del menú —incluidos **Evolución Regional 2004-2026** y **Cobertura Territorial**—, un Explorador con cruces pre-computados, chat de IA asistente y buscador global.
 
 La implementación se escalona en **tres fases**: la Fase 1 (0-6 meses) entrega el observatorio completo como sitio estático en GitHub Pages con ETL en Python, **con costo de infraestructura ≈ US$ 0** —el mismo patrón ya probado en los observatorios live del equipo—; la Fase 2 (6-12 meses) añade backend FastAPI, PostgreSQL/PostGIS y una API pública documentada; la Fase 3 (12-24 meses) escala a nube AWS con CDN e infraestructura como código, con alternativa de contención de costos documentada. La plataforma integrará 14+ fuentes oficiales, entre ellas MEF Consulta Amigable, INEI, MINEDU-ESCALE, MINSA, CENEPRED-SIGRID, SENAMHI, CEPLAN y la API OCDS del OECE[^res-fuentes].
 
@@ -215,7 +219,7 @@ QHAWAY 2.0 se organiza en seis capas funcionales desacopladas. Cada capa puede e
 
 **Capa 3 — Capa de datos.** En Fase 1: JSON y GeoJSON estáticos versionados en Git, servidos como archivos planos con un manifest de catálogo. En Fase 2 esta capa evoluciona a PostgreSQL + PostGIS para consultas geoespaciales arbitrarias (intersección distrito × piso altitudinal, agregaciones dinámicas), manteniendo los archivos estáticos como caché de publicación: el frontend nunca depende de que el backend esté vivo.
 
-**Capa 4 — Frontend de visualización.** SPA React + TypeScript con ECharts (series, Sankey, treemap, heatmap) y Leaflet/MapLibre GL (mapas distritales vectoriales), organizada en los nueve módulos del menú (incluido el Explorador Multidimensional). Estado en la URL: cada vista filtrada es un enlace compartible.
+**Capa 4 — Frontend de visualización.** SPA React + TypeScript con ECharts (series, Sankey, treemap, heatmap) y Leaflet/MapLibre GL (mapas distritales vectoriales), organizada en los nueve módulos live del menú (Inicio, Presupuesto, Pisos, Riesgos, Prosperidad, Explorador, Evolución Regional, Cobertura Territorial y Metodología/FAQ). Estado en la URL: cada vista filtrada es un enlace compartible.
 
 **Capa 5 — Capa de IA.** Consultas en lenguaje natural sobre los datasets publicados (patrón AskBot ya demostrado en FONAFE y Defensa-Interior), resúmenes automáticos por territorio e interpretación guiada de indicadores. Arquitectura agnóstica del proveedor de LLM; toda respuesta cita el dato del manifest que la sustenta — la IA explica datos verificados, no los inventa.
 
@@ -239,7 +243,7 @@ flowchart TB
     D2["Fase 2: PostgreSQL + PostGIS"]
   end
   subgraph C4["Capa 4 · Frontend (React + ECharts + MapLibre)"]
-    M1["9 módulos: Presupuesto · Clima · Riesgos · Indicadores ·<br/>Pisos · Prospectiva · Simulador · Explorador (Cubo) · Lab. FIEECS"]
+    M1["Módulos live: Inicio · Presupuesto · Pisos · Riesgos · Prosperidad (IPT) ·<br/>Explorador · Evolución Regional 2004-2026 · Cobertura Territorial · Metodología/FAQ"]
   end
   subgraph C5["Capa 5 · IA"]
     A1["Consultas en lenguaje natural · resúmenes por territorio"]
@@ -257,19 +261,34 @@ flowchart TB
 
 ## 6.1 Módulos y pregunta principal que responde cada uno
 
-| # | Módulo | Pregunta principal |
-|---|--------|--------------------|
-| 1 | 🏛 Presupuesto Público | ¿Cuánto se asigna (PIA/PIM) y cuánto se ejecuta realmente (devengado/girado) en cada distrito, sector y programa? |
-| 2 | 🌱 Cambio Climático | ¿Cuánto invierte el Perú en adaptación y mitigación, en qué territorios, y con qué ejecución real? |
-| 3 | ⚠️ Riesgos Territoriales | ¿Qué distritos están expuestos a inundaciones, sequías, heladas y huaicos, y cómo se cruza esa exposición con la inversión? |
-| 4 | 📊 Indicadores Sociales (IPT) | ¿Qué distritos prosperan y cuáles se rezagan en educación, salud, economía y servicios básicos? |
-| 5 | 🗺 Inteligencia Territorial (Pisos) | ¿Cuánto presupuesto llega a la puna, a la selva baja o a cada región natural de Pulgar Vidal? (diferencial territorial) |
-| 6 | 📈 Prospectiva y Escenarios | ¿Hacia qué escenarios territoriales se dirige el Perú al 2030/2040/2050 si las tendencias continúan o cambian? |
-| 7 | 🧠 Simulador de Políticas Públicas | ¿Qué efecto estimado tendría priorizar educación, agua o resiliencia, bajo supuestos explícitos de literatura OCDE/BM? |
-| 8 | 🔍 Explorador Multidimensional (Cubo) | ¿Qué distritos cruzan alta vulnerabilidad climática, alta pobreza y baja inversión pública? (diferencial estrella vs. MEF) |
-| 9 | 📚 Laboratorio Académico FIEECS | ¿Cómo reutilizar datasets citables, ETL reproducible y casos reales en tesis, cursos e investigación? |
+El menú se divide entre los módulos **entregados** —ya live y verificables en el dashboard de la Fase 1— y los módulos **propuestos** para las Fases 2-3. La distinción —construido vs. por construir— se mantiene explícita en todo el plan de implementación.
 
-Los módulos 1-3 reutilizan componentes ya construidos y demostrados (Perú Finanzas Públicas, Perú Riesgos); los módulos 5, 7 y 6 (pisos, simulador, prospectiva) son desarrollo nuevo sobre patrones probados (INTI, EPI); el módulo 8 (Explorador) ya opera con cruces pre-computados en la Fase 1 y se completa como cubo OLAP en la Fase 2. Esta distinción —construido vs. por construir— se mantiene explícita en todo el plan de implementación.
+**Módulos entregados (live):**
+
+| Módulo | Pregunta principal |
+|--------|--------------------|
+| 🏠 Inicio | ¿Cómo evoluciona el presupuesto público nacional y qué KPIs lo resumen a lo largo de 22 años? |
+| 🏛 Presupuesto Público | ¿Cuánto se asigna (PIA/PIM) y cuánto se ejecuta realmente (devengado/girado) en cada distrito (2025), función, sector y nivel? |
+| 🗺 Pisos Altitudinales | ¿Cuánto presupuesto llega a la puna, a la selva baja o a cada región natural de Pulgar Vidal? (diferencial territorial) |
+| ⚠️ Riesgos Territoriales | ¿Qué territorios están expuestos a cada peligro, y cómo se cruza esa exposición con la inversión? |
+| 📊 Prosperidad (IPT) | ¿Qué distritos prosperan y cuáles se rezagan en educación, salud, economía y servicios básicos? |
+| 🔍 Explorador Multidimensional | ¿Cómo se cruza función/fuente × territorio × nivel, distinguiendo destino (META) de ejecutora? (diferencial vs. MEF) |
+| 📈 Evolución Regional 2004-2026 | ¿Cómo cambió el presupuesto por departamento (destino META) en cada uno de los 22 años? |
+| 🧭 Cobertura Territorial | ¿Qué distritos tienen dato, cuáles no, y cuáles aún no existían?, con la línea de tiempo de demarcación |
+| 📚 Metodología y FAQ | ¿Cómo se construyó cada cifra, qué significa cada gráfico y cuál es el vacío de datos distritales por destino? |
+
+A lo anterior se suman, de forma transversal, el chat de IA asistente, el buscador global (Ctrl+K) y el modo oscuro.
+
+**Módulos propuestos (Fases 2-3):**
+
+| Módulo | Pregunta principal |
+|--------|--------------------|
+| 🌱 Cambio Climático (dedicado) | ¿Cuánto invierte el Perú en adaptación y mitigación, en qué territorios, y con qué ejecución real? |
+| 🧠 Simulador de Políticas Públicas | ¿Qué efecto estimado tendría priorizar educación, agua o resiliencia, bajo supuestos explícitos de literatura OCDE/BM? |
+| 📈 Prospectiva y Escenarios | ¿Hacia qué escenarios territoriales se dirige el Perú al 2030/2040/2050 si las tendencias continúan o cambian? |
+| 📚 Laboratorio Académico FIEECS | ¿Cómo reutilizar datasets citables, ETL reproducible y casos reales en tesis, cursos e investigación? |
+
+Los módulos de Presupuesto, Pisos, Riesgos, IPT, Explorador, Evolución Regional y Cobertura Territorial reutilizan y amplían componentes ya construidos y demostrados (Perú Finanzas Públicas, Perú Riesgos, INTI, EPI) y operan hoy en la Fase 1; el Explorador opera con cruces pre-computados y se completa como cubo OLAP en la Fase 2. Los módulos de Cambio Climático dedicado, Simulador y Prospectiva son desarrollo de las Fases 2-3 sobre esos mismos patrones probados.
 
 [^arqf-mef]: MEF — Transparencia Económica / Consulta Amigable: https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx
 [^arqf-ssi]: INVIERTE.PE — Sistema de Seguimiento de Inversiones (SSI): https://ofi5.mef.gob.pe/ssi/
@@ -407,7 +426,7 @@ flowchart TB
 
 # 8. Módulos de la Plataforma
 
-QHAWAY 2.0 se organiza en módulos que comparten una misma columna vertebral: el distrito como unidad mínima de análisis (marco oficial INEI de 1,845 distritos; el dataset cartográfico vigente cubre 1,834, los GeoJSON y UBIGEO ya operativos en Proyecto INTI y en el dashboard de la Fase 1), ETL Python versionado y URLs compartibles por cada vista. Esta sección describe los módulos temáticos en las subsecciones 8.1 a 8.7, y el **Explorador Presupuestal Multidimensional** —el cubo OLAP, diferencial estrella frente al portal del MEF— en la subsección 8.8. Cada módulo distingue explícitamente qué está ya demostrado en productos live del equipo y qué queda por construir.
+QHAWAY 2.0 se organiza en módulos que comparten una misma columna vertebral: el distrito como unidad mínima de análisis (marco oficial INEI de 1,845 distritos; el dataset cartográfico vigente cubre 1,834, los GeoJSON y UBIGEO ya operativos en Proyecto INTI y en el dashboard de la Fase 1), ETL Python versionado y URLs compartibles por cada vista. Esta sección describe los módulos temáticos en las subsecciones 8.1 a 8.7, el **Explorador Presupuestal Multidimensional** —el cubo OLAP, diferencial estrella frente al portal del MEF— en la subsección 8.8, y los dos módulos entregados que amplían la dimensión histórica y la transparencia de cobertura: **Evolución Regional 2004-2026** (§8.9) y **Cobertura Territorial** (§8.10). Cada módulo distingue explícitamente qué está ya demostrado y operativo en el dashboard live y qué queda por construir.
 
 ## 8.1 Presupuesto Público
 
@@ -421,7 +440,7 @@ QHAWAY 2.0 se organiza en módulos que comparten una misma columna vertebral: el
 
 **Visualizaciones.** (a) Mapa coroplético distrital (Leaflet + MapLibre GL) de presupuesto per cápita y avance de ejecución; (b) series temporales PIA/PIM/Devengado por territorio; (c) diagrama Sankey del flujo PIA → PIM → Devengado → Girado, que vuelve visibles las modificaciones presupuestales y las brechas de ejecución; (d) treemap por función y programa presupuestal; (e) ranking de ejecución por pliego y municipalidad; (f) heatmap año × territorio para detectar patrones persistentes de subejecución.
 
-**Base existente.** El repo unimaurox-peru-finanzas-publicas ya implementa series PIA/PIM/Devengado 1990-2025, heatmap año × sector, mapa coroplético regional y treemap ministerial con ETL del MEF Consulta Amigable y BCRP; Perú Transparente demuestra el mismo patrón (ECharts + MapLibre + export CSV) en producción con ~20 MB de JSON estático[^mod-pt]. La **Fase 1 ya publicada** (<https://unimauro.github.io/qhaway-dashboard/>) opera este módulo con datos reales del SIAF-MEF 2025 (PIM ≈ S/ 272 mil millones) sobre los 1,834 distritos del dataset cartográfico. Por construir: la desagregación a provincia, el Sankey de cuatro etapas y la serie histórica multi-año.
+**Base existente.** El repo unimaurox-peru-finanzas-publicas ya implementa series PIA/PIM/Devengado 1990-2025, heatmap año × sector, mapa coroplético regional y treemap ministerial con ETL del MEF Consulta Amigable y BCRP; Perú Transparente demuestra el mismo patrón (ECharts + MapLibre + export CSV) en producción con ~20 MB de JSON estático[^mod-pt]. La **Fase 1 ya publicada** (<https://unimauro.github.io/qhaway-dashboard/>) opera este módulo con datos reales del SIAF-MEF 2025 (PIM ≈ S/ 272 mil millones) sobre los 1,834 distritos del dataset cartográfico, incluyendo las fases PIA/PIM/Devengado/Girado, el Sankey del flujo presupuestal, treemap por función, desagregación por sector y nivel, y la evolución mensual; la **serie histórica del presupuesto por destino 2004-2026 (22 años)** se entrega en el módulo Evolución Regional (§8.9), a nivel departamental. Por construir: la desagregación distrital **histórica** por destino —hoy disponible solo para 2025— y la apertura a nivel provincia en años previos (véase §9.1).
 
 **Cobertura y honestidad de datos.** Como principio de honestidad de datos, el observatorio **muestra explícitamente qué distritos no tienen información presupuestal**, distinguiendo dos situaciones que jamás deben confundirse: "sin ejecución" (el distrito existe en el presupuesto pero su devengado es S/ 0) frente a "sin dato" (no hay registro disponible para ese distrito en la fuente o en el dataset cartográfico). Esta transparencia es parte del valor público: conocer las brechas de información es tan relevante como conocer las cifras. El propio marco territorial lo exige —el dataset cartográfico vigente cubre 1,834 de los 1,845 distritos oficiales del INEI— y la plataforma lo señala en mapas y rankings con una categoría visual diferenciada para "sin dato".
 
@@ -650,6 +669,28 @@ Mockup descriptivo de la vista del Explorador (cubo presupuestal):
 [^expl-mef]: MEF — Consulta Amigable de Ejecución del Gasto (navegación por jerarquía de menús): https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx
 [^expl-fase1]: Dashboard QHAWAY 2.0 — Fase 1, con Explorador de cruces pre-computados sobre datos reales del SIAF-MEF 2025: https://unimauro.github.io/qhaway-dashboard/
 
+## 8.9 Evolución Regional 2004-2026
+
+**Estado: entregado y live.** Este módulo responde una pregunta que la Consulta Amigable del MEF no expone de forma directa: **¿cómo evolucionó, año por año, el presupuesto que llega a cada departamento del Perú a lo largo de 22 años?** A diferencia de la mayoría de tableros fiscales —que muestran un solo ejercicio—, Evolución Regional presenta el presupuesto por departamento de **destino (campo `DEPARTAMENTO_META`)** para cada uno de los **23 ejercicios 2004-2026**, es decir, adónde llega el dinero y no solo dónde se administra.
+
+**Cómo se obtuvo.** La serie proviene de un **ingestor (scraper) propio de la Consulta Amigable del MEF, ya operativo** (descrito en §9.1): atraviesa la protección anti-bot del portal ASP.NET, navega la jerarquía año → nivel de gobierno → departamento y extrae PIA, PIM, devengado y girado por destino territorial. Es el mismo pipeline que sustenta la serie nacional de 22 años del módulo Inicio.
+
+**Visualizaciones.** (a) **Mapa coroplético por año** con control deslizante de ejercicio, que anima la redistribución territorial del presupuesto a lo largo de las dos décadas; (b) **ranking de departamentos** para el año seleccionado; (c) **serie temporal por departamento** para seguir la trayectoria de cada región. Toda vista codifica su estado en la URL y exporta CSV.
+
+**Honestidad de datos.** La granularidad de destino llega hasta **departamento**, no a provincia ni distrito, por una limitación de la propia fuente que el observatorio declara explícitamente (véase §8.10 y §9.1): el SIAF solo georreferencia el gasto por destino hasta el nivel departamental. La serie es, por tanto, la máxima resolución territorial-histórica que la fuente permite por destino.
+
+## 8.10 Cobertura Territorial
+
+**Estado: entregado y live.** La transparencia sobre las brechas de información es, en QHAWAY 2.0, un entregable de primer orden. Este módulo hace visible, de forma sistemática, **qué se sabe y qué no se sabe** del presupuesto en cada territorio, distinguiendo **tres estados del dato** que jamás deben confundirse:
+
+- **"Con dato"** — existe registro presupuestal para el territorio en la fuente y el periodo consultados.
+- **"Sin dato"** — el territorio existe (administrativa y cartográficamente) pero no hay registro disponible para él en la fuente o en el dataset cartográfico vigente (que cubre 1,834 de los 1,845 distritos oficiales del INEI).
+- **"No existía"** — el distrito aún no había sido creado por demarcación territorial en el ejercicio consultado; mostrarlo como "sin dato" sería un error histórico.
+
+Para sostener el tercer estado, el módulo incorpora una **línea de tiempo de la demarcación de distritos**, de modo que la cobertura se lea siempre contra el universo de distritos vigente en cada año, no contra el universo actual. Esta distinción es la que permite que la serie histórica (§8.9) y los mapas no induzcan a conclusiones falsas sobre territorios que simplemente no existían.
+
+El módulo es la expresión visual del **hallazgo de transparencia** que recorre todo el documento (§9.1): el detalle distrital por **destino** no existe en la fuente —el SIAF solo georreferencia el gasto, por destino, hasta departamento—, mientras que el detalle distrital por **unidad ejecutora** sí existe y, para los gobiernos locales (donde la municipalidad coincide con el distrito), es plenamente significativo. Cobertura Territorial convierte ese vacío de transparencia en un dato consultable, en lugar de ocultarlo.
+
 
 # 9. Roadmap
 
@@ -659,8 +700,8 @@ El roadmap de QHAWAY 2.0 está diseñado bajo un principio rector: **lanzar pron
 
 **Fase 1 — MVP público (mes 1-6, EN MARCHA / parcialmente ENTREGADA).** Esta fase ya no es promesa: el dashboard estático está **live y verificable** en <https://unimauro.github.io/qhaway-dashboard/>[^road-fase1], con datos reales del SIAF-MEF 2025 (PIM ≈ S/ 272 mil millones) sobre los 1,834 distritos del dataset cartográfico. Estado por componente:
 
-- ✅ **Entregado:** dashboard estático abierto (sin login, URLs compartibles); módulos de Presupuesto, Pisos Altitudinales, Riesgos, IPT, **Explorador Multidimensional** (con cruces pre-computados y atribución territorial **por destino/META** además de por ejecutora) y **Cobertura Territorial** (los tres estados: "con dato" / "sin dato" / "no existía", §8.1); chat de IA asistente; buscador global; presupuesto distrital 2025 (~1,892 distritos, 196 provincias, 25 regiones); **serie histórica nacional 2021-2024** (Presupuesto del Sector Público, fuente Informe Global de la Gestión Presupuestaria del MEF) y evolución mensual 2025.
-- ⏳ **Pendiente de Fase 1:** el **presupuesto histórico a nivel distrital** (cada año, cada distrito) —hoy disponible solo para 2025—, mediante el ingestor de Consulta Amigable descrito en §9.1; extensión de la serie nacional a años previos a 2021 (requiere OCR de informes escaneados); desagregación a nivel provincia en años históricos.
+- ✅ **Entregado:** dashboard estático abierto (sin login, URLs compartibles); módulos de Inicio, Presupuesto, Pisos Altitudinales, Riesgos, Prosperidad (IPT), **Explorador Multidimensional** (con cruces pre-computados y atribución territorial **por destino/META** además de por ejecutora), **Evolución Regional 2004-2026** (§8.9) y **Cobertura Territorial** (los tres estados: "con dato" / "sin dato" / "no existía", §8.10), más Metodología y FAQ; **scraper propio de la Consulta Amigable del MEF operando**; chat de IA asistente; buscador global (Ctrl+K); presupuesto distrital 2025 (~1,892 distritos, 196 provincias, 25 regiones); **serie nacional del presupuesto por destino 2004-2026 (22 años)** y presupuesto por departamento (destino META) para los 23 ejercicios 2004-2026; evolución mensual 2025.
+- ⏳ **Pendiente:** el **presupuesto histórico a nivel distrital por destino** (cada año, cada distrito) —que **no existe en la fuente** para el grueso del gasto, según el hallazgo de §9.1, y solo es plenamente significativo para los gobiernos locales donde municipalidad = distrito—; el distrital histórico por ejecutora para gobiernos locales; la desagregación a nivel provincia; y el **cubo OLAP completo** con cruces arbitrarios en vivo (Fase 2).
 
 Arquitectura 100 % estática: React + ECharts + MapLibre/Leaflet + JSON versionado por ETL Python en GitHub Actions. Es la fase de menor riesgo: los componentes ya existen y están operando en producción.
 
@@ -672,19 +713,19 @@ Arquitectura 100 % estática: React + ECharts + MapLibre/Leaflet + JSON versiona
 
 El objetivo central del observatorio —tener información de **todos los distritos, provincias y regiones, para cada año**— enfrenta una restricción técnica concreta de las fuentes públicas, que conviene declarar con transparencia:
 
-- La **API de Datos Abiertos del MEF** (datastore SQL) contiene el detalle distrital de todos los años, pero **agota el tiempo de respuesta** (timeouts superiores a 210 s) al agregar las tablas anuales completas de ~11,4 millones de filas; en la práctica solo el ejercicio 2025 respondió de forma fiable. Por eso QHAWAY 2.0 carga hoy el detalle distrital de **2025** y la serie **nacional** 2021-2024 desde los informes oficiales.
-- Los **Informes Globales del MEF** dan el total nacional pero **no descienden al distrito**; además, los anteriores a 2021 están escaneados como imagen (requieren OCR).
+- La **API de Datos Abiertos del MEF** (datastore SQL) contiene el detalle distrital de todos los años, pero **agota el tiempo de respuesta** (timeouts superiores a 210 s) al agregar las tablas anuales completas de ~11,4 millones de filas; en la práctica solo el ejercicio 2025 respondió de forma fiable. Por eso QHAWAY 2.0 carga el detalle **distrital** (por ejecutora) del ejercicio **2025** desde esta vía.
+- Los **Informes Globales del MEF** dan el total nacional pero **no descienden al distrito**; además, los anteriores a 2021 están escaneados como imagen (requieren OCR). Por eso la serie **nacional y por departamento de 22 años (2004-2026)** se obtiene del scraper de la Consulta Amigable descrito a continuación, no de estos informes.
 
 La vía que sí entrega el histórico distrital completo es la **Consulta Amigable** del MEF (`apps5.mineco.gob.pe/transparencia`), el portal que navega año → nivel de gobierno → departamento → provincia → distrito → proyecto, con PIA, PIM, certificado, comprometido, devengado y girado, para todos los años desde 2012 (y antes en su versión clásica). Su limitación es de forma, no de fondo: es una aplicación ASP.NET con estado de sesión (`__VIEWSTATE`) y protección anti-bot, no consultable directamente por programa.
 
-**QHAWAY 2.0 incorpora un ingestor (scraper) reproducible de la Consulta Amigable** como pieza de su capa ETL. Su viabilidad fue verificada y **ya está operando**: se estableció sesión atravesando la protección del portal y se automatizó la navegación, extrayendo el presupuesto por **departamento de destino (META)** para los **23 ejercicios 1999/2004-2026**. Con ello, la plataforma muestra ya la **evolución regional del presupuesto a lo largo de 22 años** (módulo "Evolución Regional"), por la atribución territorial correcta —adónde llega el dinero, no dónde se administra—.
+**QHAWAY 2.0 incorpora un ingestor (scraper) reproducible de la Consulta Amigable** como pieza de su capa ETL. Su viabilidad fue verificada y **ya está operando**: se estableció sesión atravesando la protección del portal y se automatizó la navegación, extrayendo el presupuesto por **departamento de destino (META)** para los **23 ejercicios 2004-2026**. Con ello, la plataforma muestra ya la **evolución regional del presupuesto a lo largo de 22 años** (módulo "Evolución Regional 2004-2026", §8.9), por la atribución territorial correcta —adónde llega el dinero, no dónde se administra—.
 
 Este trabajo arrojó además un **hallazgo de transparencia de primer orden**, que el observatorio visibiliza explícitamente: **el SIAF del Estado peruano solo georreferencia su gasto, por destino, hasta el nivel de departamento** (existe `DEPARTAMENTO_META`, pero no provincia ni distrito de destino). El único detalle distrital disponible es el de la **unidad ejecutora** —dónde está la entidad que administra el gasto—, que para el grueso del Gobierno Nacional se concentra en Lima. Dicho de otro modo: **el Estado no registra públicamente en qué distrito aterriza la mayor parte de su presupuesto.** No es una carencia de QHAWAY ni del scraper, sino de la propia fuente; y señalarla es, en sí mismo, un acto de transparencia. Por eso la plataforma ofrece el detalle por destino a nivel departamental para todos los años, el detalle distrital por ejecutora donde existe (2025, y de forma significativa para los gobiernos locales, donde la municipalidad coincide con el distrito), y declara el vacío en su sección de preguntas frecuentes. Cerrar esa brecha —que el presupuesto se conozca a nivel distrital de destino— es, además, una recomendación de política que QHAWAY eleva al propio MEF.
 
 | Fase | Periodo | Estado | Entregables clave | Condición de salida |
 |---|---|---|---|---|
 | 0 | Mes 0-1 | ⏳ En curso | Convenio FIEECS, dominio/subdominio, kickoff | Resolución firmada y dominio operativo |
-| 1 | Mes 1-6 | ✅ Parcial (live) | Dashboard con datos reales 2025 (distrital), módulos Presupuesto/Pisos/Riesgos/IPT/Explorador/Cobertura, chat IA, buscador, serie nacional 2021-2024 | Sitio live (✅); pendiente: distrital histórico vía scraper (§9.1) |
+| 1 | Mes 1-6 | ✅ Parcial (live) | Dashboard con distrital 2025; módulos Inicio/Presupuesto/Pisos/Riesgos/IPT/Explorador/Evolución Regional/Cobertura/Metodología; serie por destino 2004-2026 (22 años); scraper Consulta Amigable; chat IA; buscador | Sitio live (✅); pendiente: distrital histórico por destino (no existe en fuente, §9.1) y cubo OLAP (Fase 2) |
 | 2 | Mes 6-12 | 🔲 Propuesta | Ingestor de Consulta Amigable (distrital histórico, §9.1); Cubo OLAP completo; FastAPI+PostGIS esquema estrella; API pública; drill-down a proyecto | Distrital histórico cargado; cubo y API pública con ≥1 caso de uso externo |
 | 3 | Mes 12-24 | 🔲 Propuesta | IA avanzada; Simulador y Prospectiva; AWS/escala | Alta disponibilidad y simulador publicado |
 
