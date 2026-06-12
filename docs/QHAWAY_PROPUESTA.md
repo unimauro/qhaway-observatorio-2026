@@ -659,8 +659,8 @@ El roadmap de QHAWAY 2.0 está diseñado bajo un principio rector: **lanzar pron
 
 **Fase 1 — MVP público (mes 1-6, EN MARCHA / parcialmente ENTREGADA).** Esta fase ya no es promesa: el dashboard estático está **live y verificable** en <https://unimauro.github.io/qhaway-dashboard/>[^road-fase1], con datos reales del SIAF-MEF 2025 (PIM ≈ S/ 272 mil millones) sobre los 1,834 distritos del dataset cartográfico. Estado por componente:
 
-- ✅ **Entregado:** dashboard estático abierto (sin login, URLs compartibles); módulos de Presupuesto, Pisos Altitudinales, Riesgos e IPT; chat de IA asistente; buscador global; Explorador con cruces **pre-computados**; evolución mensual 2025.
-- ⏳ **Pendiente de Fase 1:** serie histórica multi-año (requiere ingerir las tablas mensuales por cada año, no solo 2025); desagregación a nivel provincia; visibilidad explícita de la **cobertura de datos** (distinguir "sin ejecución" de "sin dato", §8.1) y de los 11 distritos del marco INEI aún no cubiertos por la cartografía.
+- ✅ **Entregado:** dashboard estático abierto (sin login, URLs compartibles); módulos de Presupuesto, Pisos Altitudinales, Riesgos, IPT, **Explorador Multidimensional** (con cruces pre-computados y atribución territorial **por destino/META** además de por ejecutora) y **Cobertura Territorial** (los tres estados: "con dato" / "sin dato" / "no existía", §8.1); chat de IA asistente; buscador global; presupuesto distrital 2025 (~1,892 distritos, 196 provincias, 25 regiones); **serie histórica nacional 2021-2024** (Presupuesto del Sector Público, fuente Informe Global de la Gestión Presupuestaria del MEF) y evolución mensual 2025.
+- ⏳ **Pendiente de Fase 1:** el **presupuesto histórico a nivel distrital** (cada año, cada distrito) —hoy disponible solo para 2025—, mediante el ingestor de Consulta Amigable descrito en §9.1; extensión de la serie nacional a años previos a 2021 (requiere OCR de informes escaneados); desagregación a nivel provincia en años históricos.
 
 Arquitectura 100 % estática: React + ECharts + MapLibre/Leaflet + JSON versionado por ETL Python en GitHub Actions. Es la fase de menor riesgo: los componentes ya existen y están operando en producción.
 
@@ -668,11 +668,22 @@ Arquitectura 100 % estática: React + ECharts + MapLibre/Leaflet + JSON versiona
 
 **Fase 3 — Escala y apertura (mes 12-24, PROPUESTA).** Migración selectiva a AWS (CloudFront, S3, Lambda, RDS) solo de las cargas de alto tráfico; IA avanzada; Simulador de Políticas (módulo 7) y Prospectiva y Escenarios (módulo 6) con supuestos siempre explícitos; alta disponibilidad institucional con alternativa VPS de contención documentada.
 
+## 9.1 Estrategia de datos: el presupuesto histórico a nivel distrital
+
+El objetivo central del observatorio —tener información de **todos los distritos, provincias y regiones, para cada año**— enfrenta una restricción técnica concreta de las fuentes públicas, que conviene declarar con transparencia:
+
+- La **API de Datos Abiertos del MEF** (datastore SQL) contiene el detalle distrital de todos los años, pero **agota el tiempo de respuesta** (timeouts superiores a 210 s) al agregar las tablas anuales completas de ~11,4 millones de filas; en la práctica solo el ejercicio 2025 respondió de forma fiable. Por eso QHAWAY 2.0 carga hoy el detalle distrital de **2025** y la serie **nacional** 2021-2024 desde los informes oficiales.
+- Los **Informes Globales del MEF** dan el total nacional pero **no descienden al distrito**; además, los anteriores a 2021 están escaneados como imagen (requieren OCR).
+
+La vía que sí entrega el histórico distrital completo es la **Consulta Amigable** del MEF (`apps5.mineco.gob.pe/transparencia`), el portal que navega año → nivel de gobierno → departamento → provincia → distrito → proyecto, con PIA, PIM, certificado, comprometido, devengado y girado, para todos los años desde 2012 (y antes en su versión clásica). Su limitación es de forma, no de fondo: es una aplicación ASP.NET con estado de sesión (`__VIEWSTATE`) y protección anti-bot, no consultable directamente por programa.
+
+**QHAWAY 2.0 incorpora un ingestor (scraper) reproducible de la Consulta Amigable** como pieza de su capa ETL. Su **viabilidad ya fue verificada técnicamente** (prueba de concepto): se estableció sesión válida atravesando la protección del portal y se accedió al formulario de navegación y a su tabla de resultados, identificando los controles de año y de desagregación geográfica —incluida la atribución por **destino territorial (META)**, la lectura correcta para inteligencia territorial—. El ingestor recorrerá año × territorio escribiendo los archivos `por-distrito-{año}.json` que el mapa y el Explorador ya consumen, de forma **incremental y reanudable** (cada año/territorio que se obtiene queda publicado, sin perder lo avanzado), con pausas y reintentos para respetar el portal. Es un proceso deliberadamente lento (horas/días en segundo plano), apropiado para la capa ETL de la Fase 2, no para consulta en vivo. Con él, la promesa de "todos los distritos, todos los años" deja de ser un horizonte y se vuelve una tarea de ingeniería acotada.
+
 | Fase | Periodo | Estado | Entregables clave | Condición de salida |
 |---|---|---|---|---|
 | 0 | Mes 0-1 | ⏳ En curso | Convenio FIEECS, dominio/subdominio, kickoff | Resolución firmada y dominio operativo |
-| 1 | Mes 1-6 | ✅ Parcial (live) | Dashboard estático con datos reales 2025; módulos Presupuesto/Pisos/Riesgos/IPT; chat IA; buscador; Explorador pre-computado | Sitio live (✅); pendiente: serie multi-año, provincia, cobertura visible |
-| 2 | Mes 6-12 | 🔲 Propuesta | Cubo OLAP completo (cruces arbitrarios); FastAPI+PostGIS esquema estrella; API pública; drill-down a proyecto; mensual histórico | Cubo en vivo y API pública con ≥1 caso de uso externo |
+| 1 | Mes 1-6 | ✅ Parcial (live) | Dashboard con datos reales 2025 (distrital), módulos Presupuesto/Pisos/Riesgos/IPT/Explorador/Cobertura, chat IA, buscador, serie nacional 2021-2024 | Sitio live (✅); pendiente: distrital histórico vía scraper (§9.1) |
+| 2 | Mes 6-12 | 🔲 Propuesta | Ingestor de Consulta Amigable (distrital histórico, §9.1); Cubo OLAP completo; FastAPI+PostGIS esquema estrella; API pública; drill-down a proyecto | Distrital histórico cargado; cubo y API pública con ≥1 caso de uso externo |
 | 3 | Mes 12-24 | 🔲 Propuesta | IA avanzada; Simulador y Prospectiva; AWS/escala | Alta disponibilidad y simulador publicado |
 
 \newpage
