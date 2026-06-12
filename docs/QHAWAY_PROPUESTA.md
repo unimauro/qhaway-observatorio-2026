@@ -12,31 +12,37 @@ En abril de 2024 la FIEECS-UNI lanzó **QHAWAY, Observatorio del Presupuesto Pú
 
 Esta propuesta plantea relanzar la marca como **QHAWAY 2.0 — Observatorio Nacional de Inteligencia Territorial, Presupuesto Público, Cambio Climático, Riesgos y Desarrollo Humano**, sobre una base ya demostrada: el proponente técnico, Carlos Cárdenas Fernández, egresado UNI, mantiene en producción siete observatorios de datos públicos de acceso abierto —más un octavo en repositorio pre-publicación—, a nivel distrital y con costo de infraestructura de US$ 0, entre ellos Perú Transparente, Proyecto INTI (1,891 distritos georreferenciados) y Perú Riesgos[^res-activos]. QHAWAY 2.0 no parte de cero: reutiliza componentes operativos y los pone bajo el respaldo institucional de la FIEECS-UNI.
 
-El observatorio se organiza en **siete módulos**:
+El observatorio se organiza en un **menú de nueve módulos**: 🏛 Presupuesto Público · 🌱 Cambio Climático · ⚠️ Riesgos Territoriales · 📊 Indicadores Sociales · 🗺 Inteligencia Territorial (Pisos) · 📈 Prospectiva y Escenarios · 🧠 Simulador de Políticas Públicas · 🔍 Explorador Multidimensional · 📚 Laboratorio Académico FIEECS.
 
 | # | Módulo | Qué responde |
 |---|---|---|
-| 1 | Presupuesto Público | PIA/PIM/Devengado/Girado por distrito, sector y programa |
-| 2 | Cambio Climático | Cuánto y dónde invierte el Perú en adaptación y mitigación |
-| 3 | Riesgos Territoriales | Inundaciones, sequías, heladas, huaicos, estrés hídrico |
-| 4 | Pisos Altitudinales | Composición de cada distrito según las 8 regiones naturales |
-| 5 | Índice de Prosperidad Territorial (IPT) | Educación, salud, economía y servicios por territorio |
-| 6 | Simulador de Políticas | Escenarios con elasticidades de literatura OCDE/BM, supuestos explícitos |
-| 7 | Observatorio Prospectivo | Escenarios territoriales 2030/2040/2050 con apoyo de IA |
+| 1 | 🏛 Presupuesto Público | PIA/PIM/Devengado/Girado por distrito, sector y programa |
+| 2 | 🌱 Cambio Climático | Cuánto y dónde invierte el Perú en adaptación y mitigación |
+| 3 | ⚠️ Riesgos Territoriales | Inundaciones, sequías, heladas, huaicos, estrés hídrico |
+| 4 | 📊 Indicadores Sociales (IPT) | Educación, salud, economía y servicios por territorio |
+| 5 | 🗺 Inteligencia Territorial (Pisos) | Composición de cada distrito según las 8 regiones naturales |
+| 6 | 📈 Prospectiva y Escenarios | Escenarios territoriales 2030/2040/2050 con apoyo de IA |
+| 7 | 🧠 Simulador de Políticas Públicas | Escenarios con elasticidades de literatura OCDE/BM, supuestos explícitos |
+| 8 | 🔍 Explorador Multidimensional (Cubo) | Cruza presupuesto × clima × riesgos × pobreza × piso altitudinal |
+| 9 | 📚 Laboratorio Académico FIEECS | Datasets citables, ETL reproducible, tesis y docencia |
 
-El **diferencial único** es el módulo de pisos altitudinales: cruzando los límites distritales con un modelo digital de elevación (SRTM/Copernicus 30 m), cada distrito se descompone porcentualmente en las ocho regiones naturales de Javier Pulgar Vidal (Chala, Yunga, Quechua, Suni, Puna, Janca, Selva Alta, Selva Baja)[^res-pulgar]. Esto permite responder preguntas que hoy ninguna plataforma pública responde: ¿cuánto presupuesto recibe la puna?, ¿cuánta inversión climática llega a los territorios amazónicos o a los distritos más vulnerables a heladas?
+El **diferencial estrella** frente al portal del MEF es el **Explorador Presupuestal Multidimensional** (módulo 8, §8.8): un "cubo presupuestal" que permite navegar desde lo nacional hasta el proyecto específico cruzando dimensiones —presupuesto × cambio climático × riesgos × pobreza × piso altitudinal— para responder, por ejemplo, qué distritos suman alta vulnerabilidad climática, alta pobreza y baja inversión pública. Ninguna plataforma pública peruana ofrece hoy ese cruce integrado. A ello se suma el **diferencial territorial** de los pisos altitudinales (módulo 5): cruzando los límites distritales con un modelo digital de elevación (SRTM/Copernicus 30 m), cada distrito se descompone porcentualmente en las ocho regiones naturales de Javier Pulgar Vidal (Chala, Yunga, Quechua, Suni, Puna, Janca, Selva Alta, Selva Baja)[^res-pulgar], lo que permite responder ¿cuánto presupuesto recibe la puna?, ¿cuánta inversión climática llega a los territorios amazónicos o a los distritos más vulnerables a heladas?
+
+La propuesta no es teórica: **la Fase 1 ya está operativa y es verificable hoy** en <https://unimauro.github.io/qhaway-dashboard/>[^res-fase1], con datos reales del SIAF-MEF 2025 (PIM ≈ S/ 272 mil millones), los 1,834 distritos del dataset cartográfico, chat de IA asistente, buscador global y módulos de presupuesto, pisos, riesgos e IPT, incluyendo un Explorador con cruces pre-computados.
 
 La implementación se escalona en **tres fases**: la Fase 1 (0-6 meses) entrega el observatorio completo como sitio estático en GitHub Pages con ETL en Python, **con costo de infraestructura ≈ US$ 0** —el mismo patrón ya probado en los observatorios live del equipo—; la Fase 2 (6-12 meses) añade backend FastAPI, PostgreSQL/PostGIS y una API pública documentada; la Fase 3 (12-24 meses) escala a nube AWS con CDN e infraestructura como código, con alternativa de contención de costos documentada. La plataforma integrará 14+ fuentes oficiales, entre ellas MEF Consulta Amigable, INEI, MINEDU-ESCALE, MINSA, CENEPRED-SIGRID, SENAMHI, CEPLAN y la API OCDS del OECE[^res-fuentes].
 
 **El pedido concreto a la FIEECS-UNI** es de respaldo, no de presupuesto de infraestructura: (i) **respaldo institucional** del Decanato para que QHAWAY 2.0 sea el observatorio oficial de la Facultad; (ii) **dominio y presencia web institucional** (subdominio bajo fieecs.uni.edu.pe o equivalente, evitando la dependencia de dominios pagados que ya costó la caída del original); y (iii) **equipo académico**: docentes e investigadores que validen metodologías, y estudiantes de Ingeniería Económica y Estadística que participen vía cursos, tesis y prácticas. La Fase 1 es demostrable en seis meses sin inversión en servidores.
 
-Tres cifras resumen la ambición: **1,891 distritos** con información territorial, **8 pisos altitudinales** como lente de análisis inédito del presupuesto, y **14+ fuentes oficiales** integradas en una sola plataforma abierta.
+Tres cifras resumen la ambición: el marco territorial oficial del INEI —**1,845 distritos, 195 provincias y 24 departamentos más la Provincia Constitucional del Callao**[^res-inei]— como universo de cobertura (el dataset cartográfico vigente cubre 1,834 de esos 1,845 distritos, y la plataforma indica con honestidad los que faltan); **8 pisos altitudinales** como lente de análisis inédito del presupuesto; y **14+ fuentes oficiales** integradas en una sola plataforma abierta.
 
 [^res-fieecs]: FIEECS-UNI, anuncio del observatorio QHAWAY (abril de 2024): <https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/>
 [^res-wayback]: Snapshot del dashboard original en Wayback Machine (30-nov-2024): <https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/>
 [^res-activos]: Activos en producción del equipo proponente: Perú Transparente (<https://unimauro.github.io/peru-transparente>), Proyecto INTI (<https://unimauro.github.io/proyecto-inti>), Perú Riesgos (<https://unimauro.github.io/unimaurox-peru-riesgos>), entre otros detallados en la sección de diagnóstico.
 [^res-pulgar]: Javier Pulgar Vidal, *Las ocho regiones naturales del Perú* (1941). DEM de referencia: SRTM/Copernicus 30 m, <https://dataspace.copernicus.eu/>
 [^res-fuentes]: Principales fuentes: MEF Transparencia Económica (<https://apps5.mineco.gob.pe/transparencia/mensual/>), INEI (<https://www.inei.gob.pe>), MINEDU-ESCALE (<https://escale.minedu.gob.pe>), CENEPRED-SIGRID (<https://sigrid.cenepred.gob.pe>), SENAMHI (<https://www.senamhi.gob.pe>), CEPLAN (<https://www.ceplan.gob.pe>), API OCDS del OECE (<https://contratacionesabiertas.oece.gob.pe>). Listado completo en la sección de fuentes de datos.
+[^res-fase1]: Dashboard QHAWAY 2.0 — Fase 1, en línea y navegable con datos reales del SIAF-MEF 2025: <https://unimauro.github.io/qhaway-dashboard/>.
+[^res-inei]: Demarcación político-administrativa oficial del Perú según el INEI: 24 departamentos más la Provincia Constitucional del Callao, 195 provincias y 1,845 distritos; cartografía y demarcación distrital del INEI: <https://www.inei.gob.pe>. El dataset cartográfico vigente de la plataforma cubre 1,834 de esos 1,845 distritos, brecha que el observatorio declara explícitamente.
 
 
 # 2. Diagnóstico
@@ -155,7 +161,7 @@ Ninguno de estos referentes exige login ni cobra por consultar —exactamente lo
 
 **QHAWAY** toma su nombre del verbo quechua *qhaway* —"mirar, observar"— y esa raíz no es decorativa: define el mandato. La visión al 2030 es que QHAWAY 2.0 sea **el observatorio territorial de referencia del Perú**: el lugar donde un investigador, un funcionario, un periodista o un vecino de Chumbivilcas miran —con el mismo dato y la misma fuente— cuánto presupuesto llega a su territorio, qué riesgos lo amenazan y cómo evoluciona su prosperidad. Operado académicamente por la FIEECS-UNI, QHAWAY 2.0 recupera y amplía el mandato del observatorio anunciado en abril de 2024[^vis-qhaway1], esta vez sobre una base técnica ya demostrada en producción y con un modelo de sostenibilidad que evita repetir la caída del dashboard original.
 
-**Misión**: producir y publicar, de forma continua y verificable, inteligencia territorial sobre presupuesto público, cambio climático, riesgos y desarrollo humano a nivel distrital (1,891 distritos), al servicio de la docencia, la investigación y la incidencia pública de la FIEECS-UNI y del país.
+**Misión**: producir y publicar, de forma continua y verificable, inteligencia territorial sobre presupuesto público, cambio climático, riesgos y desarrollo humano a nivel distrital —sobre el marco oficial del INEI de 1,845 distritos, 195 provincias y 24 departamentos más la Provincia Constitucional del Callao—, al servicio de la docencia, la investigación y la incidencia pública de la FIEECS-UNI y del país.
 
 La visión se sostiene en cinco **principios operativos**, que son a la vez compromisos verificables:
 
@@ -181,7 +187,9 @@ QHAWAY 2.0 no compite con la Consulta Amigable del MEF[^val-mef] ni con los port
 
 El **diferencial único** —que ninguna plataforma pública o privada ofrece hoy en el Perú— es el **lente de pisos altitudinales aplicado al presupuesto**. Usando la clasificación de las ocho regiones naturales de Javier Pulgar Vidal[^val-pulgar] (Chala, Yunga, Quechua, Suni, Puna, Janca, Selva Alta, Selva Baja), QHAWAY 2.0 calcula la composición altitudinal de cada distrito cruzando los límites distritales con un modelo digital de elevación de 30 m[^val-dem], y prorratea el gasto público según esa composición. Eso habilita preguntas que hoy nadie puede responder con datos: **¿cuánto presupuesto recibe la puna? ¿Cuánta inversión climática llega a la selva baja? ¿La ejecución en Janca es proporcional a su vulnerabilidad ante el retroceso glaciar?** Cabe la honestidad metodológica: el prorrateo altitudinal es una **estimación** (el gasto se registra por entidad ejecutora, no por cota), y así se marcará; pero es una estimación reproducible, auditable y radicalmente más informativa que el vacío actual.
 
-A esto se suma un segundo diferencial pragmático: la propuesta no parte de cero. Los siete observatorios live del equipo proponente (§2.3) demuestran que el patrón técnico (estático, abierto, costo de infraestructura cercano a US$ 0 en su primera fase) funciona y sobrevive sin presupuesto recurrente de hosting, exactamente el punto donde el QHAWAY original falló (§2.2).
+El **diferencial central frente al MEF** es el **Explorador Presupuestal Multidimensional** (el "cubo presupuestal", §8.8): mientras la Consulta Amigable obliga a navegar una jerarquía rígida de menús anidados, QHAWAY 2.0 permite cruzar libremente presupuesto × cambio climático × riesgos × pobreza × piso altitudinal, y descender desde lo nacional hasta el proyecto específico. Ninguna plataforma pública peruana ofrece hoy ese cruce integrado: ese es el espacio que QHAWAY 2.0 ocupa. Y no es promesa: la **Fase 1 ya está operativa y verificable** en <https://unimauro.github.io/qhaway-dashboard/>[^val-fase1], con datos reales del SIAF-MEF 2025 y un Explorador con cruces pre-computados (el cubo con cruces arbitrarios en vivo llega con el backend de la Fase 2).
+
+A esto se suma un segundo diferencial pragmático: la propuesta no parte de cero. Los siete observatorios live del equipo proponente (§2.3) —más el propio dashboard QHAWAY 2.0 ya publicado— demuestran que el patrón técnico (estático, abierto, costo de infraestructura cercano a US$ 0 en su primera fase) funciona y sobrevive sin presupuesto recurrente de hosting, exactamente el punto donde el QHAWAY original falló (§2.2).
 
 [^vis-qhaway1]: FIEECS-UNI, "QHAWAY — Observatorio del Presupuesto Público del Perú" (abril 2024): <https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/>. Snapshot del dashboard original (30-nov-2024) en Wayback Machine: <https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/>.
 [^vis-fuentes]: MEF Transparencia Económica: <https://apps5.mineco.gob.pe/transparencia/mensual/>; INEI: <https://www.inei.gob.pe>; CENEPRED-SIGRID: <https://sigrid.cenepred.gob.pe>; SENAMHI: <https://www.senamhi.gob.pe>.
@@ -189,6 +197,7 @@ A esto se suma un segundo diferencial pragmático: la propuesta no parte de cero
 [^val-clima]: Referencia metodológica: marcadores climáticos del MEF/MINAM sobre el clasificador funcional-programático y marcadores de Río de la OCDE: <https://www.oecd.org/dac/environment-development/rio-markers.htm>.
 [^val-pulgar]: Javier Pulgar Vidal, *Las ocho regiones naturales del Perú* (1941 y ediciones posteriores), clasificación geográfica canónica del territorio peruano por pisos altitudinales.
 [^val-dem]: Modelos digitales de elevación SRTM 30 m (<https://www.earthdata.nasa.gov/sensors/srtm>) y Copernicus GLO-30 (<https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM>).
+[^val-fase1]: Dashboard QHAWAY 2.0 — Fase 1, en línea y verificable: <https://unimauro.github.io/qhaway-dashboard/>.
 
 
 # 6. Arquitectura Funcional
@@ -201,7 +210,7 @@ QHAWAY 2.0 se organiza en seis capas funcionales desacopladas. Cada capa puede e
 
 **Capa 3 — Capa de datos.** En Fase 1: JSON y GeoJSON estáticos versionados en Git, servidos como archivos planos con un manifest de catálogo. En Fase 2 esta capa evoluciona a PostgreSQL + PostGIS para consultas geoespaciales arbitrarias (intersección distrito × piso altitudinal, agregaciones dinámicas), manteniendo los archivos estáticos como caché de publicación: el frontend nunca depende de que el backend esté vivo.
 
-**Capa 4 — Frontend de visualización.** SPA React + TypeScript con ECharts (series, Sankey, treemap, heatmap) y Leaflet/MapLibre GL (mapas distritales vectoriales), organizada en los siete módulos del mandato. Estado en la URL: cada vista filtrada es un enlace compartible.
+**Capa 4 — Frontend de visualización.** SPA React + TypeScript con ECharts (series, Sankey, treemap, heatmap) y Leaflet/MapLibre GL (mapas distritales vectoriales), organizada en los nueve módulos del menú (incluido el Explorador Multidimensional). Estado en la URL: cada vista filtrada es un enlace compartible.
 
 **Capa 5 — Capa de IA.** Consultas en lenguaje natural sobre los datasets publicados (patrón AskBot ya demostrado en FONAFE y Defensa-Interior), resúmenes automáticos por territorio e interpretación guiada de indicadores. Arquitectura agnóstica del proveedor de LLM; toda respuesta cita el dato del manifest que la sustenta — la IA explica datos verificados, no los inventa.
 
@@ -225,7 +234,7 @@ flowchart TB
     D2["Fase 2: PostgreSQL + PostGIS"]
   end
   subgraph C4["Capa 4 · Frontend (React + ECharts + MapLibre)"]
-    M1["7 módulos: Presupuesto · Clima · Riesgos ·<br/>Pisos altitudinales · IPT · Simulador · Prospectiva"]
+    M1["9 módulos: Presupuesto · Clima · Riesgos · Indicadores ·<br/>Pisos · Prospectiva · Simulador · Explorador (Cubo) · Lab. FIEECS"]
   end
   subgraph C5["Capa 5 · IA"]
     A1["Consultas en lenguaje natural · resúmenes por territorio"]
@@ -245,15 +254,17 @@ flowchart TB
 
 | # | Módulo | Pregunta principal |
 |---|--------|--------------------|
-| 1 | Presupuesto Público | ¿Cuánto se asigna (PIA/PIM) y cuánto se ejecuta realmente (devengado/girado) en cada distrito, sector y programa? |
-| 2 | Cambio Climático | ¿Cuánto invierte el Perú en adaptación y mitigación, en qué territorios, y con qué ejecución real? |
-| 3 | Riesgos Territoriales | ¿Qué distritos están expuestos a inundaciones, sequías, heladas y huaicos, y cómo se cruza esa exposición con la inversión? |
-| 4 | Pisos Altitudinales | ¿Cuánto presupuesto llega a la puna, a la selva baja o a cada región natural de Pulgar Vidal? (diferencial único) |
-| 5 | Índice de Prosperidad Territorial | ¿Qué distritos prosperan y cuáles se rezagan en educación, salud, economía y servicios básicos? |
-| 6 | Simulador de Políticas | ¿Qué efecto estimado tendría priorizar educación, agua o resiliencia, bajo supuestos explícitos de literatura OCDE/BM? |
-| 7 | Observatorio Prospectivo | ¿Hacia qué escenarios territoriales se dirige el Perú al 2030/2040/2050 si las tendencias continúan o cambian? |
+| 1 | 🏛 Presupuesto Público | ¿Cuánto se asigna (PIA/PIM) y cuánto se ejecuta realmente (devengado/girado) en cada distrito, sector y programa? |
+| 2 | 🌱 Cambio Climático | ¿Cuánto invierte el Perú en adaptación y mitigación, en qué territorios, y con qué ejecución real? |
+| 3 | ⚠️ Riesgos Territoriales | ¿Qué distritos están expuestos a inundaciones, sequías, heladas y huaicos, y cómo se cruza esa exposición con la inversión? |
+| 4 | 📊 Indicadores Sociales (IPT) | ¿Qué distritos prosperan y cuáles se rezagan en educación, salud, economía y servicios básicos? |
+| 5 | 🗺 Inteligencia Territorial (Pisos) | ¿Cuánto presupuesto llega a la puna, a la selva baja o a cada región natural de Pulgar Vidal? (diferencial territorial) |
+| 6 | 📈 Prospectiva y Escenarios | ¿Hacia qué escenarios territoriales se dirige el Perú al 2030/2040/2050 si las tendencias continúan o cambian? |
+| 7 | 🧠 Simulador de Políticas Públicas | ¿Qué efecto estimado tendría priorizar educación, agua o resiliencia, bajo supuestos explícitos de literatura OCDE/BM? |
+| 8 | 🔍 Explorador Multidimensional (Cubo) | ¿Qué distritos cruzan alta vulnerabilidad climática, alta pobreza y baja inversión pública? (diferencial estrella vs. MEF) |
+| 9 | 📚 Laboratorio Académico FIEECS | ¿Cómo reutilizar datasets citables, ETL reproducible y casos reales en tesis, cursos e investigación? |
 
-Los módulos 1-3 reutilizan componentes ya construidos y demostrados (Perú Finanzas Públicas, Perú Riesgos); los módulos 4, 6 y 7 son desarrollo nuevo sobre patrones probados (INTI, EPI). Esta distinción —construido vs. por construir— se mantiene explícita en todo el plan de implementación.
+Los módulos 1-3 reutilizan componentes ya construidos y demostrados (Perú Finanzas Públicas, Perú Riesgos); los módulos 5, 7 y 6 (pisos, simulador, prospectiva) son desarrollo nuevo sobre patrones probados (INTI, EPI); el módulo 8 (Explorador) ya opera con cruces pre-computados en la Fase 1 y se completa como cubo OLAP en la Fase 2. Esta distinción —construido vs. por construir— se mantiene explícita en todo el plan de implementación.
 
 [^arqf-mef]: MEF — Transparencia Económica / Consulta Amigable: https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx
 [^arqf-ssi]: INVIERTE.PE — Sistema de Seguimiento de Inversiones (SSI): https://ofi5.mef.gob.pe/ssi/
@@ -273,7 +284,7 @@ La arquitectura de QHAWAY 2.0 responde directamente a la lección central del QH
 
 ## 7.1 Fase 1 (0–6 meses): sitio estático en GitHub Pages
 
-- **Frontend**: React 18+ con TypeScript, empaquetado con Vite y estilado con Tailwind CSS. Visualizaciones con Apache ECharts (series temporales, Sankey, treemap, heatmap, rankings) y mapas con Leaflet + MapLibre GL para teselas vectoriales distritales (1,891 distritos, GeoJSON ya disponible del Proyecto INTI).
+- **Frontend**: React 18+ con TypeScript, empaquetado con Vite y estilado con Tailwind CSS. Visualizaciones con Apache ECharts (series temporales, Sankey, treemap, heatmap, rankings) y mapas con Leaflet + MapLibre GL para teselas vectoriales distritales (marco oficial INEI de 1,845 distritos; el dataset cartográfico vigente del dashboard de la Fase 1 cubre 1,834, y los faltantes se declaran como "sin dato").
 - **Datos**: JSON estático versionado en el repositorio, generado por un ETL en Python ejecutado de forma programada con GitHub Actions[^arq-actions] contra las fuentes públicas de la sección de datos (MEF Consulta Amigable, INEI, CENEPRED, SENAMHI, etc.). Cada dataset lleva manifiesto con fecha de corte y marcado de procedencia (`verified`/`estimate`), patrón ya operativo en el Observatorio FONAFE.
 - **Costo y riesgo**: la infraestructura cuesta ≈ US$ 0. El riesgo conocido son los límites blandos de GitHub Pages (~1 GB de sitio publicado y ~100 GB/mes de ancho de banda)[^arq-pages]. **Mitigación**: servir los GeoJSON y DEM derivados más pesados desde un CDN externo gratuito o de bajo costo (p. ej. jsDelivr sobre el propio repositorio, o un bucket con CDN), y publicar teselas vectoriales simplificadas por nivel de zoom.
 
@@ -325,7 +336,43 @@ Se evita prometer capacidades predictivas no validadas: la IA interpreta y resum
 - **HTTPS** en todas las fases; en Fase 2+ se añade *rate limiting* y claves de API opcionales para consumo masivo de la API pública.
 - **Reproducibilidad**: todo el ETL es código Python público en GitHub; cualquier investigador puede auditar y reproducir cada cifra desde la fuente primaria. Esto es un requisito académico, no un extra.
 
+## 7.7 Modelo de datos del cubo: esquema estrella
+
+El Explorador Multidimensional (§8.8) se apoya en un **esquema estrella** (*star schema*) clásico de almacén de datos: una tabla de hechos central rodeada de tablas de dimensión, diseño que habilita consultas OLAP rápidas (agregaciones y cruces arbitrarios) sobre grandes volúmenes[^arq-star]. La tabla de hechos `fact_budget` registra cada combinación de ejecución presupuestal con sus claves dimensionales; las dimensiones describen el territorio, el clasificador presupuestal, el financiamiento, el clima y los indicadores sociales.
+
+| Tabla | Tipo | Campos principales |
+|---|---|---|
+| `fact_budget` | Hechos | año, mes, ubigeo, función, fuente, nivel; medidas: pia, pim, certificado, comprometido, devengado, girado |
+| `dim_territorio` | Dimensión | ubigeo, departamento, provincia, distrito, piso ecológico, superficie, población |
+| `dim_presupuesto` | Dimensión | función, división funcional, grupo funcional, programa presupuestal, actividad, proyecto |
+| `dim_financiamiento` | Dimensión | fuente de financiamiento, rubro, genérica de gasto, específica de gasto |
+| `dim_clima` | Dimensión | riesgo climático, vulnerabilidad, piso altitudinal dominante |
+| `dim_indicadores` | Dimensión | pobreza, anemia, indicadores de educación, acceso a agua |
+
+En Fase 1 estos cruces se sirven **pre-computados** como JSON estático; en Fase 2, sobre PostgreSQL + PostGIS, el mismo modelo se consulta en vivo, permitiendo agregaciones OLAP arbitrarias (p. ej. *roll-up* de distrito a departamento, *slice* por piso altitudinal, *dice* por función × fuente × año) con tiempos de respuesta de consulta interactiva.
+
 \newpage
+
+**Figura 7.2 — Esquema estrella del cubo presupuestal (`fact_budget` + dimensiones)**
+
+```mermaid
+flowchart TB
+    FB["fact_budget<br/>año · mes · ubigeo · función · fuente · nivel<br/>pia · pim · certificado · comprometido · devengado · girado"]
+    DT["dim_territorio<br/>departamento · provincia · distrito<br/>piso ecológico · superficie · población"]
+    DP["dim_presupuesto<br/>función · división/grupo funcional<br/>programa · actividad · proyecto"]
+    DF["dim_financiamiento<br/>fuente · rubro<br/>genérica · específica"]
+    DC["dim_clima<br/>riesgo climático · vulnerabilidad · piso"]
+    DI["dim_indicadores<br/>pobreza · anemia<br/>educación · agua"]
+    DT --> FB
+    DP --> FB
+    DF --> FB
+    DC --> FB
+    DI --> FB
+```
+
+\newpage
+
+[^arq-star]: Esquema estrella (*star schema*), patrón canónico de modelado dimensional para almacenes de datos y consultas OLAP: Ralph Kimball y Margy Ross, *The Data Warehouse Toolkit* (3.ª ed.); referencia general: <https://en.wikipedia.org/wiki/Star_schema>.
 
 **Figura 7.1 — Evolución de la arquitectura, Fase 1 → 2 → 3**
 
@@ -355,7 +402,7 @@ flowchart TB
 
 # 8. Módulos de la Plataforma
 
-QHAWAY 2.0 se organiza en siete módulos que comparten una misma columna vertebral: el distrito como unidad mínima de análisis (1,891 distritos con GeoJSON y UBIGEO ya operativos en Proyecto INTI), ETL Python versionado y URLs compartibles por cada vista. Esta sección describe los siete módulos: los módulos 1 a 3 a continuación, y los módulos 4 a 7 en las subsecciones 8.4 a 8.7. Cada módulo distingue explícitamente qué está ya demostrado en productos live del equipo y qué queda por construir.
+QHAWAY 2.0 se organiza en módulos que comparten una misma columna vertebral: el distrito como unidad mínima de análisis (marco oficial INEI de 1,845 distritos; el dataset cartográfico vigente cubre 1,834, los GeoJSON y UBIGEO ya operativos en Proyecto INTI y en el dashboard de la Fase 1), ETL Python versionado y URLs compartibles por cada vista. Esta sección describe los módulos temáticos en las subsecciones 8.1 a 8.7, y el **Explorador Presupuestal Multidimensional** —el cubo OLAP, diferencial estrella frente al portal del MEF— en la subsección 8.8. Cada módulo distingue explícitamente qué está ya demostrado en productos live del equipo y qué queda por construir.
 
 ## 8.1 Presupuesto Público
 
@@ -369,7 +416,9 @@ QHAWAY 2.0 se organiza en siete módulos que comparten una misma columna vertebr
 
 **Visualizaciones.** (a) Mapa coroplético distrital (Leaflet + MapLibre GL) de presupuesto per cápita y avance de ejecución; (b) series temporales PIA/PIM/Devengado por territorio; (c) diagrama Sankey del flujo PIA → PIM → Devengado → Girado, que vuelve visibles las modificaciones presupuestales y las brechas de ejecución; (d) treemap por función y programa presupuestal; (e) ranking de ejecución por pliego y municipalidad; (f) heatmap año × territorio para detectar patrones persistentes de subejecución.
 
-**Base existente.** El repo unimaurox-peru-finanzas-publicas ya implementa series PIA/PIM/Devengado 1990-2025, heatmap año × sector, mapa coroplético regional y treemap ministerial con ETL del MEF Consulta Amigable y BCRP; Perú Transparente demuestra el mismo patrón (ECharts + MapLibre + export CSV) en producción con ~20 MB de JSON estático[^mod-pt]. Por construir: la desagregación distrital completa y el Sankey de cuatro etapas.
+**Base existente.** El repo unimaurox-peru-finanzas-publicas ya implementa series PIA/PIM/Devengado 1990-2025, heatmap año × sector, mapa coroplético regional y treemap ministerial con ETL del MEF Consulta Amigable y BCRP; Perú Transparente demuestra el mismo patrón (ECharts + MapLibre + export CSV) en producción con ~20 MB de JSON estático[^mod-pt]. La **Fase 1 ya publicada** (<https://unimauro.github.io/qhaway-dashboard/>) opera este módulo con datos reales del SIAF-MEF 2025 (PIM ≈ S/ 272 mil millones) sobre los 1,834 distritos del dataset cartográfico. Por construir: la desagregación a provincia, el Sankey de cuatro etapas y la serie histórica multi-año.
+
+**Cobertura y honestidad de datos.** Como principio de honestidad de datos, el observatorio **muestra explícitamente qué distritos no tienen información presupuestal**, distinguiendo dos situaciones que jamás deben confundirse: "sin ejecución" (el distrito existe en el presupuesto pero su devengado es S/ 0) frente a "sin dato" (no hay registro disponible para ese distrito en la fuente o en el dataset cartográfico). Esta transparencia es parte del valor público: conocer las brechas de información es tan relevante como conocer las cifras. El propio marco territorial lo exige —el dataset cartográfico vigente cubre 1,834 de los 1,845 distritos oficiales del INEI— y la plataforma lo señala en mapas y rankings con una categoría visual diferenciada para "sin dato".
 
 \newpage
 
@@ -532,6 +581,70 @@ Cada territorio tendrá tres narrativas prospectivas, en el formato ya probado: 
 [^mod7-ceplan]: CEPLAN, Plan Estratégico de Desarrollo Nacional al 2050: https://www.ceplan.gob.pe
 [^mod7-inti]: Proyecto INTI — prospectiva territorial con tres escenarios por distrito: https://unimauro.github.io/proyecto-inti
 
+## 8.8 Explorador Presupuestal Multidimensional (Cubo OLAP)
+
+Este módulo es el **diferencial estrella** de QHAWAY 2.0 frente al portal del MEF. La Consulta Amigable del MEF[^expl-mef] obliga a navegar una jerarquía rígida de menús anidados, un eje a la vez; el Explorador invierte esa lógica: permite **navegar libremente desde lo más agregado (nacional) hasta el proyecto específico, cruzando dimensiones a voluntad**. Es la diferencia entre una tabla y un cubo: en lugar de "elija año, luego pliego, luego función", el usuario pregunta "muéstrame educación en Cajamarca por nivel de gobierno" o "cruza inversión climática con pobreza y piso altitudinal" y obtiene la respuesta en una sola vista.
+
+**Dimensiones del cubo.** El Explorador organiza el presupuesto público en seis ejes cruzables:
+
+| Dimensión | Niveles / atributos |
+|---|---|
+| **Temporal** | Año · semestre · trimestre · mes (serie histórica 2009/2012–actualidad como meta) |
+| **Territorial** | Nacional → departamento → provincia → distrito |
+| **Institucional** | Gobierno Nacional / Regional / Local; dentro: sector → pliego → unidad ejecutora |
+| **Presupuestal** | Función → división funcional → grupo funcional → programa presupuestal → actividad → proyecto |
+| **Financiera** | Fuente de financiamiento → rubro → genérica de gasto → específica de gasto |
+| **Estados (medidas)** | PIA · PIM · Certificado · Comprometido · Devengado · Girado · % Ejecutado |
+
+**Casos de uso concretos.** El cruce de dimensiones habilita preguntas que hoy exigen horas de navegación manual en la Consulta Amigable:
+
+- **"Educación en Cajamarca"** — función Educación × territorio Cajamarca × nivel de gobierno: cuánto asigna y ejecuta cada nivel (nacional/regional/local), con desagregación a programa y proyecto.
+- **"Cambio Climático en Puno"** — función Ambiente × categoría adaptación × territorio Puno × piso Puna: inversión total, por habitante y por km², para ver si el gasto de adaptación llega efectivamente a la puna altoandina.
+- **"Salud rural"** — función Salud × distritos con más del 70 % de su territorio en puna: ranking de inversión per cápita y brechas, para identificar dónde el gasto en salud no acompaña la dispersión y altitud del territorio.
+
+**La vista tipo OLAP — el "cubo presupuestal".** Más allá del presupuesto puro, el Explorador cruza **Presupuesto × Cambio Climático × Riesgos × Pobreza × Piso Altitudinal** sobre una misma unidad territorial. Ejemplos del tipo de pregunta que solo este módulo responde:
+
+- **"Distritos con alta vulnerabilidad climática + alta pobreza + baja inversión pública"** — la intersección que prioriza dónde el riesgo y la carencia coinciden con el abandono presupuestal.
+- **"Provincias amazónicas que recibieron recursos de mitigación climática 2015–2025"** — trazabilidad territorial del gasto climático cruzada con la geografía natural.
+
+**Ninguna plataforma pública peruana ofrece hoy este cruce integrado.** La Consulta Amigable entrega presupuesto; SIGRID entrega riesgo; INEI entrega pobreza; QHAWAY 2.0 es el primero que los pone en un mismo cubo navegable. Ese es el principal diferencial de la propuesta.
+
+**Honestidad de fases (anti-overclaiming).** La distinción entre lo construido y lo propuesto es explícita:
+
+- **Fase 1 (ya operativa, estática, GitHub Pages).** El dashboard publicado[^expl-fase1] ofrece un Explorador con **cruces pre-computados** (función × territorio × nivel × fuente, para el año vigente), servidos como JSON estático. Es real, navegable y verificable hoy.
+- **Fase 2 (propuesta, backend).** El **cubo OLAP completo**, con cruces arbitrarios en vivo (cualquier combinación de las seis dimensiones, incluido Presupuesto × Clima × Riesgos × Pobreza × Piso sobre series mensuales históricas), requiere el backend de la Fase 2: FastAPI + PostgreSQL/PostGIS con el **esquema estrella** descrito en §7.7. El volumen lo justifica: la ejecución de gasto del SIAF ronda los **~11.4 millones de filas por año**, inviable de pre-computar para todos los cruces posibles, pero trivial para un almacén dimensional indexado.
+
+No se sobreafirma: lo pre-computado de la Fase 1 ya entrega valor inmediato; el cubo arbitrario en vivo es un entregable de la Fase 2, presentado como tal.
+
+\newpage
+
+Mockup descriptivo de la vista del Explorador (cubo presupuestal):
+
+```text
++----------------------------------------------------------------------+
+| QHAWAY 2.0 · Explorador Multidimensional (Cubo)   [ES] [☾] [Compartir]|
++----------------------------------------------------------------------+
+| FILAS: [Distrito ▾]   COLUMNAS: [Estado: Devengado ▾]                |
+| FILTROS (cruzar dimensiones):                                        |
+|   Función:[Ambiente ▾] Año:[2015-2025 ▾] Fuente:[Todas ▾]            |
+|   + Clima:[Vulnerabilidad alta ▾]  + Pobreza:[> 40% ▾]              |
+|   + Piso:[Puna ▾]                                   [Aplicar cruce]  |
++----------------------------------------------------------------------+
+| RESULTADO — distritos en la intersección (23)            [CSV] [URL] |
+|  #  Distrito        Devengado  S//hab  Vulner.  Pobreza  % Ejec.    |
+|  1  ...              ...        ...     alta     52%      31%        |
+|  2  ...              ...        ...     alta     48%      27%        |
++----------------------------------------------------------------------+
+| ⓘ Fase 1: cruces pre-computados (año vigente). Cubo en vivo: Fase 2. |
+| Fuente: SIAF-MEF · CENEPRED · INEI · corte indicado por celda        |
++----------------------------------------------------------------------+
+```
+
+\newpage
+
+[^expl-mef]: MEF — Consulta Amigable de Ejecución del Gasto (navegación por jerarquía de menús): https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx
+[^expl-fase1]: Dashboard QHAWAY 2.0 — Fase 1, con Explorador de cruces pre-computados sobre datos reales del SIAF-MEF 2025: https://unimauro.github.io/qhaway-dashboard/
+
 
 # 9. Roadmap
 
@@ -539,18 +652,23 @@ El roadmap de QHAWAY 2.0 está diseñado bajo un principio rector: **lanzar pron
 
 **Fase 0 — Institucionalización (mes 0-1).** Firma del convenio o resolución de Decanato que adscribe QHAWAY 2.0 a la FIEECS-UNI; definición del dominio (recuperar/registrar `qhaway.pe` o, preferentemente por sostenibilidad y autoridad institucional, un subdominio bajo `uni.edu.pe`, p. ej. `qhaway.uni.edu.pe`, que no caduca por falta de pago); kickoff con docentes y estudiantes, replicando los talleres participativos que el QHAWAY original ya practicó en 2024[^road-qhaway].
 
-**Fase 1 — MVP público (mes 1-6).** Lanzamiento abierto (sin login, con URLs compartibles) de los módulos 1 (Presupuesto Público), 3 (Riesgos Territoriales) y 4 (Pisos Altitudinales), reutilizando los activos live del equipo (Perú Transparente, peru-riesgos, Proyecto INTI) bajo marca FIEECS-UNI. Arquitectura 100 % estática: React + ECharts + MapLibre/Leaflet + JSON versionado por ETL Python en GitHub Actions. Es la fase de menor riesgo: los componentes ya existen y están operando en producción.
+**Fase 1 — MVP público (mes 1-6, EN MARCHA / parcialmente ENTREGADA).** Esta fase ya no es promesa: el dashboard estático está **live y verificable** en <https://unimauro.github.io/qhaway-dashboard/>[^road-fase1], con datos reales del SIAF-MEF 2025 (PIM ≈ S/ 272 mil millones) sobre los 1,834 distritos del dataset cartográfico. Estado por componente:
 
-**Fase 2 — Profundización analítica (mes 6-12).** Módulos 2 (Cambio Climático, continuidad del tablero "Inversión Verde" del QHAWAY original) y 5 (Índice de Prosperidad Territorial); incorporación de la capa de IA (consultas en lenguaje natural, resúmenes por territorio, patrón AskBot ya probado); backend FastAPI + PostgreSQL/PostGIS para consultas que el modelo estático no resuelve bien.
+- ✅ **Entregado:** dashboard estático abierto (sin login, URLs compartibles); módulos de Presupuesto, Pisos Altitudinales, Riesgos e IPT; chat de IA asistente; buscador global; Explorador con cruces **pre-computados**; evolución mensual 2025.
+- ⏳ **Pendiente de Fase 1:** serie histórica multi-año (requiere ingerir las tablas mensuales por cada año, no solo 2025); desagregación a nivel provincia; visibilidad explícita de la **cobertura de datos** (distinguir "sin ejecución" de "sin dato", §8.1) y de los 11 distritos del marco INEI aún no cubiertos por la cartografía.
 
-**Fase 3 — Escala y apertura (mes 12-24).** Módulos 6 (Simulador de Políticas, con supuestos siempre explícitos) y 7 (Observatorio Prospectivo); migración selectiva a AWS (CloudFront, S3, Lambda, RDS) solo de las cargas que lo requieran; API pública documentada (OpenAPI) para investigadores y periodistas de datos.
+Arquitectura 100 % estática: React + ECharts + MapLibre/Leaflet + JSON versionado por ETL Python en GitHub Actions. Es la fase de menor riesgo: los componentes ya existen y están operando en producción.
 
-| Fase | Periodo | Entregables clave | Condición de salida |
-|---|---|---|---|
-| 0 | Mes 0-1 | Convenio FIEECS, dominio/subdominio, kickoff | Resolución firmada y dominio operativo |
-| 1 | Mes 1-6 | MVP módulos 1, 3 y 4; lanzamiento público | Sitio live, open access, métricas de uso activas |
-| 2 | Mes 6-12 | Módulos 2 y 5; AskBot IA; FastAPI+PostGIS | API interna estable; IPT v1 publicado |
-| 3 | Mes 12-24 | Módulos 6-7; AWS; API pública OpenAPI | API pública con ≥1 caso de uso externo |
+**Fase 2 — Backend y cubo OLAP (mes 6-12, PROPUESTA).** Backend **FastAPI + PostgreSQL/PostGIS con esquema estrella** (§7.7) que habilita el **Explorador Multidimensional completo** (§8.8): el cubo OLAP con cruces arbitrarios en vivo (Presupuesto × Clima × Riesgos × Pobreza × Piso), *drill-down* hasta el proyecto y granularidad mensual histórica sobre ~11.4 M de filas/año. Se añade la API pública documentada (OpenAPI), los módulos 2 (Cambio Climático, continuidad del tablero "Inversión Verde") y 5/IPT consolidados, y la capa de IA sobre la API propia (patrón AskBot ya probado).
+
+**Fase 3 — Escala y apertura (mes 12-24, PROPUESTA).** Migración selectiva a AWS (CloudFront, S3, Lambda, RDS) solo de las cargas de alto tráfico; IA avanzada; Simulador de Políticas (módulo 7) y Prospectiva y Escenarios (módulo 6) con supuestos siempre explícitos; alta disponibilidad institucional con alternativa VPS de contención documentada.
+
+| Fase | Periodo | Estado | Entregables clave | Condición de salida |
+|---|---|---|---|---|
+| 0 | Mes 0-1 | ⏳ En curso | Convenio FIEECS, dominio/subdominio, kickoff | Resolución firmada y dominio operativo |
+| 1 | Mes 1-6 | ✅ Parcial (live) | Dashboard estático con datos reales 2025; módulos Presupuesto/Pisos/Riesgos/IPT; chat IA; buscador; Explorador pre-computado | Sitio live (✅); pendiente: serie multi-año, provincia, cobertura visible |
+| 2 | Mes 6-12 | 🔲 Propuesta | Cubo OLAP completo (cruces arbitrarios); FastAPI+PostGIS esquema estrella; API pública; drill-down a proyecto; mensual histórico | Cubo en vivo y API pública con ≥1 caso de uso externo |
+| 3 | Mes 12-24 | 🔲 Propuesta | IA avanzada; Simulador y Prospectiva; AWS/escala | Alta disponibilidad y simulador publicado |
 
 \newpage
 
@@ -626,6 +744,7 @@ Es decir: en el **Escenario A (mínimo viable)** la actualización mensual no a�
 
 [^road-qhaway]: QHAWAY — Observatorio del Presupuesto Público del Perú, anuncio institucional FIEECS-UNI (abril 2024): <https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/>
 [^road-wayback]: Snapshot del dashboard original (30-nov-2024) en Internet Archive, único acceso vigente al estar el dominio caído: <https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/>
+[^road-fase1]: Dashboard QHAWAY 2.0 — Fase 1, en línea y verificable con datos reales del SIAF-MEF 2025: <https://unimauro.github.io/qhaway-dashboard/>
 [^cost-pages]: GitHub Pages es gratuito para sitios de repositorios públicos, con límites de uso blando (~100 GB/mes de banda): <https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages>
 [^cost-rmv]: Remuneración Mínima Vital de S/ 1,130 vigente desde el 01-ene-2025 (D.S. N.° 006-2024-TR); la subvención mínima de prácticas preprofesionales se referencia a la RMV (Ley N.° 28518): <https://www.gob.pe/institucion/mtpe/noticias/1067253>
 [^cost-aws]: Estimación con la calculadora de precios de AWS para CloudFront + S3 + Lambda + RDS de bajo tráfico; debe recotizarse al diseñar la Fase 3: <https://calculator.aws/>
@@ -720,7 +839,7 @@ Se recomienda al Decanato y a las instancias competentes de FIEECS-UNI adoptar l
 
 | # | Recomendación | Responsable | Plazo |
 |---|---|---|---|
-| R1 | Aprobar formalmente el relanzamiento de QHAWAY como QHAWAY 2.0, con el alcance de 7 módulos descrito en este documento | Decanato FIEECS | Mes 0 (junio–julio 2026) |
+| R1 | Aprobar formalmente el relanzamiento de QHAWAY como QHAWAY 2.0, con el alcance del menú de 9 módulos descrito en este documento | Decanato FIEECS | Mes 0 (junio–julio 2026) |
 | R2 | Designar un comité académico del observatorio (3–5 docentes/investigadores) con funciones de validación metodológica y priorización | Decanato FIEECS | Mes 1 |
 | R3 | Firmar convenio o emitir resolución que formalice la colaboración con el equipo técnico proponente y la titularidad institucional de la marca | Decanato / Asesoría legal UNI | Mes 1–2 |
 | R4 | Recuperar el dominio `qhaway-fieecs.pe` o, preferentemente, crear `qhaway.uni.edu.pe` bajo el dominio institucional (sin renovaciones pagadas externas) | Oficina de TI UNI + comité | Mes 1–3 |
