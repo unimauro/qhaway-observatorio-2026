@@ -1,7 +1,7 @@
 ---
 title: "QHAWAY 2.0 — Observatorio Nacional de Inteligencia Territorial, Presupuesto Público, Cambio Climático, Riesgos y Desarrollo Humano"
 subtitle: "Propuesta institucional y técnica de relanzamiento — Facultad de Ingeniería Económica, Estadística y Ciencias Sociales, Universidad Nacional de Ingeniería"
-author: "Equipo proponente — Carlos Cárdenas Fernández (GitHub: unimauro)"
+author: "Carlos Cárdenas Fernández · Egresado UNI · unimauro.github.io"
 date: "Junio 2026"
 lang: es
 ---
@@ -1126,3 +1126,18 @@ Los ocho productos siguientes —siete publicados y verificables a junio de 2026
 | **ETL** | Extracción, Transformación y Carga (*Extract, Transform, Load*): proceso programado que toma datos de las fuentes, los limpia y estandariza, y los publica en formatos consumibles por la plataforma. |
 | **GeoJSON** | Formato abierto basado en JSON para representar geometrías geográficas (polígonos distritales, puntos, líneas) directamente consumible por bibliotecas web de mapas. |
 | **Coroplético** | Tipo de mapa temático que colorea unidades territoriales (distritos, provincias) según el valor de un indicador, permitiendo comparar territorios de un vistazo. |
+
+\newpage
+
+# Autoría y contacto
+
+**QHAWAY 2.0** es desarrollado y mantenido por **Carlos Cárdenas Fernández** —egresado de la Universidad Nacional de Ingeniería (UNI)—, proponente técnico del observatorio, con respaldo institucional de la FIEECS-UNI.
+
+| | |
+|---|---|
+| **Portafolio** | <https://unimauro.github.io/> |
+| **GitHub** | <https://github.com/unimauro> |
+| **LinkedIn** | <https://www.linkedin.com/in/carloscardenasf/> |
+| **Correo** | <carlos@cardenas.pe> |
+
+**Dashboard (observatorio live):** <https://unimauro.github.io/qhaway-dashboard/> · **API pública (docs):** <https://qhaway.tunky.net/docs>
