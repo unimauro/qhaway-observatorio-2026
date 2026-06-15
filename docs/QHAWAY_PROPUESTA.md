@@ -1,7 +1,7 @@
 ---
 title: "QHAWAY 2.0 — Observatorio Nacional de Inteligencia Territorial, Presupuesto Público, Cambio Climático, Riesgos y Desarrollo Humano"
 subtitle: "Propuesta institucional y técnica de relanzamiento — Facultad de Ingeniería Económica, Estadística y Ciencias Sociales, Universidad Nacional de Ingeniería"
-author: "Carlos Mauro Cárdenas Fernández · Ingeniero · Docente UNI-FIIS · Ciencia de Datos e IA"
+author: "Carlos Mauro Cárdenas Fernández · Ingeniero de Sistemas (UNI) · MBA · Ciencia de Datos e IA"
 date: "Junio 2026"
 lang: es
 ---
@@ -1131,9 +1131,9 @@ Los ocho productos siguientes —siete publicados y verificables a junio de 2026
 
 # Sobre el autor
 
-**Carlos Mauro Cárdenas Fernández** — Ingeniero y docente de la UNI-FIIS, especialista en ciencia de datos, inteligencia artificial e ingeniería de software aplicada a datos públicos.
+**Carlos Mauro Cárdenas Fernández** — **Ingeniero de Sistemas** por la Universidad Nacional de Ingeniería (UNI) y **MBA**, especialista en ciencia de datos, inteligencia artificial e ingeniería de software aplicada a datos públicos.
 
-Diseña y mantiene en producción una red de **observatorios de datos abiertos del Estado peruano** —entre ellos Perú Transparente, Proyecto INTI, Perú Riesgos y el Observatorio FONAFE—, con énfasis en transparencia fiscal e inteligencia territorial, servidos como plataformas abiertas y reproducibles. **QHAWAY 2.0** es una de estas plataformas, desarrollada como **consultoría para la Facultad de Ingeniería Económica, Estadística y Ciencias Sociales (FIEECS) de la Universidad Nacional de Ingeniería**, sobre componentes propios ya probados en producción.
+Diseña y mantiene en producción una red de **observatorios de datos abiertos del Estado peruano** —entre ellos Perú Transparente, Proyecto INTI, Perú Riesgos y el Observatorio FONAFE—, con énfasis en transparencia fiscal e inteligencia territorial, servidos como plataformas abiertas y reproducibles. El portafolio completo es verificable en su **GitHub** (<https://github.com/unimauro>). **QHAWAY 2.0** es una de estas plataformas, desarrollada como **consultoría para la Facultad de Ingeniería Económica, Estadística y Ciencias Sociales (FIEECS) de la Universidad Nacional de Ingeniería**, sobre componentes propios ya probados en producción.
 
 | Contacto | |
 |---|---|
