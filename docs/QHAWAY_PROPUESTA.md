@@ -56,6 +56,35 @@ Tres cifras resumen la ambición: el marco territorial oficial del INEI —**1,8
 [^res-inei]: Demarcación político-administrativa oficial del Perú según el INEI: 24 departamentos más la Provincia Constitucional del Callao, 195 provincias y 1,845 distritos; cartografía y demarcación distrital del INEI: <https://www.inei.gob.pe>. El dataset cartográfico vigente de la plataforma cubre 1,834 de esos 1,845 distritos, brecha que el observatorio declara explícitamente.
 
 
+## 1.1 Alcances culminados (estado de avance a junio de 2026)
+
+Lo que sigue ya está **entregado y verificable en línea** —no es plan, es producto—. Las Fases 1 y 2 del roadmap (§9) están operativas.
+
+**Plataforma y módulos**
+
+- ✅ Dashboard público *live*, sin login y con URLs compartibles: <https://unimauro.github.io/qhaway-dashboard/>
+- ✅ **Once módulos operativos**: Inicio · Presupuesto Público · Pisos Altitudinales · Riesgos Territoriales · Prosperidad (IPT) · Cambio Climático · Explorador Multidimensional · Cubo Presupuestal (OLAP en vivo) · Evolución Regional 2004-2026 · Cobertura Territorial · Metodología y FAQ.
+- ✅ Asistente de IA **Ninacha** (motor híbrido de costo casi nulo), buscador global (Ctrl+K) y modo oscuro.
+
+**Datos**
+
+- ✅ **Detalle presupuestal distrital de los 15 ejercicios 2012-2026** (~1,890 distritos por año), cargado y **conciliado al céntimo** contra el total nacional en todos los cortes (función, sector, nivel de gobierno, distrito), con la única salvedad declarada de 2012 (§9.1).
+- ✅ Serie nacional y regional por destino territorial 2004-2026 (22 años), vía scraper propio de la Consulta Amigable del MEF.
+- ✅ Inversión ambiental/climática (proxy por función: Ambiente, Saneamiento, Agropecuaria, Energía) para los 15 años.
+
+**Backend y API (Fase 2, operativa)**
+
+- ✅ Backend **FastAPI + PostgreSQL** en producción (HTTPS) en <https://qhaway.tunky.net>, consumido por el dashboard con respaldo automático a datos estáticos.
+- ✅ Seguridad: CORS restringido, límite de tasa por IP, solo lectura, base de datos no expuesta y clave de IA oculta en el servidor.
+- ✅ **API pública documentada** (OpenAPI): Swagger <https://qhaway.tunky.net/docs> y ReDoc <https://qhaway.tunky.net/redoc> — entregable académico reutilizable por terceros.
+- ✅ **Cubo OLAP en vivo** (`/api/cubo-pivot`): pivote 2D (función/fuente × nivel/departamento × PIM/devengado) calculado en tiempo real.
+
+**Rigor y reproducibilidad**
+
+- ✅ Pipeline ETL reproducible (Python, público) con migración paralela y **prueba de conciliación**; cada cifra es reconstruible desde la fuente primaria.
+
+Lo **pendiente** —Simulador de Políticas, Prospectiva 2030/2040/2050, Laboratorio Académico FIEECS, el etiquetado climático fino por marcadores de Río y la migración selectiva a nube— corresponde a la **Fase 3** y se ordena en el roadmap (§9).
+
 # 2. Diagnóstico
 
 ## 2.1 El QHAWAY original (2024): un mérito que debe reconocerse

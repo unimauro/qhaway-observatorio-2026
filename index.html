@@ -62,7 +62,12 @@ unimauro)</p>
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#resumen-ejecutivo" id="toc-resumen-ejecutivo">1. Resumen
-Ejecutivo</a></li>
+Ejecutivo</a>
+<ul>
+<li><a href="#alcances-culminados-estado-de-avance-a-junio-de-2026"
+id="toc-alcances-culminados-estado-de-avance-a-junio-de-2026">1.1
+Alcances culminados (estado de avance a junio de 2026)</a></li>
+</ul></li>
 <li><a href="#diagnóstico" id="toc-diagnóstico">2. Diagnóstico</a>
 <ul>
 <li><a href="#el-qhaway-original-2024-un-mérito-que-debe-reconocerse"
@@ -111,14 +116,18 @@ href="#fase-3-12-24-meses-nube-gestionada-con-alternativa-de-contención"
 id="toc-fase-3-12-24-meses-nube-gestionada-con-alternativa-de-contención">7.3
 Fase 3 (12-24 meses): nube gestionada con alternativa de
 contención</a></li>
-<li><a href="#capa-de-ia-agnóstica-del-proveedor-y-con-guardrails"
-id="toc-capa-de-ia-agnóstica-del-proveedor-y-con-guardrails">7.4 Capa de
-IA: agnóstica del proveedor y con guardrails</a></li>
+<li><a
+href="#capa-de-ia-ninacha-agnóstica-del-proveedor-y-con-guardrails"
+id="toc-capa-de-ia-ninacha-agnóstica-del-proveedor-y-con-guardrails">7.4
+Capa de IA: “Ninacha”, agnóstica del proveedor y con guardrails</a></li>
 <li><a href="#stack-por-fase" id="toc-stack-por-fase">7.5 Stack por
 fase</a></li>
 <li><a href="#seguridad-y-reproducibilidad"
 id="toc-seguridad-y-reproducibilidad">7.6 Seguridad y
 reproducibilidad</a></li>
+<li><a href="#modelo-de-datos-del-cubo-esquema-estrella"
+id="toc-modelo-de-datos-del-cubo-esquema-estrella">7.7 Modelo de datos
+del cubo: esquema estrella</a></li>
 </ul></li>
 <li><a href="#módulos-de-la-plataforma"
 id="toc-módulos-de-la-plataforma">8. Módulos de la Plataforma</a>
@@ -140,8 +149,22 @@ id="toc-simulador-de-políticas-públicas">8.6 Simulador de Políticas
 Públicas</a></li>
 <li><a href="#observatorio-prospectivo"
 id="toc-observatorio-prospectivo">8.7 Observatorio Prospectivo</a></li>
+<li><a href="#explorador-presupuestal-multidimensional-cubo-olap"
+id="toc-explorador-presupuestal-multidimensional-cubo-olap">8.8
+Explorador Presupuestal Multidimensional (Cubo OLAP)</a></li>
+<li><a href="#evolución-regional-2004-2026"
+id="toc-evolución-regional-2004-2026">8.9 Evolución Regional
+2004-2026</a></li>
+<li><a href="#cobertura-territorial" id="toc-cobertura-territorial">8.10
+Cobertura Territorial</a></li>
 </ul></li>
-<li><a href="#roadmap" id="toc-roadmap">9. Roadmap</a></li>
+<li><a href="#roadmap" id="toc-roadmap">9. Roadmap</a>
+<ul>
+<li><a
+href="#estrategia-de-datos-el-presupuesto-histórico-a-nivel-distrital"
+id="toc-estrategia-de-datos-el-presupuesto-histórico-a-nivel-distrital">9.1
+Estrategia de datos: el presupuesto histórico a nivel distrital</a></li>
+</ul></li>
 <li><a href="#costos-estimados" id="toc-costos-estimados">10. Costos
 Estimados</a>
 <ul>
@@ -229,7 +252,19 @@ georreferenciados) y Perú Riesgos<a href="#fn3" class="footnote-ref"
 id="fnref3" role="doc-noteref"><sup>3</sup></a>. QHAWAY 2.0 no parte de
 cero: reutiliza componentes operativos y los pone bajo el respaldo
 institucional de la FIEECS-UNI.</p>
-<p>El observatorio se organiza en <strong>siete módulos</strong>:</p>
+<p>El observatorio <strong>ya está live y navegable</strong> en <a
+href="https://unimauro.github.io/qhaway-dashboard/"
+class="uri">https://unimauro.github.io/qhaway-dashboard/</a> con un
+<strong>menú de once módulos operativos</strong>: 🏠 Inicio · 🏛
+Presupuesto Público · 🗺 Pisos Altitudinales · (!) Riesgos Territoriales
+· Prosperidad (IPT) · 🌡 Cambio Climático · 🔍 Explorador
+Multidimensional · 🧊 Cubo Presupuestal (OLAP en vivo) · 📈 Evolución
+Regional 2004-2026 · 🧭 Cobertura Territorial · 📚 Metodología y FAQ. A
+estos módulos entregados, la propuesta suma una agenda de módulos
+<strong>propuestos</strong> para la Fase 3 (Simulador de Políticas,
+Prospectiva 2030/2040/2050 y Laboratorio Académico FIEECS), claramente
+marcados como tales.</p>
+<p><strong>Módulos entregados (live hoy):</strong></p>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -246,64 +281,148 @@ institucional de la FIEECS-UNI.</p>
 <tbody>
 <tr>
 <td>1</td>
-<td>Presupuesto Público</td>
-<td>PIA/PIM/Devengado/Girado por distrito, sector y programa</td>
+<td>🏠 Inicio</td>
+<td>KPIs nacionales y tendencia del presupuesto público a lo largo de 22
+años</td>
 </tr>
 <tr>
 <td>2</td>
-<td>Cambio Climático</td>
-<td>Cuánto y dónde invierte el Perú en adaptación y mitigación</td>
+<td>🏛 Presupuesto Público</td>
+<td>PIA/PIM/Devengado/Girado por distrito (15 años 2012-2026), función,
+sector y nivel, con Sankey, treemap y evolución mensual</td>
 </tr>
 <tr>
 <td>3</td>
-<td>Riesgos Territoriales</td>
-<td>Inundaciones, sequías, heladas, huaicos, estrés hídrico</td>
+<td>🗺 Pisos Altitudinales</td>
+<td>Composición de cada distrito según las 8 regiones naturales; %
+población vs. % presupuesto y per cápita por piso</td>
 </tr>
 <tr>
 <td>4</td>
-<td>Pisos Altitudinales</td>
-<td>Composición de cada distrito según las 8 regiones naturales</td>
+<td>(!) Riesgos Territoriales</td>
+<td>Exposición a peligros por región, cruzada con territorio</td>
 </tr>
 <tr>
 <td>5</td>
-<td>Índice de Prosperidad Territorial (IPT)</td>
-<td>Educación, salud, economía y servicios por territorio</td>
+<td>Prosperidad (IPT)</td>
+<td>Índice de Prosperidad Territorial por distrito (educación, salud,
+economía, servicios)</td>
 </tr>
 <tr>
 <td>6</td>
-<td>Simulador de Políticas</td>
-<td>Escenarios con elasticidades de literatura OCDE/BM, supuestos
-explícitos</td>
+<td>🌡 Cambio Climático</td>
+<td>Inversión ambiental/climática (proxy por función) territorializada +
+cruce riesgo climático vs. inversión per cápita</td>
 </tr>
 <tr>
 <td>7</td>
-<td>Observatorio Prospectivo</td>
-<td>Escenarios territoriales 2030/2040/2050 con apoyo de IA</td>
+<td>🔍 Explorador Multidimensional</td>
+<td>Cruza función/fuente x territorio x nivel, con atribución por
+destino (META) vs. ejecutora y cobertura de datos</td>
+</tr>
+<tr>
+<td>8</td>
+<td>🧊 Cubo Presupuestal (OLAP)</td>
+<td>Pivote 2D en vivo: cruza función/fuente x nivel/departamento x
+PIM/devengado, calculado por la API en tiempo real</td>
+</tr>
+<tr>
+<td>9</td>
+<td>📈 Evolución Regional 2004-2026</td>
+<td>Presupuesto por departamento para cada uno de 22 años: mapa por año,
+ranking y serie temporal por departamento</td>
+</tr>
+<tr>
+<td>10</td>
+<td>🧭 Cobertura Territorial</td>
+<td>Tres estados del dato (“con dato” / “sin dato” / “no existía”) y
+timeline de demarcación de distritos</td>
+</tr>
+<tr>
+<td>11</td>
+<td>📚 Metodología y FAQ</td>
+<td>Glosario, guía de gráficos, presentación de la marca y la nota del
+vacío de datos distritales por destino</td>
 </tr>
 </tbody>
 </table>
-<p>El <strong>diferencial único</strong> es el módulo de pisos
-altitudinales: cruzando los límites distritales con un modelo digital de
-elevación (SRTM/Copernicus 30 m), cada distrito se descompone
-porcentualmente en las ocho regiones naturales de Javier Pulgar Vidal
-(Chala, Yunga, Quechua, Suni, Puna, Janca, Selva Alta, Selva Baja)<a
-href="#fn4" class="footnote-ref" id="fnref4"
-role="doc-noteref"><sup>4</sup></a>. Esto permite responder preguntas
-que hoy ninguna plataforma pública responde: ¿cuánto presupuesto recibe
-la puna?, ¿cuánta inversión climática llega a los territorios amazónicos
-o a los distritos más vulnerables a heladas?</p>
+<p>A ello se suman, de forma transversal, <strong>Ninacha</strong> –el
+asistente de IA flotante del observatorio (motor híbrido de costo casi
+nulo, §7.4)–, un <strong>buscador global</strong> (Ctrl+K) y modo
+oscuro. Los módulos <strong>propuestos</strong> para la Fase 3
+–Simulador de Políticas Públicas, Prospectiva y Escenarios
+2030/2040/2050, y Laboratorio Académico FIEECS– se describen en §8 y se
+ordenan en el roadmap de §9.</p>
+<p>El <strong>diferencial estrella</strong> frente al portal del MEF es
+el <strong>Explorador Presupuestal Multidimensional</strong> (módulo 8,
+§8.8): un “cubo presupuestal” que permite navegar desde lo nacional
+hasta el proyecto específico cruzando dimensiones –presupuesto x cambio
+climático x riesgos x pobreza x piso altitudinal– para responder, por
+ejemplo, qué distritos suman alta vulnerabilidad climática, alta pobreza
+y baja inversión pública. Ninguna plataforma pública peruana ofrece hoy
+ese cruce integrado. A ello se suma el <strong>diferencial
+territorial</strong> de los pisos altitudinales (módulo 5): cruzando los
+límites distritales con un modelo digital de elevación (SRTM/Copernicus
+30 m), cada distrito se descompone porcentualmente en las ocho regiones
+naturales de Javier Pulgar Vidal (Chala, Yunga, Quechua, Suni, Puna,
+Janca, Selva Alta, Selva Baja)<a href="#fn4" class="footnote-ref"
+id="fnref4" role="doc-noteref"><sup>4</sup></a>, lo que permite
+responder ¿cuánto presupuesto recibe la puna?, ¿cuánta inversión
+climática llega a los territorios amazónicos o a los distritos más
+vulnerables a heladas?</p>
+<blockquote>
+<p><strong>QHAWAY no replica la Consulta Amigable del MEF. QHAWAY
+transforma la información presupuestal en inteligencia
+territorial</strong>, mediante la integración de presupuesto, inversión
+pública, riesgos, cambio climático, desarrollo humano y prospectiva. El
+MEF muestra <em>dónde está el dinero</em>; QHAWAY explica <em>qué
+significa ese dinero para el desarrollo de los territorios</em>.</p>
+</blockquote>
+<p>Un ejemplo concreto del salto de valor: en el SIAF, el presupuesto
+del Gobierno Nacional aparece –si se mira por unidad ejecutora–
+concentrado en Lima (S/ 145.5 mil millones de PIM 2025 frente a montos
+ínfimos en el resto). Pero esos proyectos están georreferenciados a su
+<strong>destino territorial</strong> (campo
+<code>DEPARTAMENTO_META</code>): leído así, el mismo presupuesto
+nacional se redistribuye realmente entre regiones –Cusco S/ 4.3 mil M,
+Áncash S/ 3.6 mil M, Piura S/ 3.4 mil M, Puno S/ 2.9 mil M, Cajamarca S/
+2.8 mil M…<a href="#fn5" class="footnote-ref" id="fnref5"
+role="doc-noteref"><sup>5</sup></a>. QHAWAY hace visible esa atribución
+territorial real, que el portal del MEF no expone de forma directa: es
+la diferencia entre saber <em>quién administra</em> el dinero y saber
+<em>a qué territorio llega</em>.</p>
+<p>La propuesta no es teórica: <strong>las Fases 1 y 2 ya están
+operativas y son verificables hoy</strong> en <a
+href="https://unimauro.github.io/qhaway-dashboard/"
+class="uri">https://unimauro.github.io/qhaway-dashboard/</a><a
+href="#fn6" class="footnote-ref" id="fnref6"
+role="doc-noteref"><sup>6</sup></a>, con datos reales del SIAF-MEF: el
+<strong>detalle presupuestal a nivel distrital de los 15 ejercicios
+2012-2026</strong> (~ 1,890 distritos por año, de S/ 122 mil M en 2012 a
+S/ 272 mil M en 2025), <strong>cargado y conciliado</strong> contra el
+total nacional, más una <strong>serie nacional y regional 2004-2026 (22
+años)</strong> del presupuesto por destino territorial. Todo ello
+servido por un <strong>backend propio (FastAPI + PostgreSQL) en
+producción</strong> (<code>qhaway.tunky.net</code>, con API pública
+documentada) y con respaldo automático a datos estáticos. Operan ya los
+once módulos del menú –incluidos <strong>Cambio Climático</strong>, el
+<strong>Cubo OLAP en vivo</strong>, <strong>Evolución Regional
+2004-2026</strong> y <strong>Cobertura Territorial</strong>–, el
+asistente Ninacha y el buscador global.</p>
 <p>La implementación se escalona en <strong>tres fases</strong>: la Fase
 1 (0-6 meses) entrega el observatorio completo como sitio estático en
 GitHub Pages con ETL en Python, <strong>con costo de infraestructura ~
 US$ 0</strong> –el mismo patrón ya probado en los observatorios live del
-equipo–; la Fase 2 (6-12 meses) añade backend FastAPI,
-PostgreSQL/PostGIS y una API pública documentada; la Fase 3 (12-24
-meses) escala a nube AWS con CDN e infraestructura como código, con
-alternativa de contención de costos documentada. La plataforma integrará
-14+ fuentes oficiales, entre ellas MEF Consulta Amigable, INEI,
-MINEDU-ESCALE, MINSA, CENEPRED-SIGRID, SENAMHI, CEPLAN y la API OCDS del
-OECE<a href="#fn5" class="footnote-ref" id="fnref5"
-role="doc-noteref"><sup>5</sup></a>.</p>
+equipo–; la Fase 2 (6-12 meses) <strong>ya está operativa</strong>
+–backend FastAPI + PostgreSQL en producción, detalle distrital de 15
+años cargado y conciliado, API pública documentada (OpenAPI), Cubo OLAP
+en vivo y el asistente Ninacha–; la Fase 3 (12-24 meses) escala a nube
+AWS con CDN e infraestructura como código, con alternativa de contención
+de costos documentada. La plataforma integrará 14+ fuentes oficiales,
+entre ellas MEF Consulta Amigable, INEI, MINEDU-ESCALE, MINSA,
+CENEPRED-SIGRID, SENAMHI, CEPLAN y la API OCDS del OECE<a href="#fn7"
+class="footnote-ref" id="fnref7"
+role="doc-noteref"><sup>7</sup></a>.</p>
 <p><strong>El pedido concreto a la FIEECS-UNI</strong> es de respaldo,
 no de presupuesto de infraestructura: (i) <strong>respaldo
 institucional</strong> del Decanato para que QHAWAY 2.0 sea el
@@ -314,25 +433,89 @@ caída del original); y (iii) <strong>equipo académico</strong>: docentes
 e investigadores que validen metodologías, y estudiantes de Ingeniería
 Económica y Estadística que participen vía cursos, tesis y prácticas. La
 Fase 1 es demostrable en seis meses sin inversión en servidores.</p>
-<p>Tres cifras resumen la ambición: <strong>1,891 distritos</strong> con
-información territorial, <strong>8 pisos altitudinales</strong> como
-lente de análisis inédito del presupuesto, y <strong>14+ fuentes
-oficiales</strong> integradas en una sola plataforma abierta.</p>
+<p>Tres cifras resumen la ambición: el marco territorial oficial del
+INEI –<strong>1,845 distritos, 195 provincias y 24 departamentos más la
+Provincia Constitucional del Callao</strong><a href="#fn8"
+class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>–
+como universo de cobertura (el dataset cartográfico vigente cubre 1,834
+de esos 1,845 distritos, y la plataforma indica con honestidad los que
+faltan); <strong>8 pisos altitudinales</strong> como lente de análisis
+inédito del presupuesto; y <strong>14+ fuentes oficiales</strong>
+integradas en una sola plataforma abierta.</p>
+<h2 id="alcances-culminados-estado-de-avance-a-junio-de-2026">1.1
+Alcances culminados (estado de avance a junio de 2026)</h2>
+<p>Lo que sigue ya está <strong>entregado y verificable en
+línea</strong> –no es plan, es producto–. Las Fases 1 y 2 del roadmap
+(§9) están operativas.</p>
+<p><strong>Plataforma y módulos</strong></p>
+<ul>
+<li>[SI] Dashboard público <em>live</em>, sin login y con URLs
+compartibles: <a href="https://unimauro.github.io/qhaway-dashboard/"
+class="uri">https://unimauro.github.io/qhaway-dashboard/</a></li>
+<li>[SI] <strong>Once módulos operativos</strong>: Inicio · Presupuesto
+Público · Pisos Altitudinales · Riesgos Territoriales · Prosperidad
+(IPT) · Cambio Climático · Explorador Multidimensional · Cubo
+Presupuestal (OLAP en vivo) · Evolución Regional 2004-2026 · Cobertura
+Territorial · Metodología y FAQ.</li>
+<li>[SI] Asistente de IA <strong>Ninacha</strong> (motor híbrido de
+costo casi nulo), buscador global (Ctrl+K) y modo oscuro.</li>
+</ul>
+<p><strong>Datos</strong></p>
+<ul>
+<li>[SI] <strong>Detalle presupuestal distrital de los 15 ejercicios
+2012-2026</strong> (~1,890 distritos por año), cargado y
+<strong>conciliado al céntimo</strong> contra el total nacional en todos
+los cortes (función, sector, nivel de gobierno, distrito), con la única
+salvedad declarada de 2012 (§9.1).</li>
+<li>[SI] Serie nacional y regional por destino territorial 2004-2026 (22
+años), vía scraper propio de la Consulta Amigable del MEF.</li>
+<li>[SI] Inversión ambiental/climática (proxy por función: Ambiente,
+Saneamiento, Agropecuaria, Energía) para los 15 años.</li>
+</ul>
+<p><strong>Backend y API (Fase 2, operativa)</strong></p>
+<ul>
+<li>[SI] Backend <strong>FastAPI + PostgreSQL</strong> en producción
+(HTTPS) en <a href="https://qhaway.tunky.net"
+class="uri">https://qhaway.tunky.net</a>, consumido por el dashboard con
+respaldo automático a datos estáticos.</li>
+<li>[SI] Seguridad: CORS restringido, límite de tasa por IP, solo
+lectura, base de datos no expuesta y clave de IA oculta en el
+servidor.</li>
+<li>[SI] <strong>API pública documentada</strong> (OpenAPI): Swagger <a
+href="https://qhaway.tunky.net/docs"
+class="uri">https://qhaway.tunky.net/docs</a> y ReDoc <a
+href="https://qhaway.tunky.net/redoc"
+class="uri">https://qhaway.tunky.net/redoc</a> – entregable académico
+reutilizable por terceros.</li>
+<li>[SI] <strong>Cubo OLAP en vivo</strong>
+(<code>/api/cubo-pivot</code>): pivote 2D (función/fuente x
+nivel/departamento x PIM/devengado) calculado en tiempo real.</li>
+</ul>
+<p><strong>Rigor y reproducibilidad</strong></p>
+<ul>
+<li>[SI] Pipeline ETL reproducible (Python, público) con migración
+paralela y <strong>prueba de conciliación</strong>; cada cifra es
+reconstruible desde la fuente primaria.</li>
+</ul>
+<p>Lo <strong>pendiente</strong> –Simulador de Políticas, Prospectiva
+2030/2040/2050, Laboratorio Académico FIEECS, el etiquetado climático
+fino por marcadores de Río y la migración selectiva a nube– corresponde
+a la <strong>Fase 3</strong> y se ordena en el roadmap (§9).</p>
 <h1 id="diagnóstico">2. Diagnóstico</h1>
 <h2 id="el-qhaway-original-2024-un-mérito-que-debe-reconocerse">2.1 El
 QHAWAY original (2024): un mérito que debe reconocerse</h2>
 <p>En abril de 2024, la FIEECS-UNI anunció QHAWAY, el “Observatorio del
 Presupuesto Público del Perú”, concebido como herramienta de docencia,
-investigación e incidencia pública<a href="#fn6" class="footnote-ref"
-id="fnref6" role="doc-noteref"><sup>6</sup></a>. Fue una apuesta
+investigación e incidencia pública<a href="#fn9" class="footnote-ref"
+id="fnref9" role="doc-noteref"><sup>9</sup></a>. Fue una apuesta
 institucional valiosa y, en varios sentidos, pionera dentro de la
 universidad pública peruana: pocas facultades del país han intentado
 convertir los datos del MEF en un producto digital propio, con identidad
 de marca y vocación ciudadana.</p>
 <p>La evidencia archivada del dashboard –snapshot de Wayback Machine del
-30 de noviembre de 2024<a href="#fn7" class="footnote-ref" id="fnref7"
-role="doc-noteref"><sup>7</sup></a>– permite documentar con precisión lo
-que QHAWAY logró construir:</p>
+30 de noviembre de 2024<a href="#fn10" class="footnote-ref" id="fnref10"
+role="doc-noteref"><sup>10</sup></a>– permite documentar con precisión
+lo que QHAWAY logró construir:</p>
 <ul>
 <li><strong>Cuatro tableros temáticos</strong>: (1) Gastos MEF –
 Ejecución Presupuestal, (2) Inversión Verde – Impacto en el Cambio
@@ -455,44 +638,44 @@ técnico (Carlos Cárdenas Fernández, egresado UNI):</p>
 </thead>
 <tbody>
 <tr>
-<td>Perú Transparente<a href="#fn8" class="footnote-ref" id="fnref8"
-role="doc-noteref"><sup>8</sup></a></td>
+<td>Perú Transparente<a href="#fn11" class="footnote-ref" id="fnref11"
+role="doc-noteref"><sup>11</sup></a></td>
 <td>213 mil servidores públicos; ECharts, MapLibre, Cytoscape; SEO/OG
 dinámico; export CSV; ETL Python (MEF, gob.pe, OECE)</td>
 </tr>
 <tr>
-<td>Obs. de Poder Económico<a href="#fn9" class="footnote-ref"
-id="fnref9" role="doc-noteref"><sup>9</sup></a></td>
+<td>Obs. de Poder Económico<a href="#fn12" class="footnote-ref"
+id="fnref12" role="doc-noteref"><sup>12</sup></a></td>
 <td>Grafos offline (PageRank, Louvain) e índice compuesto EPI 0-100:
 metodología heredable para índices territoriales</td>
 </tr>
 <tr>
-<td>Perú Riesgos<a href="#fn10" class="footnote-ref" id="fnref10"
-role="doc-noteref"><sup>10</sup></a></td>
+<td>Perú Riesgos<a href="#fn13" class="footnote-ref" id="fnref13"
+role="doc-noteref"><sup>13</sup></a></td>
 <td>14 secciones de riesgos (sismos, El Niño, huaicos, heladas) con 6
 simuladores client-side y simulaciones compartibles por URL</td>
 </tr>
 <tr>
-<td>Proyecto INTI<a href="#fn11" class="footnote-ref" id="fnref11"
-role="doc-noteref"><sup>11</sup></a></td>
+<td>Proyecto INTI<a href="#fn14" class="footnote-ref" id="fnref14"
+role="doc-noteref"><sup>14</sup></a></td>
 <td>GeoJSON de 1,891 distritos + UBIGEO; IDH y pobreza distrital;
 prospectiva 2075 con escenarios</td>
 </tr>
 <tr>
-<td>Obs. FONAFE<a href="#fn12" class="footnote-ref" id="fnref12"
-role="doc-noteref"><sup>12</sup></a></td>
+<td>Obs. FONAFE<a href="#fn15" class="footnote-ref" id="fnref15"
+role="doc-noteref"><sup>15</sup></a></td>
 <td>ETL modular versionado con snapshots y patrón anti-overclaiming
 (datos marcados <em>verified</em>/<em>estimate</em>); AskBot con IA</td>
 </tr>
 <tr>
-<td>Obs. Defensa-Interior<a href="#fn13" class="footnote-ref"
-id="fnref13" role="doc-noteref"><sup>13</sup></a></td>
+<td>Obs. Defensa-Interior<a href="#fn16" class="footnote-ref"
+id="fnref16" role="doc-noteref"><sup>16</sup></a></td>
 <td>Patrón de presupuesto sectorial + asistente IA client-side sin
 backend (costo operativo cero)</td>
 </tr>
 <tr>
-<td>Obs. Smartphones Adolescentes<a href="#fn14" class="footnote-ref"
-id="fnref14" role="doc-noteref"><sup>14</sup></a></td>
+<td>Obs. Smartphones Adolescentes<a href="#fn17" class="footnote-ref"
+id="fnref17" role="doc-noteref"><sup>17</sup></a></td>
 <td>i18n en 10 idiomas con prerender; procedencia de datos por registro;
 biblioteca con DOI</td>
 </tr>
@@ -511,8 +694,8 @@ capacidad futura.</p>
 <h2 id="la-brecha-nacional-que-qhaway-2.0-debe-cerrar">2.4 La brecha
 nacional que QHAWAY 2.0 debe cerrar</h2>
 <p>El Estado peruano publica sus datos presupuestales: la Consulta
-Amigable del MEF<a href="#fn15" class="footnote-ref" id="fnref15"
-role="doc-noteref"><sup>15</sup></a> permite, en teoría, descender hasta
+Amigable del MEF<a href="#fn18" class="footnote-ref" id="fnref18"
+role="doc-noteref"><sup>18</sup></a> permite, en teoría, descender hasta
 el detalle del gasto. En la práctica, su uso exige conocer la jerarquía
 PIA/PIM/Devengado, navegar menús anidados y entender clasificadores
 funcionales-programáticos. El resultado es que hoy un ciudadano de a pie
@@ -534,16 +717,16 @@ está abierta hoy; cada una de estas condiciones es verificable.</p>
 <p><strong>(a) Los datos abiertos del Estado peruano alcanzaron masa
 crítica.</strong> El MEF expone la ejecución presupuestal completa –PIA,
 PIM, Devengado, Girado– a nivel distrital y mensual vía Consulta
-Amigable<a href="#fn16" class="footnote-ref" id="fnref16"
-role="doc-noteref"><sup>16</sup></a>; el OECE publica todas las
+Amigable<a href="#fn19" class="footnote-ref" id="fnref19"
+role="doc-noteref"><sup>19</sup></a>; el OECE publica todas las
 contrataciones públicas en estándar internacional OCDS mediante API<a
-href="#fn17" class="footnote-ref" id="fnref17"
-role="doc-noteref"><sup>17</sup></a>; CENEPRED mantiene en SIGRID
-escenarios y registros de riesgo georreferenciados<a href="#fn18"
-class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a>;
+href="#fn20" class="footnote-ref" id="fnref20"
+role="doc-noteref"><sup>20</sup></a>; CENEPRED mantiene en SIGRID
+escenarios y registros de riesgo georreferenciados<a href="#fn21"
+class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a>;
 y el Portal Nacional de Datos Abiertos agrega miles de datasets de
-entidades<a href="#fn19" class="footnote-ref" id="fnref19"
-role="doc-noteref"><sup>19</sup></a>. El insumo ya no es el cuello de
+entidades<a href="#fn22" class="footnote-ref" id="fnref22"
+role="doc-noteref"><sup>22</sup></a>. El insumo ya no es el cuello de
 botella: lo es la capacidad de integrarlo, limpiarlo y narrarlo. Esa es
 precisamente la competencia que la FIEECS forma.</p>
 <p><strong>(b) El costo marginal de publicar cayó a prácticamente
@@ -552,9 +735,9 @@ recurrentes de dominio y hosting. La arquitectura de sitio estático
 sobre GitHub Pages –con ETL en Python versionado y JSON estático–
 elimina ese riesgo: el equipo proponente opera hoy siete observatorios
 live bajo este patrón con costo de infraestructura de US$ 0, entre ellos
-Perú Transparente<a href="#fn20" class="footnote-ref" id="fnref20"
-role="doc-noteref"><sup>20</sup></a> y Perú Riesgos<a href="#fn21"
-class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a>
+Perú Transparente<a href="#fn23" class="footnote-ref" id="fnref23"
+role="doc-noteref"><sup>23</sup></a> y Perú Riesgos<a href="#fn24"
+class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a>
 (detalle en §2.3). No es una hipótesis: es un patrón en producción.</p>
 <p><strong>(c) La IA generativa elimina la barrera del
 especialista.</strong> Hasta hace poco, preguntar “¿cuánto ejecutó mi
@@ -571,10 +754,10 @@ reproducibles. QHAWAY 2.0 convierte a la facultad en proveedora de datos
 de investigación, no solo consumidora.</p>
 <p><strong>(e) La agenda climática y de riesgos carece de tablero
 territorial público.</strong> El Perú reporta NDC al Acuerdo de París<a
-href="#fn22" class="footnote-ref" id="fnref22"
-role="doc-noteref"><sup>22</sup></a> y está adherido al Marco de Sendai
-para la Reducción del Riesgo de Desastres<a href="#fn23"
-class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a>,
+href="#fn25" class="footnote-ref" id="fnref25"
+role="doc-noteref"><sup>25</sup></a> y está adherido al Marco de Sendai
+para la Reducción del Riesgo de Desastres<a href="#fn26"
+class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a>,
 pero no existe una plataforma pública que cruce inversión climática,
 exposición a peligros y territorio a nivel distrital. El tablero
 “Inversión Verde” del QHAWAY original intuyó esta necesidad; QHAWAY 2.0
@@ -602,20 +785,20 @@ probado internacionalmente</h2>
 </thead>
 <tbody>
 <tr>
-<td>Our World in Data<a href="#fn24" class="footnote-ref" id="fnref24"
-role="doc-noteref"><sup>24</sup></a></td>
+<td>Our World in Data<a href="#fn27" class="footnote-ref" id="fnref27"
+role="doc-noteref"><sup>27</sup></a></td>
 <td>Académico (Oxford), open access, gráficos compartibles con URL</td>
 <td>Una universidad puede ser referencia global de datos públicos</td>
 </tr>
 <tr>
-<td>World Bank Data<a href="#fn25" class="footnote-ref" id="fnref25"
-role="doc-noteref"><sup>25</sup></a></td>
+<td>World Bank Data<a href="#fn28" class="footnote-ref" id="fnref28"
+role="doc-noteref"><sup>28</sup></a></td>
 <td>Datos abiertos + API + visualización simple</td>
 <td>Acceso sin registro multiplica el uso</td>
 </tr>
 <tr>
-<td>OECD Data Explorer<a href="#fn26" class="footnote-ref" id="fnref26"
-role="doc-noteref"><sup>26</sup></a></td>
+<td>OECD Data Explorer<a href="#fn29" class="footnote-ref" id="fnref29"
+role="doc-noteref"><sup>29</sup></a></td>
 <td>Explorador unificado de indicadores comparables</td>
 <td>La integración multi-fuente es el valor, no el dato aislado</td>
 </tr>
@@ -635,15 +818,17 @@ Chumbivilcas miran –con el mismo dato y la misma fuente– cuánto
 presupuesto llega a su territorio, qué riesgos lo amenazan y cómo
 evoluciona su prosperidad. Operado académicamente por la FIEECS-UNI,
 QHAWAY 2.0 recupera y amplía el mandato del observatorio anunciado en
-abril de 2024<a href="#fn27" class="footnote-ref" id="fnref27"
-role="doc-noteref"><sup>27</sup></a>, esta vez sobre una base técnica ya
+abril de 2024<a href="#fn30" class="footnote-ref" id="fnref30"
+role="doc-noteref"><sup>30</sup></a>, esta vez sobre una base técnica ya
 demostrada en producción y con un modelo de sostenibilidad que evita
 repetir la caída del dashboard original.</p>
 <p><strong>Misión</strong>: producir y publicar, de forma continua y
 verificable, inteligencia territorial sobre presupuesto público, cambio
-climático, riesgos y desarrollo humano a nivel distrital (1,891
-distritos), al servicio de la docencia, la investigación y la incidencia
-pública de la FIEECS-UNI y del país.</p>
+climático, riesgos y desarrollo humano a nivel distrital –sobre el marco
+oficial del INEI de 1,845 distritos, 195 provincias y 24 departamentos
+más la Provincia Constitucional del Callao–, al servicio de la docencia,
+la investigación y la incidencia pública de la FIEECS-UNI y del
+país.</p>
 <p>La visión se sostiene en cinco <strong>principios
 operativos</strong>, que son a la vez compromisos verificables:</p>
 <ol type="1">
@@ -652,8 +837,8 @@ de sesión –la barrera que limitó al QHAWAY original–; todo dataset
 descargable (CSV/JSON) con licencia abierta y metadatos schema.org
 Dataset.</li>
 <li><strong>Reproducibilidad</strong>: cada cifra publicada es trazable
-a su fuente primaria (MEF, INEI, CENEPRED, SENAMHI<a href="#fn28"
-class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a>)
+a su fuente primaria (MEF, INEI, CENEPRED, SENAMHI<a href="#fn31"
+class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a>)
 mediante ETL versionado en repositorios públicos; cualquier tercero
 puede regenerar el dataset y auditar el método.</li>
 <li><strong>Neutralidad política</strong>: QHAWAY describe brechas y
@@ -675,8 +860,8 @@ el futuro ni reemplazar a los entes rectores de estadística; se promete
 territorial y método público– lo que el Estado ya publica de forma
 fragmentada.</p>
 <h1 id="propuesta-de-valor">5. Propuesta de Valor</h1>
-<p>QHAWAY 2.0 no compite con la Consulta Amigable del MEF<a href="#fn29"
-class="footnote-ref" id="fnref29" role="doc-noteref"><sup>29</sup></a>
+<p>QHAWAY 2.0 no compite con la Consulta Amigable del MEF<a href="#fn32"
+class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a>
 ni con los portales del INEI: los <strong>integra y traduce a
 territorio</strong>. Su valor está en cruzar lo que hoy vive en silos
 –presupuesto, clima, riesgo, desarrollo humano– sobre una misma unidad
@@ -720,8 +905,8 @@ URL</td>
 <td>Difícil verificar a dónde llega la inversión climática
 comprometida</td>
 <td>Trazabilidad territorial del gasto climático (taxonomía verde sobre
-el clasificador funcional del MEF<a href="#fn30" class="footnote-ref"
-id="fnref30" role="doc-noteref"><sup>30</sup></a>), con ejecución real
+el clasificador funcional del MEF<a href="#fn33" class="footnote-ref"
+id="fnref33" role="doc-noteref"><sup>33</sup></a>), con ejecución real
 por distrito y piso altitudinal</td>
 </tr>
 </tbody>
@@ -729,13 +914,13 @@ por distrito y piso altitudinal</td>
 <p>El <strong>diferencial único</strong> –que ninguna plataforma pública
 o privada ofrece hoy en el Perú– es el <strong>lente de pisos
 altitudinales aplicado al presupuesto</strong>. Usando la clasificación
-de las ocho regiones naturales de Javier Pulgar Vidal<a href="#fn31"
-class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a>
+de las ocho regiones naturales de Javier Pulgar Vidal<a href="#fn34"
+class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a>
 (Chala, Yunga, Quechua, Suni, Puna, Janca, Selva Alta, Selva Baja),
 QHAWAY 2.0 calcula la composición altitudinal de cada distrito cruzando
 los límites distritales con un modelo digital de elevación de 30 m<a
-href="#fn32" class="footnote-ref" id="fnref32"
-role="doc-noteref"><sup>32</sup></a>, y prorratea el gasto público según
+href="#fn35" class="footnote-ref" id="fnref35"
+role="doc-noteref"><sup>35</sup></a>, y prorratea el gasto público según
 esa composición. Eso habilita preguntas que hoy nadie puede responder
 con datos: <strong>¿cuánto presupuesto recibe la puna? ¿Cuánta inversión
 climática llega a la selva baja? ¿La ejecución en Janca es proporcional
@@ -744,12 +929,28 @@ honestidad metodológica: el prorrateo altitudinal es una
 <strong>estimación</strong> (el gasto se registra por entidad ejecutora,
 no por cota), y así se marcará; pero es una estimación reproducible,
 auditable y radicalmente más informativa que el vacío actual.</p>
+<p>El <strong>diferencial central frente al MEF</strong> es el
+<strong>Explorador Presupuestal Multidimensional</strong> (el “cubo
+presupuestal”, §8.8): mientras la Consulta Amigable obliga a navegar una
+jerarquía rígida de menús anidados, QHAWAY 2.0 permite cruzar libremente
+presupuesto x cambio climático x riesgos x pobreza x piso altitudinal, y
+descender desde lo nacional hasta el proyecto específico. Ninguna
+plataforma pública peruana ofrece hoy ese cruce integrado: ese es el
+espacio que QHAWAY 2.0 ocupa. Y no es promesa: la <strong>Fase 1 ya está
+operativa y verificable</strong> en <a
+href="https://unimauro.github.io/qhaway-dashboard/"
+class="uri">https://unimauro.github.io/qhaway-dashboard/</a><a
+href="#fn36" class="footnote-ref" id="fnref36"
+role="doc-noteref"><sup>36</sup></a>, con datos reales del SIAF-MEF 2025
+y un Explorador con cruces pre-computados (el cubo con cruces
+arbitrarios en vivo llega con el backend de la Fase 2).</p>
 <p>A esto se suma un segundo diferencial pragmático: la propuesta no
 parte de cero. Los siete observatorios live del equipo proponente (§2.3)
-demuestran que el patrón técnico (estático, abierto, costo de
-infraestructura cercano a US$ 0 en su primera fase) funciona y sobrevive
-sin presupuesto recurrente de hosting, exactamente el punto donde el
-QHAWAY original falló (§2.2).</p>
+–más el propio dashboard QHAWAY 2.0 ya publicado– demuestran que el
+patrón técnico (estático, abierto, costo de infraestructura cercano a
+US$ 0 en su primera fase) funciona y sobrevive sin presupuesto
+recurrente de hosting, exactamente el punto donde el QHAWAY original
+falló (§2.2).</p>
 <h1 id="arquitectura-funcional">6. Arquitectura Funcional</h1>
 <p>QHAWAY 2.0 se organiza en seis capas funcionales desacopladas. Cada
 capa puede evolucionar de forma independiente entre las tres fases
@@ -763,20 +964,20 @@ directa de la caída del QHAWAY original por caducidad de dominio y
 hosting (§2.2).</p>
 <p><strong>Capa 1 – Fuentes oficiales.</strong> El observatorio consume
 exclusivamente fuentes públicas verificables: MEF Transparencia
-Económica / Consulta Amigable para ejecución presupuestal<a href="#fn33"
-class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a>,
-INVIERTE.PE/SSI para inversión pública<a href="#fn34"
-class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a>,
-la API OCDS del OECE para contrataciones<a href="#fn35"
-class="footnote-ref" id="fnref35" role="doc-noteref"><sup>35</sup></a>,
-INEI (censos, ENAHO, ENDES)<a href="#fn36" class="footnote-ref"
-id="fnref36" role="doc-noteref"><sup>36</sup></a>, MINEDU-ESCALE<a
-href="#fn37" class="footnote-ref" id="fnref37"
-role="doc-noteref"><sup>37</sup></a>, MINSA-REUNIS, MIDIS-REDinforma,
-CENEPRED-SIGRID para escenarios de riesgo<a href="#fn38"
+Económica / Consulta Amigable para ejecución presupuestal<a href="#fn37"
+class="footnote-ref" id="fnref37" role="doc-noteref"><sup>37</sup></a>,
+INVIERTE.PE/SSI para inversión pública<a href="#fn38"
 class="footnote-ref" id="fnref38" role="doc-noteref"><sup>38</sup></a>,
-SENAMHI, CEPLAN, el Portal Nacional de Datos Abiertos<a href="#fn39"
+la API OCDS del OECE para contrataciones<a href="#fn39"
 class="footnote-ref" id="fnref39" role="doc-noteref"><sup>39</sup></a>,
+INEI (censos, ENAHO, ENDES)<a href="#fn40" class="footnote-ref"
+id="fnref40" role="doc-noteref"><sup>40</sup></a>, MINEDU-ESCALE<a
+href="#fn41" class="footnote-ref" id="fnref41"
+role="doc-noteref"><sup>41</sup></a>, MINSA-REUNIS, MIDIS-REDinforma,
+CENEPRED-SIGRID para escenarios de riesgo<a href="#fn42"
+class="footnote-ref" id="fnref42" role="doc-noteref"><sup>42</sup></a>,
+SENAMHI, CEPLAN, el Portal Nacional de Datos Abiertos<a href="#fn43"
+class="footnote-ref" id="fnref43" role="doc-noteref"><sup>43</sup></a>,
 organismos multilaterales (Banco Mundial, OCDE, BID, CEPAL) y, para la
 dimensión territorial, el GeoJSON distrital ya disponible en Proyecto
 INTI más el DEM SRTM/Copernicus de 30 m que sustenta el cálculo de pisos
@@ -784,8 +985,8 @@ altitudinales.</p>
 <p><strong>Capa 2 – ETL Python reproducible y versionado.</strong> Cada
 fuente tiene un extractor propio bajo el patrón
 <code>seed  -&gt;  build_dataset  -&gt;  snapshots/manifest</code> ya
-probado en el Observatorio FONAFE<a href="#fn40" class="footnote-ref"
-id="fnref40" role="doc-noteref"><sup>40</sup></a>: los datos crudos se
+probado en el Observatorio FONAFE<a href="#fn44" class="footnote-ref"
+id="fnref44" role="doc-noteref"><sup>44</sup></a>: los datos crudos se
 congelan como <em>snapshots</em> fechados en el repositorio, el
 <em>build</em> genera los datasets derivados de forma determinista, y un
 <em>manifest</em> registra fuente, fecha y procedencia de cada registro
@@ -803,8 +1004,10 @@ backend esté vivo.</p>
 <p><strong>Capa 4 – Frontend de visualización.</strong> SPA React +
 TypeScript con ECharts (series, Sankey, treemap, heatmap) y
 Leaflet/MapLibre GL (mapas distritales vectoriales), organizada en los
-siete módulos del mandato. Estado en la URL: cada vista filtrada es un
-enlace compartible.</p>
+nueve módulos live del menú (Inicio, Presupuesto, Pisos, Riesgos,
+Prosperidad, Explorador, Evolución Regional, Cobertura Territorial y
+Metodología/FAQ). Estado en la URL: cada vista filtrada es un enlace
+compartible.</p>
 <p><strong>Capa 5 – Capa de IA.</strong> Consultas en lenguaje natural
 sobre los datasets publicados (patrón AskBot ya demostrado en FONAFE y
 Defensa-Interior), resúmenes automáticos por territorio e interpretación
@@ -819,69 +1022,116 @@ lo que el login obligatorio del QHAWAY original impedía.</p>
 <p><img src="assets/diagrams/diagram_01.png" style="width:90.0%" /></p>
 <h2 id="módulos-y-pregunta-principal-que-responde-cada-uno">6.1 Módulos
 y pregunta principal que responde cada uno</h2>
+<p>El menú se divide entre los módulos <strong>entregados</strong> –ya
+live y verificables en el dashboard de la Fase 1– y los módulos
+<strong>propuestos</strong> para las Fases 2-3. La distinción
+–construido vs. por construir– se mantiene explícita en todo el plan de
+implementación.</p>
+<p><strong>Módulos entregados (live):</strong></p>
 <table>
 <colgroup>
-<col style="width: 9%" />
-<col style="width: 25%" />
-<col style="width: 64%" />
+<col style="width: 28%" />
+<col style="width: 71%" />
 </colgroup>
 <thead>
 <tr>
-<th>#</th>
 <th>Módulo</th>
 <th>Pregunta principal</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>Presupuesto Público</td>
+<td>🏠 Inicio</td>
+<td>¿Cómo evoluciona el presupuesto público nacional y qué KPIs lo
+resumen a lo largo de 22 años?</td>
+</tr>
+<tr>
+<td>🏛 Presupuesto Público</td>
 <td>¿Cuánto se asigna (PIA/PIM) y cuánto se ejecuta realmente
-(devengado/girado) en cada distrito, sector y programa?</td>
+(devengado/girado) en cada distrito (2025), función, sector y
+nivel?</td>
 </tr>
 <tr>
-<td>2</td>
-<td>Cambio Climático</td>
-<td>¿Cuánto invierte el Perú en adaptación y mitigación, en qué
-territorios, y con qué ejecución real?</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Riesgos Territoriales</td>
-<td>¿Qué distritos están expuestos a inundaciones, sequías, heladas y
-huaicos, y cómo se cruza esa exposición con la inversión?</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Pisos Altitudinales</td>
+<td>🗺 Pisos Altitudinales</td>
 <td>¿Cuánto presupuesto llega a la puna, a la selva baja o a cada región
-natural de Pulgar Vidal? (diferencial único)</td>
+natural de Pulgar Vidal? (diferencial territorial)</td>
 </tr>
 <tr>
-<td>5</td>
-<td>Índice de Prosperidad Territorial</td>
+<td>(!) Riesgos Territoriales</td>
+<td>¿Qué territorios están expuestos a cada peligro, y cómo se cruza esa
+exposición con la inversión?</td>
+</tr>
+<tr>
+<td>Prosperidad (IPT)</td>
 <td>¿Qué distritos prosperan y cuáles se rezagan en educación, salud,
 economía y servicios básicos?</td>
 </tr>
 <tr>
-<td>6</td>
-<td>Simulador de Políticas</td>
+<td>🔍 Explorador Multidimensional</td>
+<td>¿Cómo se cruza función/fuente x territorio x nivel, distinguiendo
+destino (META) de ejecutora? (diferencial vs. MEF)</td>
+</tr>
+<tr>
+<td>📈 Evolución Regional 2004-2026</td>
+<td>¿Cómo cambió el presupuesto por departamento (destino META) en cada
+uno de los 22 años?</td>
+</tr>
+<tr>
+<td>🧭 Cobertura Territorial</td>
+<td>¿Qué distritos tienen dato, cuáles no, y cuáles aún no existían?,
+con la línea de tiempo de demarcación</td>
+</tr>
+<tr>
+<td>📚 Metodología y FAQ</td>
+<td>¿Cómo se construyó cada cifra, qué significa cada gráfico y cuál es
+el vacío de datos distritales por destino?</td>
+</tr>
+</tbody>
+</table>
+<p>A lo anterior se suman, de forma transversal, el chat de IA
+asistente, el buscador global (Ctrl+K) y el modo oscuro.</p>
+<p><strong>Módulos propuestos (Fases 2-3):</strong></p>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Pregunta principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🌱 Cambio Climático (dedicado)</td>
+<td>¿Cuánto invierte el Perú en adaptación y mitigación, en qué
+territorios, y con qué ejecución real?</td>
+</tr>
+<tr>
+<td>Simulador de Políticas Públicas</td>
 <td>¿Qué efecto estimado tendría priorizar educación, agua o
 resiliencia, bajo supuestos explícitos de literatura OCDE/BM?</td>
 </tr>
 <tr>
-<td>7</td>
-<td>Observatorio Prospectivo</td>
+<td>📈 Prospectiva y Escenarios</td>
 <td>¿Hacia qué escenarios territoriales se dirige el Perú al
 2030/2040/2050 si las tendencias continúan o cambian?</td>
 </tr>
+<tr>
+<td>📚 Laboratorio Académico FIEECS</td>
+<td>¿Cómo reutilizar datasets citables, ETL reproducible y casos reales
+en tesis, cursos e investigación?</td>
+</tr>
 </tbody>
 </table>
-<p>Los módulos 1-3 reutilizan componentes ya construidos y demostrados
-(Perú Finanzas Públicas, Perú Riesgos); los módulos 4, 6 y 7 son
-desarrollo nuevo sobre patrones probados (INTI, EPI). Esta distinción
-–construido vs. por construir– se mantiene explícita en todo el plan de
-implementación.</p>
+<p>Los módulos de Presupuesto, Pisos, Riesgos, IPT, Explorador,
+Evolución Regional y Cobertura Territorial reutilizan y amplían
+componentes ya construidos y demostrados (Perú Finanzas Públicas, Perú
+Riesgos, INTI, EPI) y operan hoy en la Fase 1; el Explorador opera con
+cruces pre-computados y se completa como cubo OLAP en la Fase 2. Los
+módulos de Cambio Climático dedicado, Simulador y Prospectiva son
+desarrollo de las Fases 2-3 sobre esos mismos patrones probados.</p>
 <h1 id="arquitectura-tecnológica">7. Arquitectura Tecnológica</h1>
 <p>La arquitectura de QHAWAY 2.0 responde directamente a la lección
 central del QHAWAY original: un observatorio con dominio y hosting
@@ -890,29 +1140,31 @@ una evolución en tres fases donde <strong>la Fase 1 tiene costo de
 infraestructura ~ US$ 0</strong> y cada fase posterior se activa solo
 cuando exista financiamiento y demanda comprobada. El patrón de la Fase
 1 no es una hipótesis: es exactamente el que sostiene hoy los siete
-observatorios live del equipo proponente (véase §2.3)<a href="#fn41"
-class="footnote-ref" id="fnref41"
-role="doc-noteref"><sup>41</sup></a>.</p>
+observatorios live del equipo proponente (véase §2.3)<a href="#fn45"
+class="footnote-ref" id="fnref45"
+role="doc-noteref"><sup>45</sup></a>.</p>
 <h2 id="fase-1-0-6-meses-sitio-estático-en-github-pages">7.1 Fase 1 (0-6
 meses): sitio estático en GitHub Pages</h2>
 <ul>
 <li><strong>Frontend</strong>: React 18+ con TypeScript, empaquetado con
 Vite y estilado con Tailwind CSS. Visualizaciones con Apache ECharts
 (series temporales, Sankey, treemap, heatmap, rankings) y mapas con
-Leaflet + MapLibre GL para teselas vectoriales distritales (1,891
-distritos, GeoJSON ya disponible del Proyecto INTI).</li>
+Leaflet + MapLibre GL para teselas vectoriales distritales (marco
+oficial INEI de 1,845 distritos; el dataset cartográfico vigente del
+dashboard de la Fase 1 cubre 1,834, y los faltantes se declaran como
+“sin dato”).</li>
 <li><strong>Datos</strong>: JSON estático versionado en el repositorio,
 generado por un ETL en Python ejecutado de forma programada con GitHub
-Actions<a href="#fn42" class="footnote-ref" id="fnref42"
-role="doc-noteref"><sup>42</sup></a> contra las fuentes públicas de la
+Actions<a href="#fn46" class="footnote-ref" id="fnref46"
+role="doc-noteref"><sup>46</sup></a> contra las fuentes públicas de la
 sección de datos (MEF Consulta Amigable, INEI, CENEPRED, SENAMHI, etc.).
 Cada dataset lleva manifiesto con fecha de corte y marcado de
 procedencia (<code>verified</code>/<code>estimate</code>), patrón ya
 operativo en el Observatorio FONAFE.</li>
 <li><strong>Costo y riesgo</strong>: la infraestructura cuesta ~ US$ 0.
 El riesgo conocido son los límites blandos de GitHub Pages (~1 GB de
-sitio publicado y ~100 GB/mes de ancho de banda)<a href="#fn43"
-class="footnote-ref" id="fnref43" role="doc-noteref"><sup>43</sup></a>.
+sitio publicado y ~100 GB/mes de ancho de banda)<a href="#fn47"
+class="footnote-ref" id="fnref47" role="doc-noteref"><sup>47</sup></a>.
 <strong>Mitigación</strong>: servir los GeoJSON y DEM derivados más
 pesados desde un CDN externo gratuito o de bajo costo (p. ej. jsDelivr
 sobre el propio repositorio, o un bucket con CDN), y publicar teselas
@@ -925,12 +1177,12 @@ altitudinal x año, a demanda) supere lo razonable para JSON
 precalculado, se incorpora:</p>
 <ul>
 <li><strong>FastAPI</strong> (Python) como capa de servicios, con
-documentación automática <strong>OpenAPI</strong><a href="#fn44"
-class="footnote-ref" id="fnref44" role="doc-noteref"><sup>44</sup></a> –
+documentación automática <strong>OpenAPI</strong><a href="#fn48"
+class="footnote-ref" id="fnref48" role="doc-noteref"><sup>48</sup></a> –
 la API pública es en sí misma un entregable académico: terceros podrán
 construir sobre los datos de QHAWAY.</li>
-<li><strong>PostgreSQL + PostGIS</strong><a href="#fn45"
-class="footnote-ref" id="fnref45" role="doc-noteref"><sup>45</sup></a>
+<li><strong>PostgreSQL + PostGIS</strong><a href="#fn49"
+class="footnote-ref" id="fnref49" role="doc-noteref"><sup>49</sup></a>
 para consultas geoespaciales (intersección distrito x piso altitudinal
 calculada desde el DEM SRTM/Copernicus 30 m).</li>
 <li><strong>ETL orquestado</strong> (cron/Actions) con bitácora de
@@ -945,30 +1197,41 @@ Fase 3 (12-24 meses): nube gestionada con alternativa de contención</h2>
 <p>Para alta disponibilidad institucional: <strong>AWS</strong> con
 CloudFront (CDN), S3 (datos y estáticos), Lambda (APIs serverless) y RDS
 PostgreSQL, todo descrito como infraestructura como código (Terraform)<a
-href="#fn46" class="footnote-ref" id="fnref46"
-role="doc-noteref"><sup>46</sup></a>. Conscientes de la lección del
+href="#fn50" class="footnote-ref" id="fnref50"
+role="doc-noteref"><sup>50</sup></a>. Conscientes de la lección del
 QHAWAY original, se documenta desde el día uno una <strong>alternativa
 de contención de costos</strong>: un VPS (~ US$ 10-40/mes) corriendo
 FastAPI + PostgreSQL detrás de un CDN gratuito, plenamente suficiente si
 el financiamiento se reduce. La decisión AWS vs. VPS es reversible
 porque los componentes (contenedores, Terraform, dumps de PostgreSQL)
 son portables.</p>
-<h2 id="capa-de-ia-agnóstica-del-proveedor-y-con-guardrails">7.4 Capa de
-IA: agnóstica del proveedor y con guardrails</h2>
-<p>La capa de consultas en lenguaje natural (AskBot) sigue un patrón
-<strong>ya probado</strong> en los observatorios FONAFE y
-Defensa-Interior: el LLM recibe como contexto el dataset curado del
-observatorio y responde sobre él. Principios de diseño:</p>
+<h2 id="capa-de-ia-ninacha-agnóstica-del-proveedor-y-con-guardrails">7.4
+Capa de IA: “Ninacha”, agnóstica del proveedor y con guardrails</h2>
+<p>La capa de consultas en lenguaje natural tiene nombre propio:
+<strong>Ninacha</strong> (<em>nina</em> = fuego en quechua; el fueguito
+que ilumina los números públicos). Sigue un patrón <strong>ya
+probado</strong> en los observatorios FONAFE y Defensa-Interior –el
+modelo recibe como contexto el dataset curado y responde sobre él– pero
+con un diseño <strong>híbrido y de costo casi nulo</strong>, ya
+operativo en el dashboard. Principios de diseño:</p>
 <ul>
-<li><strong>Agnosticismo del proveedor</strong>: una interfaz única de
-inferencia permite usar APIs comerciales de LLM (Anthropic, OpenAI,
-Google) o modelos open source (Llama, Qwen) autoalojados, como opciones
-técnicas intercambiables – independencia tecnológica y de costos.</li>
-<li><strong>Guardrails</strong>: el bot responde <strong>solo</strong>
+<li><strong>Motor híbrido (gasto mínimo)</strong>: la mayoría de
+preguntas son estructuradas (“¿cuánto invirtió Cusco en educación en
+2024?”) y se responden <strong>con reglas en el cliente, consultando la
+API directamente, a costo cero</strong>; solo las consultas
+abiertas/conversacionales se derivan a un LLM. Esto deja el ~80-90 % de
+las interacciones sin costo de tokens.</li>
+<li><strong>Agnosticismo del proveedor y clave oculta</strong>: el LLM
+se invoca a través de la API propia (<code>/api/ninacha</code>), con la
+clave del proveedor <strong>oculta en el servidor</strong> –nunca
+embebida en el sitio estático–; por defecto usa un modelo
+<strong>gratuito</strong> (OpenRouter), y es intercambiable por Gemini,
+Anthropic, OpenAI o modelos open source autoalojados.</li>
+<li><strong>Guardrails</strong>: Ninacha responde <strong>solo</strong>
 con base en los datos del observatorio; si la información no está en el
-dataset, lo declara explícitamente. <strong>Citación
-obligatoria</strong>: toda respuesta indica el indicador, la fuente y la
-fecha de corte.</li>
+dataset, lo declara. <strong>Citación obligatoria</strong>: indica el
+indicador, la fuente y la fecha de corte. Si la IA no está disponible,
+cae con gracia al modo guiado.</li>
 <li>Casos de uso: consultas territoriales (“¿cuánto presupuesto
 climático ejecutó la puna de Junín en 2025?”), resúmenes automáticos por
 distrito e informes PDF.</li>
@@ -1041,23 +1304,116 @@ registro del QHAWAY original).</li>
 <li><strong>HTTPS</strong> en todas las fases; en Fase 2+ se añade
 <em>rate limiting</em> y claves de API opcionales para consumo masivo de
 la API pública.</li>
+<li><strong>Seguridad de la API ya implementada (Fase 2 live).</strong>
+El backend en <code>qhaway.tunky.net</code> aplica:
+<strong>CORS</strong> restringido al origen del dashboard,
+<strong>límite de tasa</strong> por IP (ventana deslizante), acceso
+<strong>solo lectura</strong> (únicamente verbos GET) y <strong>base de
+datos no expuesta</strong> a internet (escucha solo en localhost del
+VPS, tras el proxy). Por diseño <em>no</em> se embebe ninguna clave en
+el cliente –sería pública en un sitio estático–; al tratarse de datos
+abiertos, la protección correcta es CORS + <em>rate limiting</em>, no un
+secreto en el navegador. La clave de API queda como opción para
+consumidores masivos de servidor a servidor.</li>
+<li><strong>Rendimiento.</strong> Respuestas cacheadas en memoria con
+TTL (datos anuales inmutables) y cabeceras <code>Cache-Control</code>
+para caché de navegador/CDN; índices por año en PostgreSQL; y, en el
+frontend, <em>timeout</em> con respaldo automático a los JSON estáticos
+si la API tarda (p. ej. durante una migración pesada), de modo que el
+panel nunca queda colgado.</li>
 <li><strong>Reproducibilidad</strong>: todo el ETL es código Python
 público en GitHub; cualquier investigador puede auditar y reproducir
 cada cifra desde la fuente primaria. Esto es un requisito académico, no
 un extra.</li>
 </ul>
+<h2 id="modelo-de-datos-del-cubo-esquema-estrella">7.7 Modelo de datos
+del cubo: esquema estrella</h2>
+<p>El Explorador Multidimensional (§8.8) se apoya en un <strong>esquema
+estrella</strong> (<em>star schema</em>) clásico de almacén de datos:
+una tabla de hechos central rodeada de tablas de dimensión, diseño que
+habilita consultas OLAP rápidas (agregaciones y cruces arbitrarios)
+sobre grandes volúmenes<a href="#fn51" class="footnote-ref" id="fnref51"
+role="doc-noteref"><sup>51</sup></a>. La tabla de hechos
+<code>fact_budget</code> registra cada combinación de ejecución
+presupuestal con sus claves dimensionales; las dimensiones describen el
+territorio, el clasificador presupuestal, el financiamiento, el clima y
+los indicadores sociales.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tabla</th>
+<th>Tipo</th>
+<th>Campos principales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fact_budget</code></td>
+<td>Hechos</td>
+<td>año, mes, ubigeo, función, fuente, nivel; medidas: pia, pim,
+certificado, comprometido, devengado, girado</td>
+</tr>
+<tr>
+<td><code>dim_territorio</code></td>
+<td>Dimensión</td>
+<td>ubigeo, departamento, provincia, distrito, piso ecológico,
+superficie, población</td>
+</tr>
+<tr>
+<td><code>dim_presupuesto</code></td>
+<td>Dimensión</td>
+<td>función, división funcional, grupo funcional, programa presupuestal,
+actividad, proyecto</td>
+</tr>
+<tr>
+<td><code>dim_financiamiento</code></td>
+<td>Dimensión</td>
+<td>fuente de financiamiento, rubro, genérica de gasto, específica de
+gasto</td>
+</tr>
+<tr>
+<td><code>dim_clima</code></td>
+<td>Dimensión</td>
+<td>riesgo climático, vulnerabilidad, piso altitudinal dominante</td>
+</tr>
+<tr>
+<td><code>dim_indicadores</code></td>
+<td>Dimensión</td>
+<td>pobreza, anemia, indicadores de educación, acceso a agua</td>
+</tr>
+</tbody>
+</table>
+<p>En Fase 1 estos cruces se sirven <strong>pre-computados</strong> como
+JSON estático; en Fase 2, sobre PostgreSQL + PostGIS, el mismo modelo se
+consulta en vivo, permitiendo agregaciones OLAP arbitrarias (p. ej.
+<em>roll-up</em> de distrito a departamento, <em>slice</em> por piso
+altitudinal, <em>dice</em> por función x fuente x año) con tiempos de
+respuesta de consulta interactiva.</p>
+<p><strong>Figura 7.2 – Esquema estrella del cubo presupuestal
+(<code>fact_budget</code> + dimensiones)</strong></p>
+<p><img src="assets/diagrams/diagram_02.png" style="width:90.0%" /></p>
 <p><strong>Figura 7.1 – Evolución de la arquitectura, Fase 1 -&gt; 2
 -&gt; 3</strong></p>
-<p><img src="assets/diagrams/diagram_02.png" style="width:90.0%" /></p>
+<p><img src="assets/diagrams/diagram_03.png" style="width:90.0%" /></p>
 <h1 id="módulos-de-la-plataforma">8. Módulos de la Plataforma</h1>
-<p>QHAWAY 2.0 se organiza en siete módulos que comparten una misma
-columna vertebral: el distrito como unidad mínima de análisis (1,891
-distritos con GeoJSON y UBIGEO ya operativos en Proyecto INTI), ETL
-Python versionado y URLs compartibles por cada vista. Esta sección
-describe los siete módulos: los módulos 1 a 3 a continuación, y los
-módulos 4 a 7 en las subsecciones 8.4 a 8.7. Cada módulo distingue
-explícitamente qué está ya demostrado en productos live del equipo y qué
-queda por construir.</p>
+<p>QHAWAY 2.0 se organiza en módulos que comparten una misma columna
+vertebral: el distrito como unidad mínima de análisis (marco oficial
+INEI de 1,845 distritos; el dataset cartográfico vigente cubre 1,834,
+los GeoJSON y UBIGEO ya operativos en Proyecto INTI y en el dashboard de
+la Fase 1), ETL Python versionado y URLs compartibles por cada vista.
+Esta sección describe los módulos temáticos en las subsecciones 8.1 a
+8.7, el <strong>Explorador Presupuestal Multidimensional</strong> –el
+cubo OLAP, diferencial estrella frente al portal del MEF– en la
+subsección 8.8, y los dos módulos entregados que amplían la dimensión
+histórica y la transparencia de cobertura: <strong>Evolución Regional
+2004-2026</strong> (§8.9) y <strong>Cobertura Territorial</strong>
+(§8.10). Cada módulo distingue explícitamente qué está ya demostrado y
+operativo en el dashboard live y qué queda por construir.</p>
 <h2 id="presupuesto-público">8.1 Presupuesto Público</h2>
 <p><strong>Objetivo.</strong> Hacer legible el ciclo presupuestal
 completo del Estado peruano –PIA, PIM, Devengado, Girado– a nivel de
@@ -1073,16 +1429,16 @@ aprobado y el PIM modificado a lo largo del año? ¿Qué funciones
 (educación, salud, transporte, saneamiento) concentran el gasto en cada
 territorio?</p>
 <p><strong>Fuentes.</strong> MEF Transparencia Económica / Consulta
-Amigable (gasto mensual y navegador por niveles)<a href="#fn47"
-class="footnote-ref" id="fnref47" role="doc-noteref"><sup>47</sup></a>;
+Amigable (gasto mensual y navegador por niveles)<a href="#fn52"
+class="footnote-ref" id="fnref52" role="doc-noteref"><sup>52</sup></a>;
 INVIERTE.PE / SSI para el detalle de proyectos de inversión<a
-href="#fn48" class="footnote-ref" id="fnref48"
-role="doc-noteref"><sup>48</sup></a>; API OCDS del OECE para vincular
-gasto con procesos de contratación<a href="#fn49" class="footnote-ref"
-id="fnref49" role="doc-noteref"><sup>49</sup></a>; Portal Nacional de
-Datos Abiertos como fuente complementaria<a href="#fn50"
-class="footnote-ref" id="fnref50"
-role="doc-noteref"><sup>50</sup></a>.</p>
+href="#fn53" class="footnote-ref" id="fnref53"
+role="doc-noteref"><sup>53</sup></a>; API OCDS del OECE para vincular
+gasto con procesos de contratación<a href="#fn54" class="footnote-ref"
+id="fnref54" role="doc-noteref"><sup>54</sup></a>; Portal Nacional de
+Datos Abiertos como fuente complementaria<a href="#fn55"
+class="footnote-ref" id="fnref55"
+role="doc-noteref"><sup>55</sup></a>.</p>
 <p><strong>Dimensiones y filtros.</strong> Año (serie histórica), nivel
 de gobierno (nacional / regional / local), región, provincia, distrito,
 sector, pliego, función, programa presupuestal, genérica de gasto y
@@ -1101,10 +1457,32 @@ unimaurox-peru-finanzas-publicas ya implementa series PIA/PIM/Devengado
 1990-2025, heatmap año x sector, mapa coroplético regional y treemap
 ministerial con ETL del MEF Consulta Amigable y BCRP; Perú Transparente
 demuestra el mismo patrón (ECharts + MapLibre + export CSV) en
-producción con ~20 MB de JSON estático<a href="#fn51"
-class="footnote-ref" id="fnref51" role="doc-noteref"><sup>51</sup></a>.
-Por construir: la desagregación distrital completa y el Sankey de cuatro
-etapas.</p>
+producción con ~20 MB de JSON estático<a href="#fn56"
+class="footnote-ref" id="fnref56" role="doc-noteref"><sup>56</sup></a>.
+La <strong>Fase 1 ya publicada</strong> (<a
+href="https://unimauro.github.io/qhaway-dashboard/"
+class="uri">https://unimauro.github.io/qhaway-dashboard/</a>) opera este
+módulo con datos reales del SIAF-MEF 2025 (PIM ~ S/ 272 mil millones)
+sobre los 1,834 distritos del dataset cartográfico, incluyendo las fases
+PIA/PIM/Devengado/Girado, el Sankey del flujo presupuestal, treemap por
+función, desagregación por sector y nivel, y la evolución mensual; la
+<strong>serie histórica del presupuesto por destino 2004-2026 (22
+años)</strong> se entrega en el módulo Evolución Regional (§8.9), a
+nivel departamental. Por construir: la desagregación distrital
+<strong>histórica</strong> por destino –hoy disponible solo para 2025– y
+la apertura a nivel provincia en años previos (véase §9.1).</p>
+<p><strong>Cobertura y honestidad de datos.</strong> Como principio de
+honestidad de datos, el observatorio <strong>muestra explícitamente qué
+distritos no tienen información presupuestal</strong>, distinguiendo dos
+situaciones que jamás deben confundirse: “sin ejecución” (el distrito
+existe en el presupuesto pero su devengado es S/ 0) frente a “sin dato”
+(no hay registro disponible para ese distrito en la fuente o en el
+dataset cartográfico). Esta transparencia es parte del valor público:
+conocer las brechas de información es tan relevante como conocer las
+cifras. El propio marco territorial lo exige –el dataset cartográfico
+vigente cubre 1,834 de los 1,845 distritos oficiales del INEI– y la
+plataforma lo señala en mapas y rankings con una categoría visual
+diferenciada para “sin dato”.</p>
 <p>Mockup descriptivo de la vista principal del módulo:</p>
 <pre class="text"><code>+----------------------------------------------------------------------+
 | QHAWAY 2.0 · Presupuesto Público                  [ES] [☾] [Compartir]|
@@ -1143,24 +1521,24 @@ gestión del riesgo de desastres, recursos hídricos, conservación de
 bosques); (2) se aplican marcadores climáticos siguiendo la referencia
 metodológica del MEF/MINAM y los marcadores de Río de la OCDE, asignando
 a cada partida un grado de relevancia (principal / significativa / no
-relevante)<a href="#fn52" class="footnote-ref" id="fnref52"
-role="doc-noteref"><sup>52</sup></a>; (3) cada cifra publicada se marca
+relevante)<a href="#fn57" class="footnote-ref" id="fnref57"
+role="doc-noteref"><sup>57</sup></a>; (3) cada cifra publicada se marca
 con su nivel de confianza (<code>verified</code> cuando proviene de un
 programa inequívocamente climático; <code>estimate</code> cuando depende
 de criterios de asignación), patrón anti-overclaiming ya operativo en el
-Observatorio FONAFE<a href="#fn53" class="footnote-ref" id="fnref53"
-role="doc-noteref"><sup>53</sup></a>. La taxonomía de etiquetado se
+Observatorio FONAFE<a href="#fn58" class="footnote-ref" id="fnref58"
+role="doc-noteref"><sup>58</sup></a>. La taxonomía de etiquetado se
 publica como dato abierto para escrutinio académico.</p>
 <p><strong>Fuentes.</strong> MEF Consulta Amigable (gasto por programa
-presupuestal)<a href="#fn54" class="footnote-ref" id="fnref54"
-role="doc-noteref"><sup>54</sup></a>; MINAM Geobosques para
-deforestación; SENAMHI para escenarios climáticos<a href="#fn55"
-class="footnote-ref" id="fnref55" role="doc-noteref"><sup>55</sup></a>;
-CEPLAN para articulación con el PEDN al 2050<a href="#fn56"
-class="footnote-ref" id="fnref56" role="doc-noteref"><sup>56</sup></a>;
-Banco Mundial y CEPAL para comparativos regionales<a href="#fn57"
-class="footnote-ref" id="fnref57"
-role="doc-noteref"><sup>57</sup></a>.</p>
+presupuestal)<a href="#fn59" class="footnote-ref" id="fnref59"
+role="doc-noteref"><sup>59</sup></a>; MINAM Geobosques para
+deforestación; SENAMHI para escenarios climáticos<a href="#fn60"
+class="footnote-ref" id="fnref60" role="doc-noteref"><sup>60</sup></a>;
+CEPLAN para articulación con el PEDN al 2050<a href="#fn61"
+class="footnote-ref" id="fnref61" role="doc-noteref"><sup>61</sup></a>;
+Banco Mundial y CEPAL para comparativos regionales<a href="#fn62"
+class="footnote-ref" id="fnref62"
+role="doc-noteref"><sup>62</sup></a>.</p>
 <p><strong>Dimensiones y filtros.</strong> Año, territorio (región -&gt;
 distrito), categoría climática (adaptación / mitigación / hídrico /
 bosques / biodiversidad / GRD), grado de relevancia del marcador,
@@ -1170,6 +1548,20 @@ climática per cápita; series de evolución del gasto etiquetado vs. gasto
 total; Sankey desde categorías climáticas hacia territorios; treemap por
 categoría; ranking de ejecución de programas climáticos; heatmap año x
 región de inversión en adaptación.</p>
+<p><strong>Estado – primera versión ya live.</strong> El módulo
+<strong>ya está publicado y operativo</strong> en el dashboard. Esta
+primera versión usa como <strong>proxy las funciones de gasto
+ambiental/climático</strong> del clasificador del MEF –AMBIENTE como
+núcleo (PIM 2025 ~ S/ 5.77 mil M), más SANEAMIENTO/recursos hídricos,
+AGROPECUARIA y ENERGÍA como gasto relacionado de adaptación–, con la
+inversión territorializada por destino (META) y un <strong>cruce de
+equidad clave</strong>: confronta, por región, el riesgo climático
+frente a la inversión ambiental per cápita, resaltando los territorios
+de alto riesgo y baja inversión. La UI declara con claridad
+(anti-overclaiming) que es una <strong>aproximación por
+función</strong>, no el etiquetado oficial por marcador climático. La
+refinación a marcadores de Río por programa presupuestal (la metodología
+descrita arriba) queda como entregable de Fase 2.</p>
 <p><strong>Base existente.</strong> El patrón de procedencia por
 registro (verified/estimate + fuente) está demostrado en FONAFE y en el
 Observatorio de Smartphones; el pipeline MEF, en
@@ -1187,12 +1579,12 @@ mayor exposición a cada peligro? ¿Coincide la inversión en gestión del
 riesgo con los territorios más expuestos? ¿Qué pasaría ante un escenario
 tipo El Niño costero o un sismo de gran magnitud en una zona dada?</p>
 <p><strong>Fuentes.</strong> CENEPRED/SIGRID (escenarios de riesgo)<a
-href="#fn58" class="footnote-ref" id="fnref58"
-role="doc-noteref"><sup>58</sup></a>; IGP (sismicidad), SENAMHI y ENFEN
+href="#fn63" class="footnote-ref" id="fnref63"
+role="doc-noteref"><sup>63</sup></a>; IGP (sismicidad), SENAMHI y ENFEN
 (clima y El Niño), INDECI (emergencias), INAIGEM (glaciares), ANA
-(recursos hídricos) y MINAM Geobosques (deforestación)<a href="#fn59"
-class="footnote-ref" id="fnref59"
-role="doc-noteref"><sup>59</sup></a>.</p>
+(recursos hídricos) y MINAM Geobosques (deforestación)<a href="#fn64"
+class="footnote-ref" id="fnref64"
+role="doc-noteref"><sup>64</sup></a>.</p>
 <p><strong>Dimensiones y filtros.</strong> Tipo de peligro, territorio,
 temporada/año, severidad del escenario, población e infraestructura
 expuestas.</p>
@@ -1205,8 +1597,8 @@ exposición al riesgo y gasto en GRD.</p>
 Niño, huaicos, friajes y heladas, sequías y glaciares, deforestación,
 pandemias, entre otras) y los <strong>6 simuladores client-side</strong>
 del producto live unimaurox-peru-riesgos, incluyendo compartir
-simulaciones por URL y generación de PDF en el navegador<a href="#fn60"
-class="footnote-ref" id="fnref60" role="doc-noteref"><sup>60</sup></a>.
+simulaciones por URL y generación de PDF en el navegador<a href="#fn65"
+class="footnote-ref" id="fnref65" role="doc-noteref"><sup>65</sup></a>.
 Por construir: la integración de sus capas con el grafo presupuestal
 distrital de los módulos 8.1 y 8.2, que es justamente donde QHAWAY 2.0
 aporta valor analítico nuevo.</p>
@@ -1221,8 +1613,8 @@ quechua agrícolas y ceja de selva. Para devolverle al análisis
 presupuestal su dimensión territorial real, el módulo recupera la
 clasificación de las ocho regiones naturales del Perú formulada por
 Javier Pulgar Vidal en 1938 y consolidada en su obra de referencia<a
-href="#fn61" class="footnote-ref" id="fnref61"
-role="doc-noteref"><sup>61</sup></a>:</p>
+href="#fn66" class="footnote-ref" id="fnref66"
+role="doc-noteref"><sup>66</sup></a>:</p>
 <table>
 <thead>
 <tr>
@@ -1277,11 +1669,11 @@ role="doc-noteref"><sup>61</sup></a>:</p>
 <p><strong>Metodología.</strong> El cálculo es reproducible con datos
 abiertos: (1) se toma un modelo digital de elevación (DEM) de 30 metros
 de resolución – SRTM de la NASA o Copernicus GLO-30 de la ESA<a
-href="#fn62" class="footnote-ref" id="fnref62"
-role="doc-noteref"><sup>62</sup></a> –; (2) se superpone con los límites
+href="#fn67" class="footnote-ref" id="fnref67"
+role="doc-noteref"><sup>67</sup></a> –; (2) se superpone con los límites
 distritales oficiales (GeoJSON de 1,891 distritos con UBIGEO, activo ya
-disponible en el portafolio del equipo<a href="#fn63"
-class="footnote-ref" id="fnref63" role="doc-noteref"><sup>63</sup></a>);
+disponible en el portafolio del equipo<a href="#fn68"
+class="footnote-ref" id="fnref68" role="doc-noteref"><sup>68</sup></a>);
 (3) se clasifica cada celda del ráster según los rangos de Pulgar Vidal,
 distinguiendo vertiente occidental y oriental para separar Yunga
 marítima de Selva Alta; y (4) se agrega por distrito la proporción de
@@ -1322,8 +1714,8 @@ allá de la etiqueta departamental “Loreto” o “Ucayali”? ¿Cuánto del
 presupuesto climático etiquetado (módulo 8.2) llega a los pisos más
 vulnerables – la janca de los glaciares en retroceso, la puna de los
 friajes? Estas preguntas son hoy incontestables con la Consulta Amigable
-del MEF<a href="#fn64" class="footnote-ref" id="fnref64"
-role="doc-noteref"><sup>64</sup></a>, que solo desagrega por unidades
+del MEF<a href="#fn69" class="footnote-ref" id="fnref69"
+role="doc-noteref"><sup>69</sup></a>, que solo desagrega por unidades
 administrativas. Para la FIEECS-UNI, el módulo abre además una agenda de
 investigación propia: economía de pisos ecológicos con datos fiscales,
 una línea publicable sin equivalente en la región.</p>
@@ -1352,8 +1744,8 @@ Territorial (IPT)</h2>
 <p>El IPT es un índice compuesto 0-100 por distrito, provincia y región,
 heredero directo de la metodología del índice EPI ya construido y
 operativo en el Observatorio de Poder Económico del equipo<a
-href="#fn65" class="footnote-ref" id="fnref65"
-role="doc-noteref"><sup>65</sup></a>. Su árbol tiene cuatro dominios con
+href="#fn70" class="footnote-ref" id="fnref70"
+role="doc-noteref"><sup>70</sup></a>. Su árbol tiene cuatro dominios con
 indicadores de fuentes oficiales:</p>
 <table>
 <colgroup>
@@ -1373,14 +1765,14 @@ indicadores de fuentes oficiales:</p>
 <td>Educación</td>
 <td>Escolarización, logro de aprendizajes, analfabetismo; PISA como
 referencia nacional</td>
-<td>MINEDU-ESCALE<a href="#fn66" class="footnote-ref" id="fnref66"
-role="doc-noteref"><sup>66</sup></a>, INEI</td>
+<td>MINEDU-ESCALE<a href="#fn71" class="footnote-ref" id="fnref71"
+role="doc-noteref"><sup>71</sup></a>, INEI</td>
 </tr>
 <tr>
 <td>Salud</td>
 <td>Anemia infantil, desnutrición crónica, mortalidad infantil</td>
-<td>MINSA-REUNIS/SIEN, ENDES<a href="#fn67" class="footnote-ref"
-id="fnref67" role="doc-noteref"><sup>67</sup></a></td>
+<td>MINSA-REUNIS/SIEN, ENDES<a href="#fn72" class="footnote-ref"
+id="fnref72" role="doc-noteref"><sup>72</sup></a></td>
 </tr>
 <tr>
 <td>Economía</td>
@@ -1395,8 +1787,8 @@ id="fnref67" role="doc-noteref"><sup>67</sup></a></td>
 </tbody>
 </table>
 <p>La construcción sigue buenas prácticas internacionales de índices
-compuestos<a href="#fn68" class="footnote-ref" id="fnref68"
-role="doc-noteref"><sup>68</sup></a>: normalización min-max de cada
+compuestos<a href="#fn73" class="footnote-ref" id="fnref73"
+role="doc-noteref"><sup>73</sup></a>: normalización min-max de cada
 indicador a escala 0-100 (invirtiendo los de signo negativo, como anemia
 o pobreza), agregación ponderada por dominio y pesos
 <strong>transparentes y configurables por la persona usuaria</strong> –
@@ -1420,11 +1812,11 @@ Públicas</h2>
 <p>El simulador permite explorar escenarios del tipo “más educación”,
 “más salud”, “más agua”, “más conectividad” o “más resiliencia
 climática” aplicando elasticidades tomadas de literatura empírica de la
-OCDE y el Banco Mundial<a href="#fn69" class="footnote-ref" id="fnref69"
-role="doc-noteref"><sup>69</sup></a>, con ejecución íntegramente en el
+OCDE y el Banco Mundial<a href="#fn74" class="footnote-ref" id="fnref74"
+role="doc-noteref"><sup>74</sup></a>, con ejecución íntegramente en el
 navegador (patrón ya operativo en los seis simuladores de Perú Riesgos<a
-href="#fn70" class="footnote-ref" id="fnref70"
-role="doc-noteref"><sup>70</sup></a>).</p>
+href="#fn75" class="footnote-ref" id="fnref75"
+role="doc-noteref"><sup>75</sup></a>).</p>
 <p>La regla editorial del módulo es estricta: <strong>todo resultado es
 condicional a supuestos visibles</strong>. Ejemplo: ante “+10 % de
 inversión en agua y saneamiento rural en un distrito”, el simulador no
@@ -1440,10 +1832,10 @@ simulación comparte también sus supuestos.</p>
 <h2 id="observatorio-prospectivo">8.7 Observatorio Prospectivo</h2>
 <p>El séptimo módulo proyecta escenarios al 2030, 2040 y 2050 –
 horizonte alineado con el Plan Estratégico de Desarrollo Nacional al
-2050 de CEPLAN<a href="#fn71" class="footnote-ref" id="fnref71"
-role="doc-noteref"><sup>71</sup></a> – sobre el patrón prospectivo ya
-demostrado en el Proyecto INTI del equipo<a href="#fn72"
-class="footnote-ref" id="fnref72" role="doc-noteref"><sup>72</sup></a>.
+2050 de CEPLAN<a href="#fn76" class="footnote-ref" id="fnref76"
+role="doc-noteref"><sup>76</sup></a> – sobre el patrón prospectivo ya
+demostrado en el Proyecto INTI del equipo<a href="#fn77"
+class="footnote-ref" id="fnref77" role="doc-noteref"><sup>77</sup></a>.
 La progresión metodológica es honesta y gradual: (1) <strong>modelos
 tendenciales</strong> (extrapolación de series con bandas de
 incertidumbre) desde el día uno; (2) <strong>regresiones</strong> con
@@ -1462,12 +1854,211 @@ del propio observatorio, se etiquetan explícitamente como escenarios –
 no predicciones – y enlazan al simulador del módulo 8.6 para que la
 persona usuaria explore qué políticas acercarían el escenario
 transformador.</p>
+<h2 id="explorador-presupuestal-multidimensional-cubo-olap">8.8
+Explorador Presupuestal Multidimensional (Cubo OLAP)</h2>
+<p>Este módulo es el <strong>diferencial estrella</strong> de QHAWAY 2.0
+frente al portal del MEF. La Consulta Amigable del MEF<a href="#fn78"
+class="footnote-ref" id="fnref78" role="doc-noteref"><sup>78</sup></a>
+obliga a navegar una jerarquía rígida de menús anidados, un eje a la
+vez; el Explorador invierte esa lógica: permite <strong>navegar
+libremente desde lo más agregado (nacional) hasta el proyecto
+específico, cruzando dimensiones a voluntad</strong>. Es la diferencia
+entre una tabla y un cubo: en lugar de “elija año, luego pliego, luego
+función”, el usuario pregunta “muéstrame educación en Cajamarca por
+nivel de gobierno” o “cruza inversión climática con pobreza y piso
+altitudinal” y obtiene la respuesta en una sola vista.</p>
+<p><strong>Dimensiones del cubo.</strong> El Explorador organiza el
+presupuesto público en seis ejes cruzables:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dimensión</th>
+<th>Niveles / atributos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Temporal</strong></td>
+<td>Año · semestre · trimestre · mes (serie histórica
+2009/2012-actualidad como meta)</td>
+</tr>
+<tr>
+<td><strong>Territorial</strong></td>
+<td>Nacional -&gt; departamento -&gt; provincia -&gt; distrito</td>
+</tr>
+<tr>
+<td><strong>Institucional</strong></td>
+<td>Gobierno Nacional / Regional / Local; dentro: sector -&gt; pliego
+-&gt; unidad ejecutora</td>
+</tr>
+<tr>
+<td><strong>Presupuestal</strong></td>
+<td>Función -&gt; división funcional -&gt; grupo funcional -&gt;
+programa presupuestal -&gt; actividad -&gt; proyecto</td>
+</tr>
+<tr>
+<td><strong>Financiera</strong></td>
+<td>Fuente de financiamiento -&gt; rubro -&gt; genérica de gasto -&gt;
+específica de gasto</td>
+</tr>
+<tr>
+<td><strong>Estados (medidas)</strong></td>
+<td>PIA · PIM · Certificado · Comprometido · Devengado · Girado · %
+Ejecutado</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Casos de uso concretos.</strong> El cruce de dimensiones
+habilita preguntas que hoy exigen horas de navegación manual en la
+Consulta Amigable:</p>
+<ul>
+<li><strong>“Educación en Cajamarca”</strong> – función Educación x
+territorio Cajamarca x nivel de gobierno: cuánto asigna y ejecuta cada
+nivel (nacional/regional/local), con desagregación a programa y
+proyecto.</li>
+<li><strong>“Cambio Climático en Puno”</strong> – función Ambiente x
+categoría adaptación x territorio Puno x piso Puna: inversión total, por
+habitante y por km², para ver si el gasto de adaptación llega
+efectivamente a la puna altoandina.</li>
+<li><strong>“Salud rural”</strong> – función Salud x distritos con más
+del 70 % de su territorio en puna: ranking de inversión per cápita y
+brechas, para identificar dónde el gasto en salud no acompaña la
+dispersión y altitud del territorio.</li>
+</ul>
+<p><strong>La vista tipo OLAP – el “cubo presupuestal”.</strong> Más
+allá del presupuesto puro, el Explorador cruza <strong>Presupuesto x
+Cambio Climático x Riesgos x Pobreza x Piso Altitudinal</strong> sobre
+una misma unidad territorial. Ejemplos del tipo de pregunta que solo
+este módulo responde:</p>
+<ul>
+<li><strong>“Distritos con alta vulnerabilidad climática + alta pobreza
++ baja inversión pública”</strong> – la intersección que prioriza dónde
+el riesgo y la carencia coinciden con el abandono presupuestal.</li>
+<li><strong>“Provincias amazónicas que recibieron recursos de mitigación
+climática 2015-2025”</strong> – trazabilidad territorial del gasto
+climático cruzada con la geografía natural.</li>
+</ul>
+<p><strong>Ninguna plataforma pública peruana ofrece hoy este cruce
+integrado.</strong> La Consulta Amigable entrega presupuesto; SIGRID
+entrega riesgo; INEI entrega pobreza; QHAWAY 2.0 es el primero que los
+pone en un mismo cubo navegable. Ese es el principal diferencial de la
+propuesta.</p>
+<p><strong>Honestidad de fases (anti-overclaiming).</strong> La
+distinción entre lo construido y lo propuesto es explícita:</p>
+<ul>
+<li><strong>Fase 1 (ya operativa, estática, GitHub Pages).</strong> El
+dashboard publicado<a href="#fn79" class="footnote-ref" id="fnref79"
+role="doc-noteref"><sup>79</sup></a> ofrece un Explorador con
+<strong>cruces pre-computados</strong> (función x territorio x nivel x
+fuente, para el año vigente), servidos como JSON estático. Es real,
+navegable y verificable hoy.</li>
+<li><strong>Fase 2 (propuesta, backend).</strong> El <strong>cubo OLAP
+completo</strong>, con cruces arbitrarios en vivo (cualquier combinación
+de las seis dimensiones, incluido Presupuesto x Clima x Riesgos x
+Pobreza x Piso sobre series mensuales históricas), requiere el backend
+de la Fase 2: FastAPI + PostgreSQL/PostGIS con el <strong>esquema
+estrella</strong> descrito en §7.7. El volumen lo justifica: la
+ejecución de gasto del SIAF ronda los <strong>~11.4 millones de filas
+por año</strong>, inviable de pre-computar para todos los cruces
+posibles, pero trivial para un almacén dimensional indexado.</li>
+</ul>
+<p>No se sobreafirma: lo pre-computado de la Fase 1 ya entrega valor
+inmediato; el cubo arbitrario en vivo es un entregable de la Fase 2,
+presentado como tal.</p>
+<p>Mockup descriptivo de la vista del Explorador (cubo
+presupuestal):</p>
+<pre class="text"><code>+----------------------------------------------------------------------+
+| QHAWAY 2.0 · Explorador Multidimensional (Cubo)   [ES] [☾] [Compartir]|
++----------------------------------------------------------------------+
+| FILAS: [Distrito ▾]   COLUMNAS: [Estado: Devengado ▾]                |
+| FILTROS (cruzar dimensiones):                                        |
+|   Función:[Ambiente ▾] Año:[2015-2025 ▾] Fuente:[Todas ▾]            |
+|   + Clima:[Vulnerabilidad alta ▾]  + Pobreza:[&gt; 40% ▾]              |
+|   + Piso:[Puna ▾]                                   [Aplicar cruce]  |
++----------------------------------------------------------------------+
+| RESULTADO -- distritos en la intersección (23)            [CSV] [URL] |
+|  #  Distrito        Devengado  S//hab  Vulner.  Pobreza  % Ejec.    |
+|  1  ...              ...        ...     alta     52%      31%        |
+|  2  ...              ...        ...     alta     48%      27%        |
++----------------------------------------------------------------------+
+| ⓘ Fase 1: cruces pre-computados (año vigente). Cubo en vivo: Fase 2. |
+| Fuente: SIAF-MEF · CENEPRED · INEI · corte indicado por celda        |
++----------------------------------------------------------------------+</code></pre>
+<h2 id="evolución-regional-2004-2026">8.9 Evolución Regional
+2004-2026</h2>
+<p><strong>Estado: entregado y live.</strong> Este módulo responde una
+pregunta que la Consulta Amigable del MEF no expone de forma directa:
+<strong>¿cómo evolucionó, año por año, el presupuesto que llega a cada
+departamento del Perú a lo largo de 22 años?</strong> A diferencia de la
+mayoría de tableros fiscales –que muestran un solo ejercicio–, Evolución
+Regional presenta el presupuesto por departamento de <strong>destino
+(campo <code>DEPARTAMENTO_META</code>)</strong> para cada uno de los
+<strong>23 ejercicios 2004-2026</strong>, es decir, adónde llega el
+dinero y no solo dónde se administra.</p>
+<p><strong>Cómo se obtuvo.</strong> La serie proviene de un
+<strong>ingestor (scraper) propio de la Consulta Amigable del MEF, ya
+operativo</strong> (descrito en §9.1): atraviesa la protección anti-bot
+del portal ASP.NET, navega la jerarquía año -&gt; nivel de gobierno
+-&gt; departamento y extrae PIA, PIM, devengado y girado por destino
+territorial. Es el mismo pipeline que sustenta la serie nacional de 22
+años del módulo Inicio.</p>
+<p><strong>Visualizaciones.</strong> (a) <strong>Mapa coroplético por
+año</strong> con control deslizante de ejercicio, que anima la
+redistribución territorial del presupuesto a lo largo de las dos
+décadas; (b) <strong>ranking de departamentos</strong> para el año
+seleccionado; (c) <strong>serie temporal por departamento</strong> para
+seguir la trayectoria de cada región. Toda vista codifica su estado en
+la URL y exporta CSV.</p>
+<p><strong>Honestidad de datos.</strong> La granularidad de destino
+llega hasta <strong>departamento</strong>, no a provincia ni distrito,
+por una limitación de la propia fuente que el observatorio declara
+explícitamente (véase §8.10 y §9.1): el SIAF solo georreferencia el
+gasto por destino hasta el nivel departamental. La serie es, por tanto,
+la máxima resolución territorial-histórica que la fuente permite por
+destino.</p>
+<h2 id="cobertura-territorial">8.10 Cobertura Territorial</h2>
+<p><strong>Estado: entregado y live.</strong> La transparencia sobre las
+brechas de información es, en QHAWAY 2.0, un entregable de primer orden.
+Este módulo hace visible, de forma sistemática, <strong>qué se sabe y
+qué no se sabe</strong> del presupuesto en cada territorio,
+distinguiendo <strong>tres estados del dato</strong> que jamás deben
+confundirse:</p>
+<ul>
+<li><strong>“Con dato”</strong> – existe registro presupuestal para el
+territorio en la fuente y el periodo consultados.</li>
+<li><strong>“Sin dato”</strong> – el territorio existe (administrativa y
+cartográficamente) pero no hay registro disponible para él en la fuente
+o en el dataset cartográfico vigente (que cubre 1,834 de los 1,845
+distritos oficiales del INEI).</li>
+<li><strong>“No existía”</strong> – el distrito aún no había sido creado
+por demarcación territorial en el ejercicio consultado; mostrarlo como
+“sin dato” sería un error histórico.</li>
+</ul>
+<p>Para sostener el tercer estado, el módulo incorpora una <strong>línea
+de tiempo de la demarcación de distritos</strong>, de modo que la
+cobertura se lea siempre contra el universo de distritos vigente en cada
+año, no contra el universo actual. Esta distinción es la que permite que
+la serie histórica (§8.9) y los mapas no induzcan a conclusiones falsas
+sobre territorios que simplemente no existían.</p>
+<p>El módulo es la expresión visual del <strong>hallazgo de
+transparencia</strong> que recorre todo el documento (§9.1): el detalle
+distrital por <strong>destino</strong> no existe en la fuente –el SIAF
+solo georreferencia el gasto, por destino, hasta departamento–, mientras
+que el detalle distrital por <strong>unidad ejecutora</strong> sí existe
+y, para los gobiernos locales (donde la municipalidad coincide con el
+distrito), es plenamente significativo. Cobertura Territorial convierte
+ese vacío de transparencia en un dato consultable, en lugar de
+ocultarlo.</p>
 <h1 id="roadmap">9. Roadmap</h1>
 <p>El roadmap de QHAWAY 2.0 está diseñado bajo un principio rector:
 <strong>lanzar pronto sobre lo ya demostrado y crecer solo cuando el uso
 lo justifique</strong>. A diferencia del QHAWAY original –que quedó
-offline por las causas detalladas en §2.2<a href="#fn73"
-class="footnote-ref" id="fnref73" role="doc-noteref"><sup>73</sup></a>–,
+offline por las causas detalladas en §2.2<a href="#fn80"
+class="footnote-ref" id="fnref80" role="doc-noteref"><sup>80</sup></a>–,
 cada fase de este plan es autosuficiente: si el financiamiento se
 detuviera al final de cualquier fase, la plataforma seguiría operativa
 con costo de infraestructura cercano a cero (GitHub Pages).</p>
@@ -1478,40 +2069,186 @@ FIEECS-UNI; definición del dominio (recuperar/registrar
 institucional, un subdominio bajo <code>uni.edu.pe</code>, p. ej.
 <code>qhaway.uni.edu.pe</code>, que no caduca por falta de pago);
 kickoff con docentes y estudiantes, replicando los talleres
-participativos que el QHAWAY original ya practicó en 2024<a href="#fn74"
-class="footnote-ref" id="fnref74"
-role="doc-noteref"><sup>74</sup></a>.</p>
-<p><strong>Fase 1 – MVP público (mes 1-6).</strong> Lanzamiento abierto
-(sin login, con URLs compartibles) de los módulos 1 (Presupuesto
-Público), 3 (Riesgos Territoriales) y 4 (Pisos Altitudinales),
-reutilizando los activos live del equipo (Perú Transparente,
-peru-riesgos, Proyecto INTI) bajo marca FIEECS-UNI. Arquitectura 100 %
-estática: React + ECharts + MapLibre/Leaflet + JSON versionado por ETL
-Python en GitHub Actions. Es la fase de menor riesgo: los componentes ya
-existen y están operando en producción.</p>
-<p><strong>Fase 2 – Profundización analítica (mes 6-12).</strong>
-Módulos 2 (Cambio Climático, continuidad del tablero “Inversión Verde”
-del QHAWAY original) y 5 (Índice de Prosperidad Territorial);
-incorporación de la capa de IA (consultas en lenguaje natural, resúmenes
-por territorio, patrón AskBot ya probado); backend FastAPI +
-PostgreSQL/PostGIS para consultas que el modelo estático no resuelve
-bien.</p>
-<p><strong>Fase 3 – Escala y apertura (mes 12-24).</strong> Módulos 6
-(Simulador de Políticas, con supuestos siempre explícitos) y 7
-(Observatorio Prospectivo); migración selectiva a AWS (CloudFront, S3,
-Lambda, RDS) solo de las cargas que lo requieran; API pública
-documentada (OpenAPI) para investigadores y periodistas de datos.</p>
+participativos que el QHAWAY original ya practicó en 2024<a href="#fn81"
+class="footnote-ref" id="fnref81"
+role="doc-noteref"><sup>81</sup></a>.</p>
+<p><strong>Fase 1 – MVP público (mes 1-6, EN MARCHA / parcialmente
+ENTREGADA).</strong> Esta fase ya no es promesa: el dashboard estático
+está <strong>live y verificable</strong> en <a
+href="https://unimauro.github.io/qhaway-dashboard/"
+class="uri">https://unimauro.github.io/qhaway-dashboard/</a><a
+href="#fn82" class="footnote-ref" id="fnref82"
+role="doc-noteref"><sup>82</sup></a>, con datos reales del SIAF-MEF 2025
+(PIM ~ S/ 272 mil millones) sobre los 1,834 distritos del dataset
+cartográfico. Estado por componente:</p>
+<ul>
+<li>[SI] <strong>Entregado:</strong> dashboard estático abierto (sin
+login, URLs compartibles); módulos de Inicio, Presupuesto, Pisos
+Altitudinales, Riesgos, Prosperidad (IPT), <strong>Cambio
+Climático</strong> (primera versión por proxy de función, §8.2),
+<strong>Explorador Multidimensional</strong> (con cruces pre-computados
+y atribución territorial <strong>por destino/META</strong> además de por
+ejecutora), <strong>Cubo Presupuestal (OLAP)</strong> consumiendo la API
+en vivo (§8.8), <strong>Evolución Regional 2004-2026</strong> (§8.9) y
+<strong>Cobertura Territorial</strong> (los tres estados: “con dato” /
+“sin dato” / “no existía”, §8.10), más Metodología y FAQ;
+<strong>scraper propio de la Consulta Amigable del MEF
+operando</strong>; chat de IA asistente; buscador global (Ctrl+K);
+presupuesto distrital 2025 (~1,892 distritos, 196 provincias, 25
+regiones); <strong>serie nacional del presupuesto por destino 2004-2026
+(22 años)</strong> y presupuesto por departamento (destino META) para
+los 23 ejercicios 2004-2026; evolución mensual 2025.</li>
+<li>[SI] <strong>Ya incorporado (Fase 2):</strong> el <strong>detalle
+distrital de los 15 ejercicios 2012-2026</strong> (por ejecutora,
+conciliado, §9.1), el <strong>Cubo OLAP en vivo</strong> y la
+<strong>API pública documentada</strong>. Lo único que <strong>no existe
+en la fuente</strong> –y se declara como tal– es el detalle distrital
+<strong>por destino</strong> (el SIAF solo georreferencia el destino
+hasta departamento, §9.1); por eso la atribución territorial fina usa la
+ejecutora (significativa sobre todo en gobiernos locales, donde
+municipalidad = distrito). Queda pendiente la desagregación por
+provincia de destino.</li>
+</ul>
+<p>Arquitectura 100 % estática: React + ECharts + MapLibre/Leaflet +
+JSON versionado por ETL Python en GitHub Actions. Es la fase de menor
+riesgo: los componentes ya existen y están operando en producción.</p>
+<p><strong>Fase 2 – Backend y cubo OLAP (mes 6-12, EN MARCHA).</strong>
+Esta fase <strong>dejó de ser una promesa</strong>: ya hay un backend
+<strong>FastAPI + PostgreSQL</strong> operativo en producción, servido
+por HTTPS (Let’s Encrypt) en
+<strong><code>https://qhaway.tunky.net</code></strong>, con seguridad
+por CORS, límite de tasa y solo lectura, y la base de datos no expuesta
+a internet<a href="#fn83" class="footnote-ref" id="fnref83"
+role="doc-noteref"><sup>83</sup></a>. El dashboard de la Fase 1
+<strong>ya consume esa API</strong> (con respaldo automático a los datos
+estáticos si el servidor se cae), y la base ya sirve la serie nacional
+de 22 años, el histórico regional y el detalle distrital,
+<strong>verificados contra cifras oficiales</strong> (PIM 2025 ~ S/
+272.5 mil M; Lima ~ S/ 158.6 mil M; 1,892 distritos). Sobre esta base
+<strong>ya está operativo</strong> el <strong>Cubo OLAP en vivo</strong>
+(§8.8): un pivote 2D que cruza cualquier par de dimensiones
+(función/fuente x nivel/departamento, medido en PIM o devengado)
+calculado en tiempo real por la API (<code>/api/cubo</code> y
+<code>/api/cubo-pivot</code>). La <strong>documentación OpenAPI también
+está publicada</strong> (Swagger en <code>qhaway.tunky.net/docs</code> y
+ReDoc en <code>/redoc</code>), de modo que la API pública –entregable
+académico– es navegable y reutilizable por terceros. Y la <strong>capa
+de IA ya tiene su asistente, “Ninacha”</strong> (§7.4), con motor
+híbrido sobre la API propia. La ingesta de los <strong>CSV anuales
+completos del MEF</strong> a PostgreSQL <strong>ya está COMPLETA: los 15
+ejercicios 2012-2026 con detalle distrital</strong> (~11 millones de
+filas por año, ~1,890 distritos por año) están cargados y conciliados.
+Se logró con un orquestador propio que descarga varios años en paralelo
+–el portal del MEF limita la velocidad por conexión, así que la
+concurrencia multiplicó el rendimiento ~ 4.8x y bajó la migración de
+días a horas– y una descarga continua robusta. Sobre esta base, un
+<em>job</em> mensual reprocesa el ejercicio en curso. El esquema
+estrella se detalla en §7.7.</p>
+<p><strong>Fase 3 – Escala y apertura (mes 12-24, PROPUESTA).</strong>
+Migración selectiva a AWS (CloudFront, S3, Lambda, RDS) solo de las
+cargas de alto tráfico; IA avanzada; Simulador de Políticas (módulo 7) y
+Prospectiva y Escenarios (módulo 6) con supuestos siempre explícitos;
+alta disponibilidad institucional con alternativa VPS de contención
+documentada.</p>
+<h2
+id="estrategia-de-datos-el-presupuesto-histórico-a-nivel-distrital">9.1
+Estrategia de datos: el presupuesto histórico a nivel distrital</h2>
+<p>El objetivo central del observatorio –tener información de
+<strong>todos los distritos, provincias y regiones, para cada
+año</strong>– enfrenta una restricción técnica concreta de las fuentes
+públicas, que conviene declarar con transparencia:</p>
+<ul>
+<li>La <strong>API de Datos Abiertos del MEF</strong> (datastore SQL)
+contiene el detalle distrital de todos los años, pero <strong>agota el
+tiempo de respuesta</strong> (timeouts superiores a 210 s) al agregar
+las tablas anuales completas de ~11,4 millones de filas; en la práctica
+solo el ejercicio 2025 respondió de forma fiable. Por eso QHAWAY 2.0
+carga el detalle <strong>distrital</strong> (por ejecutora) del
+ejercicio <strong>2025</strong> desde esta vía.</li>
+<li>Los <strong>Informes Globales del MEF</strong> dan el total nacional
+pero <strong>no descienden al distrito</strong>; además, los anteriores
+a 2021 están escaneados como imagen (requieren OCR). Por eso la serie
+<strong>nacional y por departamento de 22 años (2004-2026)</strong> se
+obtiene del scraper de la Consulta Amigable descrito a continuación, no
+de estos informes.</li>
+</ul>
+<p>La vía que sí entrega el histórico distrital completo es la
+<strong>Consulta Amigable</strong> del MEF
+(<code>apps5.mineco.gob.pe/transparencia</code>), el portal que navega
+año -&gt; nivel de gobierno -&gt; departamento -&gt; provincia -&gt;
+distrito -&gt; proyecto, con PIA, PIM, certificado, comprometido,
+devengado y girado, para todos los años desde 2012 (y antes en su
+versión clásica). Su limitación es de forma, no de fondo: es una
+aplicación ASP.NET con estado de sesión (<code>__VIEWSTATE</code>) y
+protección anti-bot, no consultable directamente por programa.</p>
+<p><strong>QHAWAY 2.0 incorpora un ingestor (scraper) reproducible de la
+Consulta Amigable</strong> como pieza de su capa ETL. Su viabilidad fue
+verificada y <strong>ya está operando</strong>: se estableció sesión
+atravesando la protección del portal y se automatizó la navegación,
+extrayendo el presupuesto por <strong>departamento de destino
+(META)</strong> para los <strong>23 ejercicios 2004-2026</strong>. Con
+ello, la plataforma muestra ya la <strong>evolución regional del
+presupuesto a lo largo de 22 años</strong> (módulo “Evolución Regional
+2004-2026”, §8.9), por la atribución territorial correcta –adónde llega
+el dinero, no dónde se administra–.</p>
+<p>Este trabajo arrojó además un <strong>hallazgo de transparencia de
+primer orden</strong>, que el observatorio visibiliza explícitamente:
+<strong>el SIAF del Estado peruano solo georreferencia su gasto, por
+destino, hasta el nivel de departamento</strong> (existe
+<code>DEPARTAMENTO_META</code>, pero no provincia ni distrito de
+destino). El único detalle distrital disponible es el de la
+<strong>unidad ejecutora</strong> –dónde está la entidad que administra
+el gasto–, que para el grueso del Gobierno Nacional se concentra en
+Lima. Dicho de otro modo: <strong>el Estado no registra públicamente en
+qué distrito aterriza la mayor parte de su presupuesto.</strong> No es
+una carencia de QHAWAY ni del scraper, sino de la propia fuente; y
+señalarla es, en sí mismo, un acto de transparencia. Por eso la
+plataforma ofrece el detalle por destino a nivel departamental para
+todos los años, el detalle distrital por ejecutora donde existe (2025, y
+de forma significativa para los gobiernos locales, donde la
+municipalidad coincide con el distrito), y declara el vacío en su
+sección de preguntas frecuentes. Cerrar esa brecha –que el presupuesto
+se conozca a nivel distrital de destino– es, además, una recomendación
+de política que QHAWAY eleva al propio MEF.</p>
+<p><strong>Control de calidad – conciliación de datos.</strong> Toda
+cifra del observatorio pasa por una <strong>prueba de
+conciliación</strong>: el presupuesto nacional de cada año es un único
+número, de modo que cada corte (por función, por sector, por nivel de
+gobierno, por distrito, por destino-META y por región) debe sumar
+exactamente ese total. La verificación se ejecutó sobre <strong>los 15
+ejercicios con detalle distrital (2012-2026)</strong> –además de la
+serie de 22 años– y <strong>todos los cortes cuadran al céntimo</strong>
+con el total nacional (p. ej. PIM 2024 = S/ 262.1 mil M y 2025 = S/
+272.5 mil M, idénticos en todos los cortes; diferencia 0.00). Este
+chequeo además detectó –y corrigió– un rasgo estructural del SIAF que de
+otro modo habría sesgado las cifras: <strong>las municipalidades
+(gobiernos locales) no llevan “sector” en la fuente</strong>, por lo que
+un agregado ingenuo por sector omitía ~S/ 52 mil M de gasto local;
+QHAWAY los reincorpora como categoría “Gobiernos Locales”.</p>
+<p>La única salvedad –que el observatorio declara con transparencia–
+está en <strong>2012</strong>: el corte por distrito suma S/ 120.2 mil M
+frente a S/ 122.4 mil M del total nacional (los cortes nacional,
+función, sector y nivel sí cuadran en 122.4). La diferencia (~1.8 %)
+corresponde a registros de ese ejercicio que <strong>no traen un ubigeo
+de distrito válido en la fuente</strong>, por lo que no existe distrito
+al que atribuirlos en el mapa. No es un error del método sino un vacío
+del SIAF en los años más antiguos; señalarlo es, en sí mismo, un acto de
+transparencia. Esta trazabilidad –cada total reconstruible y
+reconciliado contra la fuente, con sus vacíos declarados– es justamente
+el estándar de rigor que un observatorio académico debe garantizar.</p>
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr>
 <th>Fase</th>
 <th>Periodo</th>
+<th>Estado</th>
 <th>Entregables clave</th>
 <th>Condición de salida</th>
 </tr>
@@ -1520,30 +2257,45 @@ documentada (OpenAPI) para investigadores y periodistas de datos.</p>
 <tr>
 <td>0</td>
 <td>Mes 0-1</td>
+<td>⏳ En curso</td>
 <td>Convenio FIEECS, dominio/subdominio, kickoff</td>
 <td>Resolución firmada y dominio operativo</td>
 </tr>
 <tr>
 <td>1</td>
 <td>Mes 1-6</td>
-<td>MVP módulos 1, 3 y 4; lanzamiento público</td>
-<td>Sitio live, open access, métricas de uso activas</td>
+<td>[SI] Parcial (live)</td>
+<td>Dashboard con distrital 2025; módulos
+Inicio/Presupuesto/Pisos/Riesgos/IPT/Explorador/Evolución
+Regional/Cobertura/Metodología; serie por destino 2004-2026 (22 años);
+scraper Consulta Amigable; chat IA; buscador</td>
+<td>Sitio live ([SI] ); pendiente: distrital histórico por destino (no
+existe en fuente, §9.1) y cubo OLAP (Fase 2)</td>
 </tr>
 <tr>
 <td>2</td>
 <td>Mes 6-12</td>
-<td>Módulos 2 y 5; AskBot IA; FastAPI+PostGIS</td>
-<td>API interna estable; IPT v1 publicado</td>
+<td>[SI] Sustancialmente ENTREGADA</td>
+<td>Backend FastAPI + PostgreSQL en HTTPS
+(<code>qhaway.tunky.net</code>) consumido por el dashboard;
+<strong>detalle distrital de los 15 años 2012-2026 cargado y
+conciliado</strong>; <strong>Cubo OLAP en vivo</strong> (pivote 2D vía
+<code>/api/cubo-pivot</code>); <strong>API pública documentada</strong>
+(OpenAPI/Swagger/ReDoc); asistente IA <strong>Ninacha</strong> (motor
+híbrido); <em>job</em> mensual de actualización</td>
+<td>[SI] logrado; queda sumar &gt;=1 caso de uso externo de la API y
+encender la IA libre de Ninacha (key de proveedor)</td>
 </tr>
 <tr>
 <td>3</td>
 <td>Mes 12-24</td>
-<td>Módulos 6-7; AWS; API pública OpenAPI</td>
-<td>API pública con &gt;=1 caso de uso externo</td>
+<td>🔲 Propuesta</td>
+<td>IA avanzada; Simulador y Prospectiva; AWS/escala</td>
+<td>Alta disponibilidad y simulador publicado</td>
 </tr>
 </tbody>
 </table>
-<p><img src="assets/diagrams/diagram_03.png" style="width:90.0%" /></p>
+<p><img src="assets/diagrams/diagram_04.png" style="width:90.0%" /></p>
 <h1 id="costos-estimados">10. Costos Estimados</h1>
 <p>Todas las cifras de esta sección son <strong>estimaciones
 referenciales a junio de 2026</strong>, expresadas en soles (S/) y
@@ -1572,8 +2324,8 @@ crecer hacia los otros conforme consiga financiamiento.</p>
 <tr>
 <td>A. Mínimo viable</td>
 <td>Horas académicas + voluntariado estudiantil FIEECS</td>
-<td>GitHub Pages (US$ 0)<a href="#fn75" class="footnote-ref"
-id="fnref75" role="doc-noteref"><sup>75</sup></a> + dominio</td>
+<td>GitHub Pages (US$ 0)<a href="#fn84" class="footnote-ref"
+id="fnref84" role="doc-noteref"><sup>84</sup></a> + dominio</td>
 <td>S/ 700 - 2,500 (US$ 190 - 680)</td>
 </tr>
 <tr>
@@ -1604,15 +2356,15 @@ un subdominio <code>uni.edu.pe</code> lo reduce a S/ 0.</p>
 referencial: coordinador medio tiempo S/ 2,500-3,500/mes (S/
 30,000-42,000/año); 2 asistentes de investigación S/ 1,500-2,500/mes c/u
 (S/ 36,000-60,000/año); bolsa de 3-4 practicantes FIEECS con subvención
-&gt;= RMV vigente (S/ 1,130/mes en 2025-2026<a href="#fn76"
-class="footnote-ref" id="fnref76" role="doc-noteref"><sup>76</sup></a>),
+&gt;= RMV vigente (S/ 1,130/mes en 2025-2026<a href="#fn85"
+class="footnote-ref" id="fnref85" role="doc-noteref"><sup>85</sup></a>),
 parcialmente cubrible por convenios de prácticas preprofesionales (S/
 40,000-55,000/año si se asume directamente); dominio, IA y contingencias
 S/ 4,000-18,000/año.</p>
 <p><strong>Escenario C – Pleno.</strong> Añade dedicación exclusiva, AWS
 (estimado US$ 150-500/mes según tráfico, es decir S/ 6,700-22,200/año<a
-href="#fn77" class="footnote-ref" id="fnref77"
-role="doc-noteref"><sup>77</sup></a>), difusión (eventos, prensa de
+href="#fn86" class="footnote-ref" id="fnref86"
+role="doc-noteref"><sup>86</sup></a>), difusión (eventos, prensa de
 datos, materiales) y reserva para datos/cómputo geoespacial (DEM,
 PostGIS gestionado).</p>
 <p><strong>Costos de IA (transversal, por consumo de API).</strong> El
@@ -1642,8 +2394,8 @@ open source autoalojados en Fase 3 para independencia del proveedor.</p>
 <tr>
 <td>Dominio <code>qhaway.pe</code> (renovación)</td>
 <td>S/ 150 - 250</td>
-<td>Vía registradores acreditados punto.pe<a href="#fn78"
-class="footnote-ref" id="fnref78" role="doc-noteref"><sup>78</sup></a>;
+<td>Vía registradores acreditados punto.pe<a href="#fn87"
+class="footnote-ref" id="fnref87" role="doc-noteref"><sup>87</sup></a>;
 S/ 0 si subdominio <code>uni.edu.pe</code></td>
 </tr>
 <tr>
@@ -1666,8 +2418,8 @@ S/ 0 si subdominio <code>uni.edu.pe</code></td>
 <p><strong>La lección del QHAWAY original, convertida en regla
 presupuestal:</strong> el observatorio anterior quedó offline porque la
 renovación de dominio y hosting no estaba asegurada más allá del primer
-año<a href="#fn79" class="footnote-ref" id="fnref79"
-role="doc-noteref"><sup>79</sup></a>. QHAWAY 2.0 adopta dos salvaguardas
+año<a href="#fn88" class="footnote-ref" id="fnref88"
+role="doc-noteref"><sup>88</sup></a>. QHAWAY 2.0 adopta dos salvaguardas
 explícitas: (i) <strong>toda partida de dominio/hosting se presupuesta
 multi-año</strong> (renovación de <code>qhaway.pe</code> por 3-5 años
 por adelantado, ~S/ 450-1,250 únicos, o subdominio institucional sin
@@ -1684,12 +2436,12 @@ infraestructura de la actualización es ~ S/ 0</strong>.</p>
 <p>El refresco se automatiza con un <em>flujo programado de GitHub
 Actions</em> (un <code>cron</code>) que, en la fecha fijada, ejecuta el
 ETL en Python, vuelve a consultar la API de Datos Abiertos del MEF<a
-href="#fn80" class="footnote-ref" id="fnref80"
-role="doc-noteref"><sup>80</sup></a>, regenera los archivos JSON y, si
+href="#fn89" class="footnote-ref" id="fnref89"
+role="doc-noteref"><sup>89</sup></a>, regenera los archivos JSON y, si
 detecta cambios, los versiona y publica; GitHub Pages redespliega el
 sitio automáticamente. En repositorios públicos, <strong>GitHub Actions
-no tiene costo</strong> (minutos ilimitados)<a href="#fn81"
-class="footnote-ref" id="fnref81" role="doc-noteref"><sup>81</sup></a>,
+no tiene costo</strong> (minutos ilimitados)<a href="#fn90"
+class="footnote-ref" id="fnref90" role="doc-noteref"><sup>90</sup></a>,
 y cada corrida del ETL toma minutos.</p>
 <p><strong>Cadencia recomendada: mensual, el último viernes de cada
 mes</strong> (alineada con el cierre mensual del SIAF), configurable a
@@ -1710,9 +2462,9 @@ activarlo es cuestión de habilitar la programación.</p>
 <tbody>
 <tr>
 <td>Cómputo del ETL (GitHub Actions, repo público)</td>
-<td>S/ 0 (capa gratuita, minutos ilimitados)<a href="#fn82"
-class="footnote-ref" id="fnref82"
-role="doc-noteref"><sup>82</sup></a></td>
+<td>S/ 0 (capa gratuita, minutos ilimitados)<a href="#fn91"
+class="footnote-ref" id="fnref91"
+role="doc-noteref"><sup>91</sup></a></td>
 </tr>
 <tr>
 <td>Redespliegue del sitio (GitHub Pages)</td>
@@ -1720,9 +2472,9 @@ role="doc-noteref"><sup>82</sup></a></td>
 </tr>
 <tr>
 <td>Consumo de la API del MEF</td>
-<td>S/ 0 (datos abiertos, sin tarifa)<a href="#fn83"
-class="footnote-ref" id="fnref83"
-role="doc-noteref"><sup>83</sup></a></td>
+<td>S/ 0 (datos abiertos, sin tarifa)<a href="#fn92"
+class="footnote-ref" id="fnref92"
+role="doc-noteref"><sup>92</sup></a></td>
 </tr>
 <tr>
 <td><strong>Mantenimiento humano</strong> (validar que el MEF no cambió
@@ -1745,8 +2497,8 @@ publicada</strong> con datos reales del SIAF-MEF (presupuesto 2025: PIM
 ~ S/ 272 mil millones), navegable en <a
 href="https://unimauro.github.io/qhaway-dashboard/"
 class="uri">https://unimauro.github.io/qhaway-dashboard/</a><a
-href="#fn84" class="footnote-ref" id="fnref84"
-role="doc-noteref"><sup>84</sup></a>, con el ETL versionado en su
+href="#fn93" class="footnote-ref" id="fnref93"
+role="doc-noteref"><sup>93</sup></a>, con el ETL versionado en su
 repositorio. Demuestra, sobre datos reales y a costo de infraestructura
 cero, la viabilidad de toda la arquitectura de la Fase 1.</p>
 <h1 id="beneficios-académicos">11. Beneficios Académicos</h1>
@@ -1762,18 +2514,18 @@ reproducible: un jurado puede verificar exactamente la versión
 usada.</p>
 <p><strong>Publicaciones indexadas con datasets citables.</strong> Cada
 release del dataset puede depositarse en Zenodo con DOI propio<a
-href="#fn85" class="footnote-ref" id="fnref85"
-role="doc-noteref"><sup>85</sup></a>, siguiendo el patrón ya operativo
+href="#fn94" class="footnote-ref" id="fnref94"
+role="doc-noteref"><sup>94</sup></a>, siguiendo el patrón ya operativo
 en el Observatorio de Smartphones en Adolescentes (biblioteca con DOI)<a
-href="#fn86" class="footnote-ref" id="fnref86"
-role="doc-noteref"><sup>86</sup></a>. Esto habilita artículos en
+href="#fn95" class="footnote-ref" id="fnref95"
+role="doc-noteref"><sup>95</sup></a>. Esto habilita artículos en
 revistas indexadas donde los datos –no solo el paper– son citables,
 sumando métricas de impacto para la UNI.</p>
 <p><strong>Laboratorio de datos y docencia.</strong> Casos reales para
 cursos de políticas públicas, presupuesto público, econometría espacial
 y ciencia de datos: los estudiantes trabajan sobre la Consulta Amigable
-del MEF<a href="#fn87" class="footnote-ref" id="fnref87"
-role="doc-noteref"><sup>87</sup></a> ya estructurada en JSON, en lugar
+del MEF<a href="#fn96" class="footnote-ref" id="fnref96"
+role="doc-noteref"><sup>96</sup></a> ya estructurada en JSON, en lugar
 de descargas manuales.</p>
 <p><strong>Semilleros de investigación.</strong> El ETL en Python y el
 frontend abierto (GitHub) permiten que semilleros contribuyan código y
@@ -1805,18 +2557,18 @@ oficial.</p>
 IPT, riesgos territoriales y ejecución presupuestal por distrito permite
 a gobiernos regionales y locales identificar dónde la brecha de
 servicios coincide con baja inversión – insumo directo para carteras de
-INVIERTE.PE<a href="#fn88" class="footnote-ref" id="fnref88"
-role="doc-noteref"><sup>88</sup></a>.</p>
+INVIERTE.PE<a href="#fn97" class="footnote-ref" id="fnref97"
+role="doc-noteref"><sup>97</sup></a>.</p>
 <p><strong>Insumo para la programación multianual.</strong> Las series
 PIA/PIM/Devengado con desagregación distrital y funcional ofrecen
 evidencia para la Programación Multianual de Inversiones y para los
 planes territoriales que CEPLAN articula con el PEDN al 2050<a
-href="#fn89" class="footnote-ref" id="fnref89"
-role="doc-noteref"><sup>89</sup></a>.</p>
+href="#fn98" class="footnote-ref" id="fnref98"
+role="doc-noteref"><sup>98</sup></a>.</p>
 <p><strong>Trazabilidad del gasto climático.</strong> El etiquetado del
 gasto con el clasificador funcional-programático del MEF y la referencia
-de los marcadores de Río de la OCDE<a href="#fn90" class="footnote-ref"
-id="fnref90" role="doc-noteref"><sup>90</sup></a> genera una serie
+de los marcadores de Río de la OCDE<a href="#fn99" class="footnote-ref"
+id="fnref99" role="doc-noteref"><sup>99</sup></a> genera una serie
 verificable de inversión en adaptación y mitigación – insumo para
 reportar avances de las NDC ante la CMNUCC y para sustentar solicitudes
 de financiamiento climático internacional (Fondo Verde del Clima,
@@ -1846,8 +2598,8 @@ compartible y exportación CSV, de modo que un periodista regional puede
 verificar, citar y embeber la evidencia en minutos. Los datos llevan
 marca de procedencia (fuente y fecha por registro), lo que permite
 distinguir cifra oficial de estimación – práctica ya operativa en los
-observatorios del equipo<a href="#fn91" class="footnote-ref"
-id="fnref91" role="doc-noteref"><sup>91</sup></a>.</p>
+observatorios del equipo<a href="#fn100" class="footnote-ref"
+id="fnref100" role="doc-noteref"><sup>100</sup></a>.</p>
 <p><strong>Vigilancia ciudadana informada.</strong> Juntas vecinales,
 frentes de defensa y comités de vigilancia de presupuesto participativo
 obtienen un lenguaje común con la autoridad: la misma cifra de PIM y
@@ -1869,16 +2621,16 @@ dato manda, la IA solo traduce.</p>
 <li><p><strong>La marca QHAWAY tiene valor institucional y debe
 relanzarse.</strong> FIEECS-UNI invirtió en 2024 en el diseño
 participativo y el lanzamiento del Observatorio del Presupuesto
-Público<a href="#fn92" class="footnote-ref" id="fnref92"
-role="doc-noteref"><sup>92</sup></a>; ese capital simbólico –una marca
+Público<a href="#fn101" class="footnote-ref" id="fnref101"
+role="doc-noteref"><sup>101</sup></a>; ese capital simbólico –una marca
 quechua propia, asociada a la facultad y a la vigilancia del gasto
 público– no debe perderse por la caída del hosting original. Relanzar es
 más barato y más creíble que empezar de cero.</p></li>
 <li><p><strong>La base técnica ya existe y está demostrada en
 producción.</strong> No se propone una promesa: siete observatorios live
 del equipo proponente (Perú Transparente, Perú Riesgos, Proyecto INTI,
-Observatorio FONAFE, entre otros)<a href="#fn93" class="footnote-ref"
-id="fnref93" role="doc-noteref"><sup>93</sup></a> operan hoy con el
+Observatorio FONAFE, entre otros)<a href="#fn102" class="footnote-ref"
+id="fnref102" role="doc-noteref"><sup>102</sup></a> operan hoy con el
 mismo stack (React, ECharts, Leaflet/MapLibre, ETL Python). QHAWAY 2.0
 reutiliza componentes probados, no parte de un prototipo.</p></li>
 <li><p><strong>El diferencial de pisos altitudinales es
@@ -1932,7 +2684,7 @@ los responsables son roles institucionales, no personas.</p>
 <tr>
 <td>R1</td>
 <td>Aprobar formalmente el relanzamiento de QHAWAY como QHAWAY 2.0, con
-el alcance de 7 módulos descrito en este documento</td>
+el alcance del menú de 9 módulos descrito en este documento</td>
 <td>Decanato FIEECS</td>
 <td>Mes 0 (junio-julio 2026)</td>
 </tr>
@@ -1970,8 +2722,8 @@ Pisos Altitudinales)</td>
 <tr>
 <td>R6</td>
 <td>Aprobar una política de datos abiertos: datasets descargables, ETL
-público y licencia CC BY 4.0<a href="#fn94" class="footnote-ref"
-id="fnref94" role="doc-noteref"><sup>94</sup></a> para datos y
+público y licencia CC BY 4.0<a href="#fn103" class="footnote-ref"
+id="fnref103" role="doc-noteref"><sup>103</sup></a> para datos y
 visualizaciones derivadas</td>
 <td>Comité académico</td>
 <td>Mes 3-4</td>
@@ -1979,8 +2731,8 @@ visualizaciones derivadas</td>
 <tr>
 <td>R7</td>
 <td>Gestionar financiamiento para Fases 2-3 ante BID, CAF y cooperación
-internacional<a href="#fn95" class="footnote-ref" id="fnref95"
-role="doc-noteref"><sup>95</sup></a>, usando el MVP live como evidencia
+internacional<a href="#fn104" class="footnote-ref" id="fnref104"
+role="doc-noteref"><sup>104</sup></a>, usando el MVP live como evidencia
 de capacidad de ejecución</td>
 <td>Decanato + comité</td>
 <td>Mes 6-12</td>
@@ -2090,16 +2842,18 @@ estado del gráfico vive en la URL: lo que usted comparte es lo que el
 receptor ve.</p>
 <h1 id="preguntas-frecuentes-faq">17. Preguntas Frecuentes (FAQ)</h1>
 <p><strong>¿De dónde salen los datos?</strong> De fuentes oficiales: MEF
-(Transparencia Económica / Consulta Amigable)<a href="#fn96"
-class="footnote-ref" id="fnref96" role="doc-noteref"><sup>96</sup></a>,
-INEI<a href="#fn97" class="footnote-ref" id="fnref97"
-role="doc-noteref"><sup>97</sup></a>, MINEDU-ESCALE<a href="#fn98"
-class="footnote-ref" id="fnref98" role="doc-noteref"><sup>98</sup></a>,
-MINSA, MIDIS, CENEPRED-SIGRID<a href="#fn99" class="footnote-ref"
-id="fnref99" role="doc-noteref"><sup>99</sup></a>, SENAMHI, CEPLAN e
-INVIERTE.PE, además de organismos internacionales (Banco Mundial, OCDE,
-BID, CEPAL). Cada gráfico cita su fuente específica en el tooltip y en
-la ficha del dato.</p>
+(Transparencia Económica / Consulta Amigable)<a href="#fn105"
+class="footnote-ref" id="fnref105"
+role="doc-noteref"><sup>105</sup></a>, INEI<a href="#fn106"
+class="footnote-ref" id="fnref106"
+role="doc-noteref"><sup>106</sup></a>, MINEDU-ESCALE<a href="#fn107"
+class="footnote-ref" id="fnref107"
+role="doc-noteref"><sup>107</sup></a>, MINSA, MIDIS, CENEPRED-SIGRID<a
+href="#fn108" class="footnote-ref" id="fnref108"
+role="doc-noteref"><sup>108</sup></a>, SENAMHI, CEPLAN e INVIERTE.PE,
+además de organismos internacionales (Banco Mundial, OCDE, BID, CEPAL).
+Cada gráfico cita su fuente específica en el tooltip y en la ficha del
+dato.</p>
 <p><strong>¿Cada cuánto se actualizan?</strong> Los datos presupuestales
 se actualizan con periodicidad mensual mediante procesos automatizados;
 los indicadores sociales, según el calendario de publicación de cada
@@ -2115,16 +2869,16 @@ explica por esto, repórtela como posible error.</p>
 presupuesto inicial aprobado por ley. PIM: presupuesto modificado
 durante el año. Devengado: obligación de pago reconocida por un bien o
 servicio ya recibido. Girado: desembolso efectivo. El glosario completo
-enlaza a las definiciones del MEF<a href="#fn100" class="footnote-ref"
-id="fnref100" role="doc-noteref"><sup>100</sup></a>.</p>
+enlaza a las definiciones del MEF<a href="#fn109" class="footnote-ref"
+id="fnref109" role="doc-noteref"><sup>109</sup></a>.</p>
 <p><strong>¿Uso devengado o girado para medir ejecución?</strong> La
 convención estándar –y la que usa QHAWAY por defecto– es
 <strong>devengado/PIM</strong>. El girado se ofrece como vista
 complementaria de caja.</p>
 <p><strong>¿Puedo descargar los datos?</strong> Sí. Todos los conjuntos
 de datos se descargan en CSV y JSON, bajo licencia Creative Commons CC
-BY 4.0<a href="#fn101" class="footnote-ref" id="fnref101"
-role="doc-noteref"><sup>101</sup></a>: úselos libremente citando la
+BY 4.0<a href="#fn110" class="footnote-ref" id="fnref110"
+role="doc-noteref"><sup>110</sup></a>: úselos libremente citando la
 fuente.</p>
 <p><strong>¿Puedo citarlo en mi tesis?</strong> Sí. Formato sugerido:
 <em>QHAWAY 2.0 – Observatorio Nacional de Inteligencia Territorial,
@@ -2190,9 +2944,9 @@ verificables, no como garantías.</p>
 </thead>
 <tbody>
 <tr>
-<td>Consulta Amigable / Transparencia Económica<a href="#fn102"
-class="footnote-ref" id="fnref102"
-role="doc-noteref"><sup>102</sup></a></td>
+<td>Consulta Amigable / Transparencia Económica<a href="#fn111"
+class="footnote-ref" id="fnref111"
+role="doc-noteref"><sup>111</sup></a></td>
 <td>MEF</td>
 <td>PIA, PIM, Certificado, Devengado, Girado por pliego, función,
 programa y proyecto</td>
@@ -2200,18 +2954,18 @@ programa y proyecto</td>
 <td>Mensual (gasto); anual (cierre)</td>
 </tr>
 <tr>
-<td>Portal Nacional de Datos Abiertos<a href="#fn103"
-class="footnote-ref" id="fnref103"
-role="doc-noteref"><sup>103</sup></a></td>
+<td>Portal Nacional de Datos Abiertos<a href="#fn112"
+class="footnote-ref" id="fnref112"
+role="doc-noteref"><sup>112</sup></a></td>
 <td>PCM/SGTD</td>
 <td>Datasets multisectoriales del Estado</td>
 <td>Variable por dataset</td>
 <td>Variable</td>
 </tr>
 <tr>
-<td>Censos, ENAHO, ENDES (microdatos)<a href="#fn104"
-class="footnote-ref" id="fnref104"
-role="doc-noteref"><sup>104</sup></a></td>
+<td>Censos, ENAHO, ENDES (microdatos)<a href="#fn113"
+class="footnote-ref" id="fnref113"
+role="doc-noteref"><sup>113</sup></a></td>
 <td>INEI</td>
 <td>Población, pobreza, empleo, ingreso, vivienda, salud
 materno-infantil</td>
@@ -2219,32 +2973,32 @@ materno-infantil</td>
 <td>Censal; anual (ENAHO/ENDES)</td>
 </tr>
 <tr>
-<td>ESCALE / Censo Educativo<a href="#fn105" class="footnote-ref"
-id="fnref105" role="doc-noteref"><sup>105</sup></a></td>
+<td>ESCALE / Censo Educativo<a href="#fn114" class="footnote-ref"
+id="fnref114" role="doc-noteref"><sup>114</sup></a></td>
 <td>MINEDU</td>
 <td>Matrícula, locales escolares, logro de aprendizaje</td>
 <td>Distrital / por institución educativa</td>
 <td>Anual</td>
 </tr>
 <tr>
-<td>REUNIS / SIEN<a href="#fn106" class="footnote-ref" id="fnref106"
-role="doc-noteref"><sup>106</sup></a></td>
+<td>REUNIS / SIEN<a href="#fn115" class="footnote-ref" id="fnref115"
+role="doc-noteref"><sup>115</sup></a></td>
 <td>MINSA</td>
 <td>Anemia, desnutrición crónica, indicadores sanitarios</td>
 <td>Distrital (según indicador)</td>
 <td>Anual; algunos semestrales</td>
 </tr>
 <tr>
-<td>REDinforma / IDD<a href="#fn107" class="footnote-ref" id="fnref107"
-role="doc-noteref"><sup>107</sup></a></td>
+<td>REDinforma / IDD<a href="#fn116" class="footnote-ref" id="fnref116"
+role="doc-noteref"><sup>116</sup></a></td>
 <td>MIDIS</td>
 <td>Desarrollo e inclusión social, cobertura de programas</td>
 <td>Distrital</td>
 <td>Anual</td>
 </tr>
 <tr>
-<td>SIGRID<a href="#fn108" class="footnote-ref" id="fnref108"
-role="doc-noteref"><sup>108</sup></a></td>
+<td>SIGRID<a href="#fn117" class="footnote-ref" id="fnref117"
+role="doc-noteref"><sup>117</sup></a></td>
 <td>CENEPRED</td>
 <td>Escenarios de riesgo, peligros, vulnerabilidad (capas
 geoespaciales)</td>
@@ -2252,52 +3006,52 @@ geoespaciales)</td>
 <td>Por evento y por estudio</td>
 </tr>
 <tr>
-<td>Datos hidrometeorológicos y escenarios climáticos<a href="#fn109"
-class="footnote-ref" id="fnref109"
-role="doc-noteref"><sup>109</sup></a></td>
+<td>Datos hidrometeorológicos y escenarios climáticos<a href="#fn118"
+class="footnote-ref" id="fnref118"
+role="doc-noteref"><sup>118</sup></a></td>
 <td>SENAMHI</td>
 <td>Clima observado, pronósticos, escenarios</td>
 <td>Estaciones / grillas interpoladas</td>
 <td>Diaria a anual según producto</td>
 </tr>
 <tr>
-<td>PEDN al 2050 e información territorial<a href="#fn110"
-class="footnote-ref" id="fnref110"
-role="doc-noteref"><sup>110</sup></a></td>
+<td>PEDN al 2050 e información territorial<a href="#fn119"
+class="footnote-ref" id="fnref119"
+role="doc-noteref"><sup>119</sup></a></td>
 <td>CEPLAN</td>
 <td>Prospectiva, brechas, fichas territoriales</td>
 <td>Departamental / provincial</td>
 <td>Por actualización de planes</td>
 </tr>
 <tr>
-<td>INVIERTE.PE / SSI<a href="#fn111" class="footnote-ref" id="fnref111"
-role="doc-noteref"><sup>111</sup></a></td>
+<td>INVIERTE.PE / SSI<a href="#fn120" class="footnote-ref" id="fnref120"
+role="doc-noteref"><sup>120</sup></a></td>
 <td>MEF</td>
 <td>Inversión pública: cartera, avance físico-financiero</td>
 <td>Por proyecto (georreferenciable)</td>
 <td>Continua</td>
 </tr>
 <tr>
-<td>API OCDS<a href="#fn112" class="footnote-ref" id="fnref112"
-role="doc-noteref"><sup>112</sup></a></td>
+<td>API OCDS<a href="#fn121" class="footnote-ref" id="fnref121"
+role="doc-noteref"><sup>121</sup></a></td>
 <td>OECE</td>
 <td>Contrataciones públicas en estándar abierto</td>
 <td>Por proceso / entidad</td>
 <td>Continua</td>
 </tr>
 <tr>
-<td>OECD Data, Banco Mundial, BID, CEPAL<a href="#fn113"
-class="footnote-ref" id="fnref113"
-role="doc-noteref"><sup>113</sup></a></td>
+<td>OECD Data, Banco Mundial, BID, CEPAL<a href="#fn122"
+class="footnote-ref" id="fnref122"
+role="doc-noteref"><sup>122</sup></a></td>
 <td>Multilaterales</td>
 <td>Comparables internacionales, elasticidades de referencia</td>
 <td>Nacional</td>
 <td>Anual</td>
 </tr>
 <tr>
-<td>Cartografía oficial y GeoJSON distrital<a href="#fn114"
-class="footnote-ref" id="fnref114"
-role="doc-noteref"><sup>114</sup></a></td>
+<td>Cartografía oficial y GeoJSON distrital<a href="#fn123"
+class="footnote-ref" id="fnref123"
+role="doc-noteref"><sup>123</sup></a></td>
 <td>IGN / geo GOB.PE</td>
 <td>Límites distritales (1,891 distritos, ya operativos en Proyecto
 INTI)</td>
@@ -2305,8 +3059,8 @@ INTI)</td>
 <td>Por actualización demarcatoria</td>
 </tr>
 <tr>
-<td>DEM SRTM / Copernicus 30 m<a href="#fn115" class="footnote-ref"
-id="fnref115" role="doc-noteref"><sup>115</sup></a></td>
+<td>DEM SRTM / Copernicus 30 m<a href="#fn124" class="footnote-ref"
+id="fnref124" role="doc-noteref"><sup>124</sup></a></td>
 <td>NASA / ESA</td>
 <td>Modelo digital de elevación para pisos altitudinales</td>
 <td>Píxel de 30 m</td>
@@ -2314,8 +3068,8 @@ id="fnref115" role="doc-noteref"><sup>115</sup></a></td>
 </tr>
 <tr>
 <td>Clasificador funcional-programático y marcadores climáticos<a
-href="#fn116" class="footnote-ref" id="fnref116"
-role="doc-noteref"><sup>116</sup></a></td>
+href="#fn125" class="footnote-ref" id="fnref125"
+role="doc-noteref"><sup>125</sup></a></td>
 <td>MEF / MINAM</td>
 <td>Taxonomía para etiquetar gasto climático (referencia: marcadores de
 Río, OCDE)</td>
@@ -2346,58 +3100,58 @@ tableros, nivel provincial, login obligatorio, hoy fuera de línea).</p>
 </thead>
 <tbody>
 <tr>
-<td>Perú Transparente<a href="#fn117" class="footnote-ref" id="fnref117"
-role="doc-noteref"><sup>117</sup></a></td>
+<td>Perú Transparente<a href="#fn126" class="footnote-ref" id="fnref126"
+role="doc-noteref"><sup>126</sup></a></td>
 <td>Stack React+TS+Vite+Tailwind, ECharts, MapLibre, Cytoscape; OG/SEO
 por sección; export CSV; ETL Python (MEF, OECE/OCDS, gob.pe) sobre ~20
 MB de JSON estático</td>
 <td>Plataforma base; M1 Presupuesto</td>
 </tr>
 <tr>
-<td>Observatorio de Poder Económico<a href="#fn118" class="footnote-ref"
-id="fnref118" role="doc-noteref"><sup>118</sup></a></td>
+<td>Observatorio de Poder Económico<a href="#fn127" class="footnote-ref"
+id="fnref127" role="doc-noteref"><sup>127</sup></a></td>
 <td>Índice compuesto EPI 0-100, grafos NetworkX offline, treemaps</td>
 <td>M5 Índice de Prosperidad Territorial</td>
 </tr>
 <tr>
-<td>Perú Riesgos<a href="#fn119" class="footnote-ref" id="fnref119"
-role="doc-noteref"><sup>119</sup></a></td>
+<td>Perú Riesgos<a href="#fn128" class="footnote-ref" id="fnref128"
+role="doc-noteref"><sup>128</sup></a></td>
 <td>14 secciones de riesgos, 6 simuladores client-side, Leaflet, URLs
 compartibles, PDF en cliente; fuentes IGP, SENAMHI, CENEPRED,
 INDECI</td>
 <td>M3 Riesgos Territoriales; M6 Simulador</td>
 </tr>
 <tr>
-<td>Proyecto INTI<a href="#fn120" class="footnote-ref" id="fnref120"
-role="doc-noteref"><sup>120</sup></a></td>
+<td>Proyecto INTI<a href="#fn129" class="footnote-ref" id="fnref129"
+role="doc-noteref"><sup>129</sup></a></td>
 <td>GeoJSON de 1,891 distritos + UBIGEO; indicadores distritales (IDH,
 pobreza); prospectiva 2075 con escenarios; consultas IA por
 distrito</td>
 <td>M4 Inteligencia Territorial; M7 Prospectivo</td>
 </tr>
 <tr>
-<td>Perú Finanzas Públicas<a href="#fn121" class="footnote-ref"
-id="fnref121" role="doc-noteref"><sup>121</sup></a></td>
+<td>Perú Finanzas Públicas<a href="#fn130" class="footnote-ref"
+id="fnref130" role="doc-noteref"><sup>130</sup></a></td>
 <td>Series 1990-2025; PIA/PIM/Devengado; heatmap añoxsector; coroplético
 regional; ETL MEF + BCRP (repo local, no publicado)</td>
 <td>M1 Presupuesto</td>
 </tr>
 <tr>
-<td>Observatorio FONAFE<a href="#fn122" class="footnote-ref"
-id="fnref122" role="doc-noteref"><sup>122</sup></a></td>
+<td>Observatorio FONAFE<a href="#fn131" class="footnote-ref"
+id="fnref131" role="doc-noteref"><sup>131</sup></a></td>
 <td>ETL modular versionado (seed -&gt; build -&gt; snapshots/manifest);
 marcado verified/estimate; AskBot con dataset como contexto</td>
 <td>Capa de datos e IA transversal</td>
 </tr>
 <tr>
-<td>Observatorio Defensa-Interior<a href="#fn123" class="footnote-ref"
-id="fnref123" role="doc-noteref"><sup>123</sup></a></td>
+<td>Observatorio Defensa-Interior<a href="#fn132" class="footnote-ref"
+id="fnref132" role="doc-noteref"><sup>132</sup></a></td>
 <td>Patrón de presupuesto sectorial; AskBot client-side sin backend</td>
 <td>M1 Presupuesto; IA transversal</td>
 </tr>
 <tr>
-<td>Obs. Smartphones Adolescentes<a href="#fn124" class="footnote-ref"
-id="fnref124" role="doc-noteref"><sup>124</sup></a></td>
+<td>Obs. Smartphones Adolescentes<a href="#fn133" class="footnote-ref"
+id="fnref133" role="doc-noteref"><sup>133</sup></a></td>
 <td>i18n con prerender; mapa Leaflet; biblioteca con DOI; procedencia
 por registro</td>
 <td>Internacionalización; rigor documental</td>
@@ -2520,7 +3274,20 @@ Perú</em> (1941). DEM de referencia: SRTM/Copernicus 30 m, <a
 href="https://dataspace.copernicus.eu/"
 class="uri">https://dataspace.copernicus.eu/</a><a href="#fnref4"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Principales fuentes: MEF Transparencia Económica (<a
+<li id="fn5"><p>Cifras verificadas sobre la API de Datos Abiertos del
+MEF (Consulta del Gasto Público, SIAF), ejercicio 2025, comparando la
+agregación por <code>DEPARTAMENTO_EJECUTORA</code> (ubicación de la
+unidad ejecutora) frente a <code>DEPARTAMENTO_META</code> (destino
+territorial del proyecto): <a
+href="https://datosabiertos.mef.gob.pe/dataset/presupuesto-y-ejecucion-de-gasto"
+class="uri">https://datosabiertos.mef.gob.pe/dataset/presupuesto-y-ejecucion-de-gasto</a><a
+href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Dashboard QHAWAY 2.0 – Fase 1, en línea y navegable con
+datos reales del SIAF-MEF 2025: <a
+href="https://unimauro.github.io/qhaway-dashboard/"
+class="uri">https://unimauro.github.io/qhaway-dashboard/</a>.<a
+href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Principales fuentes: MEF Transparencia Económica (<a
 href="https://apps5.mineco.gob.pe/transparencia/mensual/"
 class="uri">https://apps5.mineco.gob.pe/transparencia/mensual/</a>),
 INEI (<a href="https://www.inei.gob.pe"
@@ -2535,105 +3302,113 @@ href="https://www.ceplan.gob.pe"
 class="uri">https://www.ceplan.gob.pe</a>), API OCDS del OECE (<a
 href="https://contratacionesabiertas.oece.gob.pe"
 class="uri">https://contratacionesabiertas.oece.gob.pe</a>). Listado
-completo en la sección de fuentes de datos.<a href="#fnref5"
+completo en la sección de fuentes de datos.<a href="#fnref7"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>FIEECS-UNI, “QHAWAY – Observatorio del Presupuesto
+<li id="fn8"><p>Demarcación político-administrativa oficial del Perú
+según el INEI: 24 departamentos más la Provincia Constitucional del
+Callao, 195 provincias y 1,845 distritos; cartografía y demarcación
+distrital del INEI: <a href="https://www.inei.gob.pe"
+class="uri">https://www.inei.gob.pe</a>. El dataset cartográfico vigente
+de la plataforma cubre 1,834 de esos 1,845 distritos, brecha que el
+observatorio declara explícitamente.<a href="#fnref8"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>FIEECS-UNI, “QHAWAY – Observatorio del Presupuesto
 Público del Perú” (abril 2024): <a
 href="https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/"
 class="uri">https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/</a><a
-href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Snapshot del dashboard QHAWAY en Internet Archive
+href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Snapshot del dashboard QHAWAY en Internet Archive
 (30-nov-2024): <a
 href="https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/"
 class="uri">https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/</a><a
-href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>Perú Transparente: <a
+href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Perú Transparente: <a
 href="https://unimauro.github.io/peru-transparente"
 class="uri">https://unimauro.github.io/peru-transparente</a><a
-href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>Observatorio de Poder Económico del Perú: <a
+href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>Observatorio de Poder Económico del Perú: <a
 href="https://unimauro.github.io/observatorio-poder-economico"
 class="uri">https://unimauro.github.io/observatorio-poder-economico</a><a
-href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>Perú Riesgos: <a
+href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Perú Riesgos: <a
 href="https://unimauro.github.io/unimaurox-peru-riesgos"
 class="uri">https://unimauro.github.io/unimaurox-peru-riesgos</a><a
-href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p>Proyecto INTI – Gemelo Digital del Perú 2075: <a
+href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>Proyecto INTI – Gemelo Digital del Perú 2075: <a
 href="https://unimauro.github.io/proyecto-inti"
 class="uri">https://unimauro.github.io/proyecto-inti</a><a
-href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p>Observatorio de Empresas Públicas (FONAFE): <a
+href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>Observatorio de Empresas Públicas (FONAFE): <a
 href="https://unimauro.github.io/observatorio-fonafe"
 class="uri">https://unimauro.github.io/observatorio-fonafe</a><a
-href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn13"><p>Observatorio del Gasto en Defensa e Interior: <a
+href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn16"><p>Observatorio del Gasto en Defensa e Interior: <a
 href="https://unimauro.github.io/observatorio-defensa-interior"
 class="uri">https://unimauro.github.io/observatorio-defensa-interior</a><a
-href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn14"><p>Observatorio Global de Smartphones en Adolescentes: <a
+href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p>Observatorio Global de Smartphones en Adolescentes: <a
 href="https://unimauro.github.io/observatorio-smartphones-adolescentes"
 class="uri">https://unimauro.github.io/observatorio-smartphones-adolescentes</a><a
-href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn15"><p>MEF, Consulta Amigable de Ejecución del Gasto: <a
+href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p>MEF, Consulta Amigable de Ejecución del Gasto: <a
 href="https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx"
 class="uri">https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx</a><a
-href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn16"><p>MEF, Consulta Amigable de Ejecución del Gasto: <a
+href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p>MEF, Consulta Amigable de Ejecución del Gasto: <a
 href="https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx"
 class="uri">https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx</a><a
-href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn17"><p>OECE, Portal de Contrataciones Abiertas (API OCDS): <a
+href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn20"><p>OECE, Portal de Contrataciones Abiertas (API OCDS): <a
 href="https://contratacionesabiertas.oece.gob.pe"
 class="uri">https://contratacionesabiertas.oece.gob.pe</a><a
-href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn18"><p>CENEPRED, Sistema de Información para la Gestión del
+href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn21"><p>CENEPRED, Sistema de Información para la Gestión del
 Riesgo de Desastres (SIGRID): <a href="https://sigrid.cenepred.gob.pe"
-class="uri">https://sigrid.cenepred.gob.pe</a><a href="#fnref18"
+class="uri">https://sigrid.cenepred.gob.pe</a><a href="#fnref21"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn19"><p>Portal Nacional de Datos Abiertos: <a
+<li id="fn22"><p>Portal Nacional de Datos Abiertos: <a
 href="https://datosabiertos.gob.pe"
-class="uri">https://datosabiertos.gob.pe</a><a href="#fnref19"
+class="uri">https://datosabiertos.gob.pe</a><a href="#fnref22"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn20"><p>Perú Transparente (activo live del equipo proponente):
+<li id="fn23"><p>Perú Transparente (activo live del equipo proponente):
 <a href="https://unimauro.github.io/peru-transparente"
 class="uri">https://unimauro.github.io/peru-transparente</a><a
-href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn21"><p>Perú Riesgos (activo live del equipo proponente): <a
+href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn24"><p>Perú Riesgos (activo live del equipo proponente): <a
 href="https://unimauro.github.io/unimaurox-peru-riesgos"
 class="uri">https://unimauro.github.io/unimaurox-peru-riesgos</a><a
-href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn22"><p>Contribuciones Determinadas a Nivel Nacional del Perú
+href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn25"><p>Contribuciones Determinadas a Nivel Nacional del Perú
 (MINAM): <a
 href="https://www.gob.pe/institucion/minam/informes-publicaciones/2376179"
 class="uri">https://www.gob.pe/institucion/minam/informes-publicaciones/2376179</a><a
-href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn23"><p>Marco de Sendai para la Reducción del Riesgo de
+href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn26"><p>Marco de Sendai para la Reducción del Riesgo de
 Desastres 2015-2030 (UNDRR): <a
 href="https://www.undrr.org/publication/sendai-framework-disaster-risk-reduction-2015-2030"
 class="uri">https://www.undrr.org/publication/sendai-framework-disaster-risk-reduction-2015-2030</a><a
-href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn24"><p>Our World in Data, Universidad de Oxford: <a
+href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn27"><p>Our World in Data, Universidad de Oxford: <a
 href="https://ourworldindata.org"
-class="uri">https://ourworldindata.org</a><a href="#fnref24"
+class="uri">https://ourworldindata.org</a><a href="#fnref27"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn25"><p>Banco Mundial, Datos de libre acceso: <a
+<li id="fn28"><p>Banco Mundial, Datos de libre acceso: <a
 href="https://datos.bancomundial.org"
-class="uri">https://datos.bancomundial.org</a><a href="#fnref25"
+class="uri">https://datos.bancomundial.org</a><a href="#fnref28"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn26"><p>OECD Data Explorer: <a
+<li id="fn29"><p>OECD Data Explorer: <a
 href="https://data-explorer.oecd.org"
-class="uri">https://data-explorer.oecd.org</a><a href="#fnref26"
+class="uri">https://data-explorer.oecd.org</a><a href="#fnref29"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn27"><p>FIEECS-UNI, “QHAWAY – Observatorio del Presupuesto
+<li id="fn30"><p>FIEECS-UNI, “QHAWAY – Observatorio del Presupuesto
 Público del Perú” (abril 2024): <a
 href="https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/"
 class="uri">https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/</a>.
 Snapshot del dashboard original (30-nov-2024) en Wayback Machine: <a
 href="https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/"
 class="uri">https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/</a>.<a
-href="#fnref27" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn28"><p>MEF Transparencia Económica: <a
+href="#fnref30" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn31"><p>MEF Transparencia Económica: <a
 href="https://apps5.mineco.gob.pe/transparencia/mensual/"
 class="uri">https://apps5.mineco.gob.pe/transparencia/mensual/</a>;
 INEI: <a href="https://www.inei.gob.pe"
@@ -2641,288 +3416,321 @@ class="uri">https://www.inei.gob.pe</a>; CENEPRED-SIGRID: <a
 href="https://sigrid.cenepred.gob.pe"
 class="uri">https://sigrid.cenepred.gob.pe</a>; SENAMHI: <a
 href="https://www.senamhi.gob.pe"
-class="uri">https://www.senamhi.gob.pe</a>.<a href="#fnref28"
+class="uri">https://www.senamhi.gob.pe</a>.<a href="#fnref31"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn29"><p>MEF, Consulta Amigable de ejecución presupuestal: <a
+<li id="fn32"><p>MEF, Consulta Amigable de ejecución presupuestal: <a
 href="https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx"
 class="uri">https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx</a>.<a
-href="#fnref29" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn30"><p>Referencia metodológica: marcadores climáticos del
+href="#fnref32" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn33"><p>Referencia metodológica: marcadores climáticos del
 MEF/MINAM sobre el clasificador funcional-programático y marcadores de
 Río de la OCDE: <a
 href="https://www.oecd.org/dac/environment-development/rio-markers.htm"
 class="uri">https://www.oecd.org/dac/environment-development/rio-markers.htm</a>.<a
-href="#fnref30" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn31"><p>Javier Pulgar Vidal, <em>Las ocho regiones naturales
+href="#fnref33" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn34"><p>Javier Pulgar Vidal, <em>Las ocho regiones naturales
 del Perú</em> (1941 y ediciones posteriores), clasificación geográfica
 canónica del territorio peruano por pisos altitudinales.<a
-href="#fnref31" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn32"><p>Modelos digitales de elevación SRTM 30 m (<a
+href="#fnref34" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn35"><p>Modelos digitales de elevación SRTM 30 m (<a
 href="https://www.earthdata.nasa.gov/sensors/srtm"
 class="uri">https://www.earthdata.nasa.gov/sensors/srtm</a>) y
 Copernicus GLO-30 (<a
 href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM"
 class="uri">https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM</a>).<a
-href="#fnref32" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn33"><p>MEF – Transparencia Económica / Consulta Amigable:
+href="#fnref35" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn36"><p>Dashboard QHAWAY 2.0 – Fase 1, en línea y verificable:
+<a href="https://unimauro.github.io/qhaway-dashboard/"
+class="uri">https://unimauro.github.io/qhaway-dashboard/</a>.<a
+href="#fnref36" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn37"><p>MEF – Transparencia Económica / Consulta Amigable:
 https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx<a
-href="#fnref33" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn34"><p>INVIERTE.PE – Sistema de Seguimiento de Inversiones
-(SSI): https://ofi5.mef.gob.pe/ssi/<a href="#fnref34"
+href="#fnref37" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn38"><p>INVIERTE.PE – Sistema de Seguimiento de Inversiones
+(SSI): https://ofi5.mef.gob.pe/ssi/<a href="#fnref38"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn35"><p>OECE – API de Contrataciones Abiertas (estándar OCDS):
-https://contratacionesabiertas.oece.gob.pe<a href="#fnref35"
+<li id="fn39"><p>OECE – API de Contrataciones Abiertas (estándar OCDS):
+https://contratacionesabiertas.oece.gob.pe<a href="#fnref39"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn36"><p>INEI – Microdatos (censos, ENAHO, ENDES):
-https://proyectos.inei.gob.pe/microdatos/<a href="#fnref36"
+<li id="fn40"><p>INEI – Microdatos (censos, ENAHO, ENDES):
+https://proyectos.inei.gob.pe/microdatos/<a href="#fnref40"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn37"><p>MINEDU – ESCALE, Estadística de la Calidad Educativa:
-https://escale.minedu.gob.pe<a href="#fnref37" class="footnote-back"
+<li id="fn41"><p>MINEDU – ESCALE, Estadística de la Calidad Educativa:
+https://escale.minedu.gob.pe<a href="#fnref41" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn38"><p>CENEPRED – SIGRID, Sistema de Información para la
+<li id="fn42"><p>CENEPRED – SIGRID, Sistema de Información para la
 Gestión del Riesgo de Desastres: https://sigrid.cenepred.gob.pe<a
-href="#fnref38" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn39"><p>Portal Nacional de Datos Abiertos:
-https://datosabiertos.gob.pe<a href="#fnref39" class="footnote-back"
+href="#fnref42" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn43"><p>Portal Nacional de Datos Abiertos:
+https://datosabiertos.gob.pe<a href="#fnref43" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn40"><p>Observatorio FONAFE (patrón ETL seed -&gt; build -&gt;
+<li id="fn44"><p>Observatorio FONAFE (patrón ETL seed -&gt; build -&gt;
 snapshots/manifest, live):
-https://unimauro.github.io/observatorio-fonafe<a href="#fnref40"
+https://unimauro.github.io/observatorio-fonafe<a href="#fnref44"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn41"><p>Portafolio demostrable en producción, p. ej. Perú
+<li id="fn45"><p>Portafolio demostrable en producción, p. ej. Perú
 Transparente (<a href="https://unimauro.github.io/peru-transparente"
 class="uri">https://unimauro.github.io/peru-transparente</a>), Proyecto
 INTI (<a href="https://unimauro.github.io/proyecto-inti"
 class="uri">https://unimauro.github.io/proyecto-inti</a>) y Perú Riesgos
 (<a href="https://unimauro.github.io/unimaurox-peru-riesgos"
 class="uri">https://unimauro.github.io/unimaurox-peru-riesgos</a>),
-todos servidos como sitios estáticos en GitHub Pages.<a href="#fnref41"
+todos servidos como sitios estáticos en GitHub Pages.<a href="#fnref45"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn42"><p>GitHub Actions, ejecución programada
+<li id="fn46"><p>GitHub Actions, ejecución programada
 (<code>schedule</code>): <a
 href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule"
 class="uri">https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule</a>.<a
-href="#fnref42" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn43"><p>Límites de uso de GitHub Pages: <a
+href="#fnref46" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn47"><p>Límites de uso de GitHub Pages: <a
 href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#usage-limits"
 class="uri">https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#usage-limits</a>.<a
-href="#fnref43" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn44"><p>FastAPI y especificación OpenAPI: <a
+href="#fnref47" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn48"><p>FastAPI y especificación OpenAPI: <a
 href="https://fastapi.tiangolo.com/"
-class="uri">https://fastapi.tiangolo.com/</a>.<a href="#fnref44"
+class="uri">https://fastapi.tiangolo.com/</a>.<a href="#fnref48"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn45"><p>PostGIS, extensión geoespacial de PostgreSQL: <a
+<li id="fn49"><p>PostGIS, extensión geoespacial de PostgreSQL: <a
 href="https://postgis.net/" class="uri">https://postgis.net/</a>.<a
-href="#fnref45" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn46"><p>AWS CloudFront, S3, Lambda y RDS: <a
+href="#fnref49" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn50"><p>AWS CloudFront, S3, Lambda y RDS: <a
 href="https://aws.amazon.com/es/"
 class="uri">https://aws.amazon.com/es/</a>; Terraform: <a
 href="https://developer.hashicorp.com/terraform"
 class="uri">https://developer.hashicorp.com/terraform</a>.<a
-href="#fnref46" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn47"><p>MEF – Transparencia Económica, Consulta Amigable de
+href="#fnref50" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn51"><p>Esquema estrella (<em>star schema</em>), patrón
+canónico de modelado dimensional para almacenes de datos y consultas
+OLAP: Ralph Kimball y Margy Ross, <em>The Data Warehouse Toolkit</em>
+(3.ª ed.); referencia general: <a
+href="https://en.wikipedia.org/wiki/Star_schema"
+class="uri">https://en.wikipedia.org/wiki/Star_schema</a>.<a
+href="#fnref51" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn52"><p>MEF – Transparencia Económica, Consulta Amigable de
 ejecución del gasto:
 https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx y gasto
 mensual: https://apps5.mineco.gob.pe/transparencia/mensual/<a
-href="#fnref47" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn48"><p>MEF – Sistema de Seguimiento de Inversiones
-(INVIERTE.PE/SSI): https://ofi5.mef.gob.pe/ssi/<a href="#fnref48"
+href="#fnref52" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn53"><p>MEF – Sistema de Seguimiento de Inversiones
+(INVIERTE.PE/SSI): https://ofi5.mef.gob.pe/ssi/<a href="#fnref53"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn49"><p>OECE – API de Contrataciones Abiertas (estándar OCDS):
-https://contratacionesabiertas.oece.gob.pe<a href="#fnref49"
+<li id="fn54"><p>OECE – API de Contrataciones Abiertas (estándar OCDS):
+https://contratacionesabiertas.oece.gob.pe<a href="#fnref54"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn50"><p>Portal Nacional de Datos Abiertos del Perú:
-https://datosabiertos.gob.pe<a href="#fnref50" class="footnote-back"
+<li id="fn55"><p>Portal Nacional de Datos Abiertos del Perú:
+https://datosabiertos.gob.pe<a href="#fnref55" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn51"><p>Perú Transparente (producto live del equipo
+<li id="fn56"><p>Perú Transparente (producto live del equipo
 proponente): https://unimauro.github.io/peru-transparente<a
-href="#fnref51" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn52"><p>OCDE – Marcadores de Río para el seguimiento de
+href="#fnref56" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn57"><p>OCDE – Marcadores de Río para el seguimiento de
 financiamiento climático (referencia metodológica, junto con los
 marcadores climáticos MEF/MINAM):
 https://www.oecd.org/dac/environment-development/rioconventions.htm<a
-href="#fnref52" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn53"><p>Observatorio FONAFE (producto live; patrón de datos
+href="#fnref57" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn58"><p>Observatorio FONAFE (producto live; patrón de datos
 verified/estimate): https://unimauro.github.io/observatorio-fonafe<a
-href="#fnref53" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn54"><p>MEF – Transparencia Económica, Consulta Amigable de
+href="#fnref58" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn59"><p>MEF – Transparencia Económica, Consulta Amigable de
 ejecución del gasto:
 https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx y gasto
 mensual: https://apps5.mineco.gob.pe/transparencia/mensual/<a
-href="#fnref54" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn55"><p>SENAMHI – escenarios climáticos nacionales:
-https://www.senamhi.gob.pe<a href="#fnref55" class="footnote-back"
+href="#fnref59" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn60"><p>SENAMHI – escenarios climáticos nacionales:
+https://www.senamhi.gob.pe<a href="#fnref60" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn56"><p>CEPLAN – Plan Estratégico de Desarrollo Nacional al
+<li id="fn61"><p>CEPLAN – Plan Estratégico de Desarrollo Nacional al
 2050 e información territorial: https://www.ceplan.gob.pe<a
-href="#fnref56" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn57"><p>Banco Mundial – Datos: https://datos.bancomundial.org ;
-CEPAL – CEPALSTAT: https://statistics.cepal.org<a href="#fnref57"
+href="#fnref61" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn62"><p>Banco Mundial – Datos: https://datos.bancomundial.org ;
+CEPAL – CEPALSTAT: https://statistics.cepal.org<a href="#fnref62"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn58"><p>CENEPRED – SIGRID, Sistema de Información para la
+<li id="fn63"><p>CENEPRED – SIGRID, Sistema de Información para la
 Gestión del Riesgo de Desastres: https://sigrid.cenepred.gob.pe<a
-href="#fnref58" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn59"><p>Fuentes integradas en el atlas de riesgos: IGP
+href="#fnref63" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn64"><p>Fuentes integradas en el atlas de riesgos: IGP
 (https://www.igp.gob.pe), SENAMHI (https://www.senamhi.gob.pe), INDECI
 (https://www.indeci.gob.pe), INAIGEM (https://www.inaigem.gob.pe), ANA
 (https://www.ana.gob.pe), MINAM Geobosques
-(https://geobosques.minam.gob.pe)<a href="#fnref59"
+(https://geobosques.minam.gob.pe)<a href="#fnref64"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn60"><p>Perú Riesgos (producto live del equipo proponente, 14
+<li id="fn65"><p>Perú Riesgos (producto live del equipo proponente, 14
 secciones y 6 simuladores):
-https://unimauro.github.io/unimaurox-peru-riesgos<a href="#fnref60"
+https://unimauro.github.io/unimaurox-peru-riesgos<a href="#fnref65"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn61"><p>Javier Pulgar Vidal, <em>Las ocho regiones naturales
+<li id="fn66"><p>Javier Pulgar Vidal, <em>Las ocho regiones naturales
 del Perú</em> (tesis presentada a la III Asamblea General del Instituto
 Panamericano de Geografía e Historia, 1941; obra posterior <em>Geografía
 del Perú: las ocho regiones naturales</em>). Reseña institucional:
 https://www.gob.pe/institucion/minam/noticias (referencia general MINAM)
 y entrada bibliográfica en
 https://es.wikipedia.org/wiki/Ocho_regiones_naturales_del_Per%C3%BA<a
-href="#fnref61" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn62"><p>NASA SRTM 30 m:
+href="#fnref66" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn67"><p>NASA SRTM 30 m:
 https://www.earthdata.nasa.gov/data/instruments/srtm ; Copernicus GLO-30
 DEM:
 https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM<a
-href="#fnref62" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn63"><p>Proyecto INTI – GeoJSON de 1,891 distritos con UBIGEO e
-indicadores distritales: https://unimauro.github.io/proyecto-inti<a
-href="#fnref63" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn64"><p>MEF, Consulta Amigable de ejecución presupuestal:
-https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx<a
-href="#fnref64" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn65"><p>Observatorio de Poder Económico – índice compuesto EPI
-0-100: https://unimauro.github.io/observatorio-poder-economico<a
-href="#fnref65" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn66"><p>MINEDU, Estadística de la Calidad Educativa (ESCALE):
-https://escale.minedu.gob.pe<a href="#fnref66" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn67"><p>INEI, Encuesta Demográfica y de Salud Familiar (ENDES)
-y microdatos: https://proyectos.inei.gob.pe/microdatos/<a
 href="#fnref67" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn68"><p>OECD/JRC, <em>Handbook on Constructing Composite
+<li id="fn68"><p>Proyecto INTI – GeoJSON de 1,891 distritos con UBIGEO e
+indicadores distritales: https://unimauro.github.io/proyecto-inti<a
+href="#fnref68" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn69"><p>MEF, Consulta Amigable de ejecución presupuestal:
+https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx<a
+href="#fnref69" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn70"><p>Observatorio de Poder Económico – índice compuesto EPI
+0-100: https://unimauro.github.io/observatorio-poder-economico<a
+href="#fnref70" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn71"><p>MINEDU, Estadística de la Calidad Educativa (ESCALE):
+https://escale.minedu.gob.pe<a href="#fnref71" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn72"><p>INEI, Encuesta Demográfica y de Salud Familiar (ENDES)
+y microdatos: https://proyectos.inei.gob.pe/microdatos/<a
+href="#fnref72" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn73"><p>OECD/JRC, <em>Handbook on Constructing Composite
 Indicators: Methodology and User Guide</em> (2008):
 https://www.oecd.org/en/publications/handbook-on-constructing-composite-indicators-methodology-and-user-guide_9789264043466-en.html<a
-href="#fnref68" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn69"><p>Banco Mundial, datos e investigación aplicada (agua,
+href="#fnref73" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn74"><p>Banco Mundial, datos e investigación aplicada (agua,
 saneamiento y salud): https://datos.bancomundial.org ; OCDE:
-https://data.oecd.org<a href="#fnref69" class="footnote-back"
+https://data.oecd.org<a href="#fnref74" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn70"><p>Perú Riesgos – 14 secciones y 6 simuladores client-side
+<li id="fn75"><p>Perú Riesgos – 14 secciones y 6 simuladores client-side
 con URL compartible: https://unimauro.github.io/unimaurox-peru-riesgos<a
-href="#fnref70" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn71"><p>CEPLAN, Plan Estratégico de Desarrollo Nacional al
-2050: https://www.ceplan.gob.pe<a href="#fnref71" class="footnote-back"
+href="#fnref75" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn76"><p>CEPLAN, Plan Estratégico de Desarrollo Nacional al
+2050: https://www.ceplan.gob.pe<a href="#fnref76" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn72"><p>Proyecto INTI – prospectiva territorial con tres
+<li id="fn77"><p>Proyecto INTI – prospectiva territorial con tres
 escenarios por distrito: https://unimauro.github.io/proyecto-inti<a
-href="#fnref72" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn73"><p>Snapshot del dashboard original (30-nov-2024) en
+href="#fnref77" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn78"><p>MEF – Consulta Amigable de Ejecución del Gasto
+(navegación por jerarquía de menús):
+https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx<a
+href="#fnref78" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn79"><p>Dashboard QHAWAY 2.0 – Fase 1, con Explorador de cruces
+pre-computados sobre datos reales del SIAF-MEF 2025:
+https://unimauro.github.io/qhaway-dashboard/<a href="#fnref79"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn80"><p>Snapshot del dashboard original (30-nov-2024) en
 Internet Archive, único acceso vigente al estar el dominio caído: <a
 href="https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/"
 class="uri">https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/</a><a
-href="#fnref73" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn74"><p>QHAWAY – Observatorio del Presupuesto Público del Perú,
+href="#fnref80" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn81"><p>QHAWAY – Observatorio del Presupuesto Público del Perú,
 anuncio institucional FIEECS-UNI (abril 2024): <a
 href="https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/"
 class="uri">https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/</a><a
-href="#fnref74" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn75"><p>GitHub Pages es gratuito para sitios de repositorios
+href="#fnref81" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn82"><p>Dashboard QHAWAY 2.0 – Fase 1, en línea y verificable
+con datos reales del SIAF-MEF 2025: <a
+href="https://unimauro.github.io/qhaway-dashboard/"
+class="uri">https://unimauro.github.io/qhaway-dashboard/</a><a
+href="#fnref82" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn83"><p>API del backend (Fase 2) en producción: <a
+href="https://qhaway.tunky.net" class="uri">https://qhaway.tunky.net</a>
+(la raíz lista los endpoints; p. ej. <code>/api/serie-nacional</code>,
+<code>/api/por-distrito/2025</code>). PostgreSQL sobre VPS, con CORS,
+límite de tasa y solo lectura; el dashboard la consume con respaldo a
+datos estáticos.<a href="#fnref83" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn84"><p>GitHub Pages es gratuito para sitios de repositorios
 públicos, con límites de uso blando (~100 GB/mes de banda): <a
 href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages"
 class="uri">https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages</a><a
-href="#fnref75" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn76"><p>Remuneración Mínima Vital de S/ 1,130 vigente desde el
+href="#fnref84" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn85"><p>Remuneración Mínima Vital de S/ 1,130 vigente desde el
 01-ene-2025 (D.S. N.° 006-2024-TR); la subvención mínima de prácticas
 preprofesionales se referencia a la RMV (Ley N.° 28518): <a
 href="https://www.gob.pe/institucion/mtpe/noticias/1067253"
 class="uri">https://www.gob.pe/institucion/mtpe/noticias/1067253</a><a
-href="#fnref76" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn77"><p>Estimación con la calculadora de precios de AWS para
+href="#fnref85" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn86"><p>Estimación con la calculadora de precios de AWS para
 CloudFront + S3 + Lambda + RDS de bajo tráfico; debe recotizarse al
 diseñar la Fase 3: <a href="https://calculator.aws/"
-class="uri">https://calculator.aws/</a><a href="#fnref77"
+class="uri">https://calculator.aws/</a><a href="#fnref86"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn78"><p>Registro y renovación de dominios .pe a través de
+<li id="fn87"><p>Registro y renovación de dominios .pe a través de
 registradores acreditados por punto.pe (NIC .pe); tarifas según
 registrador: <a href="https://punto.pe/"
-class="uri">https://punto.pe/</a><a href="#fnref78"
+class="uri">https://punto.pe/</a><a href="#fnref87"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn79"><p>Evidencia: el dominio
+<li id="fn88"><p>Evidencia: el dominio
 <code>dashboard.qhaway-fieecs.pe</code> no resuelve a junio 2026; solo
 persiste el archivo en Wayback Machine: <a
 href="https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/"
 class="uri">https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/</a><a
-href="#fnref79" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn80"><p>API de Datos Abiertos del MEF (Consulta del Gasto
+href="#fnref88" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn89"><p>API de Datos Abiertos del MEF (Consulta del Gasto
 Público, SIAF), de acceso libre y sin tarifa: <a
 href="https://datosabiertos.mef.gob.pe/dataset/presupuesto-y-ejecucion-de-gasto"
 class="uri">https://datosabiertos.mef.gob.pe/dataset/presupuesto-y-ejecucion-de-gasto</a><a
-href="#fnref80" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn81"><p>GitHub Actions es gratuito y sin límite de minutos para
+href="#fnref89" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn90"><p>GitHub Actions es gratuito y sin límite de minutos para
 repositorios públicos; los flujos programados
 (<code>schedule</code>/<code>cron</code>) permiten ejecutar el ETL
 automáticamente: <a
 href="https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration"
 class="uri">https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration</a><a
-href="#fnref81" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn82"><p>GitHub Actions es gratuito y sin límite de minutos para
+href="#fnref90" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn91"><p>GitHub Actions es gratuito y sin límite de minutos para
 repositorios públicos; los flujos programados
 (<code>schedule</code>/<code>cron</code>) permiten ejecutar el ETL
 automáticamente: <a
 href="https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration"
 class="uri">https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration</a><a
-href="#fnref82" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn83"><p>API de Datos Abiertos del MEF (Consulta del Gasto
+href="#fnref91" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn92"><p>API de Datos Abiertos del MEF (Consulta del Gasto
 Público, SIAF), de acceso libre y sin tarifa: <a
 href="https://datosabiertos.mef.gob.pe/dataset/presupuesto-y-ejecucion-de-gasto"
 class="uri">https://datosabiertos.mef.gob.pe/dataset/presupuesto-y-ejecucion-de-gasto</a><a
-href="#fnref83" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn84"><p>Dashboard QHAWAY 2.0 – Fase 1 (implementación de
+href="#fnref92" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn93"><p>Dashboard QHAWAY 2.0 – Fase 1 (implementación de
 referencia con datos reales del SIAF-MEF): <a
 href="https://unimauro.github.io/qhaway-dashboard/"
 class="uri">https://unimauro.github.io/qhaway-dashboard/</a><a
-href="#fnref84" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn85"><p>Zenodo, repositorio de datos de investigación operado
+href="#fnref93" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn94"><p>Zenodo, repositorio de datos de investigación operado
 por el CERN, asigna DOI a cada versión de un dataset: <a
 href="https://zenodo.org" class="uri">https://zenodo.org</a>.<a
-href="#fnref85" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn86"><p>Observatorio Global de Smartphones en Adolescentes,
+href="#fnref94" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn95"><p>Observatorio Global de Smartphones en Adolescentes,
 biblioteca científica con DOI y procedencia de datos por registro: <a
 href="https://unimauro.github.io/observatorio-smartphones-adolescentes"
 class="uri">https://unimauro.github.io/observatorio-smartphones-adolescentes</a>.<a
-href="#fnref86" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn87"><p>MEF, Consulta Amigable de ejecución presupuestal: <a
+href="#fnref95" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn96"><p>MEF, Consulta Amigable de ejecución presupuestal: <a
 href="https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx"
 class="uri">https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx</a>.<a
-href="#fnref87" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn88"><p>MEF, Sistema de Seguimiento de Inversiones
+href="#fnref96" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn97"><p>MEF, Sistema de Seguimiento de Inversiones
 (INVIERTE.PE/SSI): <a href="https://ofi5.mef.gob.pe/ssi/"
-class="uri">https://ofi5.mef.gob.pe/ssi/</a>.<a href="#fnref88"
+class="uri">https://ofi5.mef.gob.pe/ssi/</a>.<a href="#fnref97"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn89"><p>CEPLAN, Plan Estratégico de Desarrollo Nacional al 2050
+<li id="fn98"><p>CEPLAN, Plan Estratégico de Desarrollo Nacional al 2050
 e información territorial: <a href="https://www.ceplan.gob.pe"
-class="uri">https://www.ceplan.gob.pe</a>.<a href="#fnref89"
+class="uri">https://www.ceplan.gob.pe</a>.<a href="#fnref98"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn90"><p>OCDE, marcadores de Río para el seguimiento del
+<li id="fn99"><p>OCDE, marcadores de Río para el seguimiento del
 financiamiento climático: <a
 href="https://www.oecd.org/dac/environment-development/rioconventions.htm"
 class="uri">https://www.oecd.org/dac/environment-development/rioconventions.htm</a>.<a
-href="#fnref90" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn91"><p>Observatorio FONAFE, patrón de procedencia de datos
+href="#fnref99" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn100"><p>Observatorio FONAFE, patrón de procedencia de datos
 (verified/estimate) y AskBot sobre dataset: <a
 href="https://unimauro.github.io/observatorio-fonafe"
 class="uri">https://unimauro.github.io/observatorio-fonafe</a>.<a
-href="#fnref91" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn92"><p>FIEECS-UNI, “QHAWAY – Observatorio del Presupuesto
+href="#fnref100" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn101"><p>FIEECS-UNI, “QHAWAY – Observatorio del Presupuesto
 Público del Perú” (abril 2024): <a
 href="https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/"
 class="uri">https://fieecs.uni.edu.pe/qhaway-observatorio-del-presupuesto-publico-del-peru/</a>.
 Snapshot del dashboard original (30-nov-2024) en Wayback Machine: <a
 href="https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/"
 class="uri">https://web.archive.org/web/20241130224308/https://dashboard.qhaway-fieecs.pe/</a>.<a
-href="#fnref92" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn93"><p>Activos live verificables: Perú Transparente <a
+href="#fnref101" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn102"><p>Activos live verificables: Perú Transparente <a
 href="https://unimauro.github.io/peru-transparente"
 class="uri">https://unimauro.github.io/peru-transparente</a>; Perú
 Riesgos <a href="https://unimauro.github.io/unimaurox-peru-riesgos"
@@ -2931,142 +3739,146 @@ Proyecto INTI <a href="https://unimauro.github.io/proyecto-inti"
 class="uri">https://unimauro.github.io/proyecto-inti</a>; Observatorio
 FONAFE <a href="https://unimauro.github.io/observatorio-fonafe"
 class="uri">https://unimauro.github.io/observatorio-fonafe</a>.<a
-href="#fnref93" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn94"><p>Licencia Creative Commons Atribución 4.0 Internacional
+href="#fnref102" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn103"><p>Licencia Creative Commons Atribución 4.0 Internacional
 (CC BY 4.0): <a
 href="https://creativecommons.org/licenses/by/4.0/deed.es"
 class="uri">https://creativecommons.org/licenses/by/4.0/deed.es</a>.<a
-href="#fnref94" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn95"><p>Datos abiertos y líneas de cooperación: BID <a
+href="#fnref103" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn104"><p>Datos abiertos y líneas de cooperación: BID <a
 href="https://data.iadb.org" class="uri">https://data.iadb.org</a>; CAF
 – Banco de Desarrollo de América Latina <a href="https://www.caf.com"
 class="uri">https://www.caf.com</a>; CEPAL <a
 href="https://statistics.cepal.org"
-class="uri">https://statistics.cepal.org</a>.<a href="#fnref95"
+class="uri">https://statistics.cepal.org</a>.<a href="#fnref104"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn96"><p>MEF – Consulta Amigable de Ejecución del Gasto:
+<li id="fn105"><p>MEF – Consulta Amigable de Ejecución del Gasto:
 https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx y gasto
 mensual: https://apps5.mineco.gob.pe/transparencia/mensual/<a
-href="#fnref96" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn97"><p>INEI – censos, ENAHO, ENDES: https://www.inei.gob.pe y
-microdatos: https://proyectos.inei.gob.pe/microdatos/<a href="#fnref97"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn98"><p>MINEDU – Estadística de la Calidad Educativa (ESCALE):
-https://escale.minedu.gob.pe<a href="#fnref98" class="footnote-back"
+href="#fnref105" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn99"><p>CENEPRED – Sistema de Información para la Gestión del
+<li id="fn106"><p>INEI – censos, ENAHO, ENDES: https://www.inei.gob.pe y
+microdatos: https://proyectos.inei.gob.pe/microdatos/<a href="#fnref106"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn107"><p>MINEDU – Estadística de la Calidad Educativa (ESCALE):
+https://escale.minedu.gob.pe<a href="#fnref107" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn108"><p>CENEPRED – Sistema de Información para la Gestión del
 Riesgo de Desastres (SIGRID): https://sigrid.cenepred.gob.pe<a
-href="#fnref99" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn100"><p>MEF – Glosario de Presupuesto Público:
-https://www.mef.gob.pe/es/glosario-sp-5902<a href="#fnref100"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn101"><p>Licencia Creative Commons Atribución 4.0 Internacional
-(CC BY 4.0): https://creativecommons.org/licenses/by/4.0/deed.es<a
-href="#fnref101" class="footnote-back"
+href="#fnref108" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn102"><p>MEF – Transparencia Económica, gasto mensual: <a
+<li id="fn109"><p>MEF – Glosario de Presupuesto Público:
+https://www.mef.gob.pe/es/glosario-sp-5902<a href="#fnref109"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn110"><p>Licencia Creative Commons Atribución 4.0 Internacional
+(CC BY 4.0): https://creativecommons.org/licenses/by/4.0/deed.es<a
+href="#fnref110" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn111"><p>MEF – Transparencia Económica, gasto mensual: <a
 href="https://apps5.mineco.gob.pe/transparencia/mensual/"
 class="uri">https://apps5.mineco.gob.pe/transparencia/mensual/</a>;
 Consulta Amigable: <a
 href="https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx"
 class="uri">https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx</a>.<a
-href="#fnref102" class="footnote-back"
+href="#fnref111" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn103"><p>Portal Nacional de Datos Abiertos: <a
+<li id="fn112"><p>Portal Nacional de Datos Abiertos: <a
 href="https://datosabiertos.gob.pe"
-class="uri">https://datosabiertos.gob.pe</a>.<a href="#fnref103"
+class="uri">https://datosabiertos.gob.pe</a>.<a href="#fnref112"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn104"><p>INEI: <a href="https://www.inei.gob.pe"
+<li id="fn113"><p>INEI: <a href="https://www.inei.gob.pe"
 class="uri">https://www.inei.gob.pe</a>; microdatos: <a
 href="https://proyectos.inei.gob.pe/microdatos/"
 class="uri">https://proyectos.inei.gob.pe/microdatos/</a>.<a
-href="#fnref104" class="footnote-back"
+href="#fnref113" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn105"><p>MINEDU – ESCALE: <a
+<li id="fn114"><p>MINEDU – ESCALE: <a
 href="https://escale.minedu.gob.pe"
-class="uri">https://escale.minedu.gob.pe</a>.<a href="#fnref105"
+class="uri">https://escale.minedu.gob.pe</a>.<a href="#fnref114"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn106"><p>MINSA: <a href="https://www.minsa.gob.pe"
-class="uri">https://www.minsa.gob.pe</a>.<a href="#fnref106"
+<li id="fn115"><p>MINSA: <a href="https://www.minsa.gob.pe"
+class="uri">https://www.minsa.gob.pe</a>.<a href="#fnref115"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn107"><p>MIDIS: <a href="https://www.midis.gob.pe"
-class="uri">https://www.midis.gob.pe</a>.<a href="#fnref107"
+<li id="fn116"><p>MIDIS: <a href="https://www.midis.gob.pe"
+class="uri">https://www.midis.gob.pe</a>.<a href="#fnref116"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn108"><p>CENEPRED – SIGRID: <a
+<li id="fn117"><p>CENEPRED – SIGRID: <a
 href="https://sigrid.cenepred.gob.pe"
-class="uri">https://sigrid.cenepred.gob.pe</a>.<a href="#fnref108"
+class="uri">https://sigrid.cenepred.gob.pe</a>.<a href="#fnref117"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn109"><p>SENAMHI: <a href="https://www.senamhi.gob.pe"
-class="uri">https://www.senamhi.gob.pe</a>.<a href="#fnref109"
+<li id="fn118"><p>SENAMHI: <a href="https://www.senamhi.gob.pe"
+class="uri">https://www.senamhi.gob.pe</a>.<a href="#fnref118"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn110"><p>CEPLAN: <a href="https://www.ceplan.gob.pe"
-class="uri">https://www.ceplan.gob.pe</a>.<a href="#fnref110"
+<li id="fn119"><p>CEPLAN: <a href="https://www.ceplan.gob.pe"
+class="uri">https://www.ceplan.gob.pe</a>.<a href="#fnref119"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn111"><p>MEF – Sistema de Seguimiento de Inversiones (SSI): <a
+<li id="fn120"><p>MEF – Sistema de Seguimiento de Inversiones (SSI): <a
 href="https://ofi5.mef.gob.pe/ssi/"
-class="uri">https://ofi5.mef.gob.pe/ssi/</a>.<a href="#fnref111"
+class="uri">https://ofi5.mef.gob.pe/ssi/</a>.<a href="#fnref120"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn112"><p>OECE – Contrataciones Abiertas (estándar OCDS): <a
+<li id="fn121"><p>OECE – Contrataciones Abiertas (estándar OCDS): <a
 href="https://contratacionesabiertas.oece.gob.pe"
 class="uri">https://contratacionesabiertas.oece.gob.pe</a>.<a
-href="#fnref112" class="footnote-back"
+href="#fnref121" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn113"><p>OECD Data: <a href="https://data.oecd.org"
+<li id="fn122"><p>OECD Data: <a href="https://data.oecd.org"
 class="uri">https://data.oecd.org</a>; Banco Mundial: <a
 href="https://datos.bancomundial.org"
 class="uri">https://datos.bancomundial.org</a>; BID: <a
 href="https://data.iadb.org" class="uri">https://data.iadb.org</a>;
 CEPAL: <a href="https://statistics.cepal.org"
-class="uri">https://statistics.cepal.org</a>.<a href="#fnref113"
+class="uri">https://statistics.cepal.org</a>.<a href="#fnref122"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn114"><p>GeoJSON distrital ya integrado en Proyecto INTI: <a
+<li id="fn123"><p>GeoJSON distrital ya integrado en Proyecto INTI: <a
 href="https://unimauro.github.io/proyecto-inti"
 class="uri">https://unimauro.github.io/proyecto-inti</a>; cartografía
-oficial: IGN y geo GOB.PE.<a href="#fnref114" class="footnote-back"
+oficial: IGN y geo GOB.PE.<a href="#fnref123" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn115"><p>SRTM 30 m (NASA) y Copernicus DEM GLO-30 (ESA), de
-acceso abierto.<a href="#fnref115" class="footnote-back"
+<li id="fn124"><p>SRTM 30 m (NASA) y Copernicus DEM GLO-30 (ESA), de
+acceso abierto.<a href="#fnref124" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn116"><p>Metodología de marcadores climáticos MEF/MINAM y
+<li id="fn125"><p>Metodología de marcadores climáticos MEF/MINAM y
 marcadores de Río de la OCDE, aplicadas sobre el clasificador
-funcional-programático del MEF.<a href="#fnref116" class="footnote-back"
+funcional-programático del MEF.<a href="#fnref125" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn117"><p><a href="https://unimauro.github.io/peru-transparente"
+<li id="fn126"><p><a href="https://unimauro.github.io/peru-transparente"
 class="uri">https://unimauro.github.io/peru-transparente</a>.<a
-href="#fnref117" class="footnote-back"
+href="#fnref126" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn118"><p><a
+<li id="fn127"><p><a
 href="https://unimauro.github.io/observatorio-poder-economico"
 class="uri">https://unimauro.github.io/observatorio-poder-economico</a>.<a
-href="#fnref118" class="footnote-back"
+href="#fnref127" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn119"><p><a
+<li id="fn128"><p><a
 href="https://unimauro.github.io/unimaurox-peru-riesgos"
 class="uri">https://unimauro.github.io/unimaurox-peru-riesgos</a>.<a
-href="#fnref119" class="footnote-back"
+href="#fnref128" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn120"><p><a href="https://unimauro.github.io/proyecto-inti"
+<li id="fn129"><p><a href="https://unimauro.github.io/proyecto-inti"
 class="uri">https://unimauro.github.io/proyecto-inti</a>.<a
-href="#fnref120" class="footnote-back"
+href="#fnref129" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn121"><p>Repositorio local
+<li id="fn130"><p>Repositorio local
 <code>unimaurox-peru-finanzas-publicas</code>; único activo del
-inventario sin URL pública a la fecha.<a href="#fnref121"
+inventario sin URL pública a la fecha.<a href="#fnref130"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn122"><p><a
+<li id="fn131"><p><a
 href="https://unimauro.github.io/observatorio-fonafe"
 class="uri">https://unimauro.github.io/observatorio-fonafe</a>.<a
-href="#fnref122" class="footnote-back"
+href="#fnref131" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn123"><p><a
+<li id="fn132"><p><a
 href="https://unimauro.github.io/observatorio-defensa-interior"
 class="uri">https://unimauro.github.io/observatorio-defensa-interior</a>.<a
-href="#fnref123" class="footnote-back"
+href="#fnref132" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn124"><p><a
+<li id="fn133"><p><a
 href="https://unimauro.github.io/observatorio-smartphones-adolescentes"
 class="uri">https://unimauro.github.io/observatorio-smartphones-adolescentes</a>.<a
-href="#fnref124" class="footnote-back"
+href="#fnref133" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
